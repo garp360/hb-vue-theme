@@ -1,0 +1,143 @@
+/* =============================================================================
+   HB VUE THEME - BUTTON COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hb-spacing-2);
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 2.5rem;
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-sm);
+  transition: all var(--hb-transition-base);
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  border: 1px solid var(--hb-border-medium);
+}
+.hb-button:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+.hb-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--hb-shadow-sm);
+}
+.hb-button:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+.hb-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.hb-button .pi {
+  font-size: var(--hb-font-size-base);
+}
+
+/* BUTTON VARIANTS */
+.hb-button-primary {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary);
+}
+.hb-button-primary:hover:not(:disabled) {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+.hb-button-primary:active:not(:disabled) {
+  background-color: var(--hb-primary-active);
+  border-color: var(--hb-primary-active);
+}
+.hb-button-secondary {
+  background-color: var(--hb-secondary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-secondary);
+}
+.hb-button-secondary:hover:not(:disabled) {
+  background-color: var(--hb-secondary-dark);
+  border-color: var(--hb-secondary-dark);
+}
+.hb-button-secondary:active:not(:disabled) {
+  background-color: var(--hb-secondary-700);
+  border-color: var(--hb-secondary-700);
+}
+.hb-button-success {
+  background-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-success);
+}
+.hb-button-success:hover:not(:disabled) {
+  background-color: var(--hb-success-600);
+  border-color: var(--hb-success-600);
+}
+.hb-button-success:active:not(:disabled) {
+  background-color: var(--hb-success-700);
+  border-color: var(--hb-success-700);
+}
+.hb-button-warning {
+  background-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-warning);
+}
+.hb-button-warning:hover:not(:disabled) {
+  background-color: var(--hb-warning-600);
+  border-color: var(--hb-warning-600);
+}
+.hb-button-warning:active:not(:disabled) {
+  background-color: var(--hb-warning-700);
+  border-color: var(--hb-warning-700);
+}
+.hb-button-danger {
+  background-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-danger);
+}
+.hb-button-danger:hover:not(:disabled) {
+  background-color: var(--hb-danger-600);
+  border-color: var(--hb-danger-600);
+}
+.hb-button-danger:active:not(:disabled) {
+  background-color: var(--hb-danger-700);
+  border-color: var(--hb-danger-700);
+}
+.hb-button-info {
+  background-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-info);
+}
+.hb-button-info:hover:not(:disabled) {
+  background-color: var(--hb-info-600);
+  border-color: var(--hb-info-600);
+}
+.hb-button-info:active:not(:disabled) {
+  background-color: var(--hb-info-700);
+  border-color: var(--hb-info-700);
+}
+
+/* BUTTON SIZES */
+.hb-button-sm {
+  font-size: var(--hb-font-size-sm);
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  min-height: 2rem;
+}
+.hb-button-sm .pi {
+  font-size: var(--hb-font-size-sm);
+} 

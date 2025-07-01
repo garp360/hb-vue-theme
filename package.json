@@ -21,7 +21,6 @@
       "require": "./dist/tokens.js"
     },
     "./css": "./dist/theme.css",
-    "./scss": "./dist/theme.scss",
     "./styles": {
       "import": "./dist/css-loader.esm.js",
       "require": "./dist/css-loader.js"
@@ -75,7 +74,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
     "primeflex": "^3.3.1",
-    "sass": "^1.69.0",
     "vite": "^5.0.0"
   }
 }

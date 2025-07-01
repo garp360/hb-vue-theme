@@ -1,0 +1,134 @@
+/* =============================================================================
+   HB VUE THEME - PAGINATOR COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-paginator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  background-color: var(--hb-bg-secondary);
+  border-top: 1px solid var(--hb-border-light);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-secondary);
+}
+.hb-paginator-info {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+.hb-paginator-text {
+  color: var(--hb-text-secondary);
+}
+.hb-paginator-numbers {
+  font-weight: var(--hb-font-weight-medium);
+  color: var(--hb-text-primary);
+}
+.hb-paginator-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+.hb-paginator-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--hb-border-medium);
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-secondary);
+  border-radius: var(--hb-border-radius-sm);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  font-size: var(--hb-font-size-sm);
+}
+.hb-paginator-button:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+  color: var(--hb-text-primary);
+}
+.hb-paginator-button:active:not(:disabled) {
+  background-color: var(--hb-bg-tertiary);
+  transform: translateY(1px);
+}
+.hb-paginator-button:focus {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+.hb-paginator-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+}
+.hb-paginator-button .pi {
+  font-size: var(--hb-font-size-sm);
+}
+.hb-paginator-page {
+  /* Inherit from .hb-paginator-button */
+}
+.hb-paginator-page.hb-paginator-page-current {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  font-weight: var(--hb-font-weight-medium);
+}
+.hb-paginator-page.hb-paginator-page-current:hover {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+.hb-paginator-page.hb-paginator-page-ellipsis {
+  cursor: default;
+}
+.hb-paginator-page.hb-paginator-page-ellipsis:hover {
+  background-color: var(--hb-bg-primary);
+  border-color: var(--hb-border-medium);
+  color: var(--hb-text-secondary);
+}
+.hb-paginator-dropdown {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+.hb-paginator-label {
+  color: var(--hb-text-secondary);
+  font-size: var(--hb-font-size-sm);
+}
+.hb-dropdown {
+  min-width: 80px;
+  font-size: var(--hb-font-size-sm);
+}
+.hb-paginator-left {
+  justify-content: flex-start;
+  gap: var(--hb-spacing-4);
+}
+.hb-paginator-center {
+  justify-content: center;
+  gap: var(--hb-spacing-4);
+}
+.hb-paginator-right {
+  justify-content: flex-end;
+  gap: var(--hb-spacing-4);
+}
+@media (max-width: 900px) {
+  .hb-paginator {
+    flex-direction: column;
+    gap: var(--hb-spacing-3);
+    padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  }
+  .hb-paginator-info {
+    order: 2;
+  }
+  .hb-paginator-controls {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .hb-paginator .hb-paginator-controls {
+    flex-wrap: wrap;
+  }
+} 

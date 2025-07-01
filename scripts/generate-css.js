@@ -1,5 +1,5 @@
 // =============================================================================
-// CSS/SCSS GENERATOR FOR DISTRIBUTION
+// CSS GENERATOR FOR DISTRIBUTION
 // =============================================================================
 
 import { hbPreset } from '../src/styles/design-tokens.js'
@@ -72,72 +72,7 @@ function readComponentCSS() {
   }
 }
 
-// =============================================================================
-// GENERATE SCSS VARIABLES
-// =============================================================================
 
-function generateSCSS() {
-  const scssVariables = Object.entries(hbPreset.tokens)
-    .map(([property, value]) => {
-      const variableName = property.replace('--hb-', '$hb-').replace(/-/g, '-')
-      return `${variableName}: ${value};`
-    })
-    .join('\n')
-
-  // Read component-specific SCSS
-  const componentSCSS = readComponentSCSS()
-
-  const scssContent = `// =============================================================================
-// HB VUE THEME - SCSS VARIABLES
-// =============================================================================
-// Generated from design tokens
-// =============================================================================
-
-${scssVariables}
-
-// =============================================================================
-// PRIMEFLEX UTILITIES
-// =============================================================================
-
-${Object.entries(hbPreset.utilities || {})
-  .map(([className, styles]) => `.${className} { ${styles} }`)
-  .join('\n')}
-
-// =============================================================================
-// COMPONENT STYLES
-// =============================================================================
-
-${componentSCSS}
-`
-
-  return scssContent
-}
-
-// =============================================================================
-// READ COMPONENT SCSS
-// =============================================================================
-
-function readComponentSCSS() {
-  try {
-    // Read the main theme SCSS file that contains all component styles
-    const themeSCSSPath = join(process.cwd(), 'src', 'styles', 'theme.scss')
-    const componentSCSS = readFileSync(themeSCSSPath, 'utf8')
-    
-    // Extract only the component styles (skip variables section)
-    const componentStylesMatch = componentSCSS.match(/\/\/ =============================================================================\s*\n\/\/ COMPONENT STYLES\s*\n\/\/ =============================================================================\s*\n\n([\s\S]*)/)
-    
-    if (componentStylesMatch) {
-      return componentStylesMatch[1]
-    } else {
-      // If no component styles section found, return everything after variables
-      const afterVariablesMatch = componentSCSS.match(/\$hb-[\s\S]*?\n\s*\/\/ =============================================================================\s*\n\/\/ PRIMEFLEX UTILITIES\s*\n\/\/ =============================================================================\s*\n\n([\s\S]*)/)
-      return afterVariablesMatch ? afterVariablesMatch[1] : componentSCSS
-    }
-  } catch (error) {
-    console.warn('Warning: Could not read component SCSS:', error.message)
-    return '// Component styles not found'
-  }
-}
 
 // =============================================================================
 // GENERATE CSS LOADER
@@ -372,7 +307,6 @@ export function createCustomPreset(
 ): HBThemePreset;
 
 export function exportAsCSS(preset?: HBThemePreset): string;
-export function exportAsSCSS(preset?: HBThemePreset): string;
 
 export const hbPreset: HBThemePreset;
 export const hbDesignTokens: HBDesignTokens;
@@ -416,11 +350,6 @@ function writeFiles() {
   const loaderCJSContent = generateCSSLoaderCJS(cssContent)
   writeFileSync('./dist/css-loader.js', loaderCJSContent)
   console.log('✅ Generated dist/css-loader.js')
-
-  // Generate and write SCSS
-  const scssContent = generateSCSS()
-  writeFileSync('./dist/theme.scss', scssContent)
-  console.log('✅ Generated dist/theme.scss')
 
   // Generate and write TypeScript definitions
   const tsContent = generateTypeScript()

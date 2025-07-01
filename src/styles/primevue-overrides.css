@@ -1,0 +1,519 @@
+/* =============================================================================
+   HB VUE THEME - PRIMEVUE CSS CLASS OVERRIDES
+   ============================================================================= */
+/* This file provides CSS overrides to replace PrimeVue's 'p-' prefixed classes
+   with our custom 'hb-' prefixed classes for unstyled mode */
+
+/* =============================================================================
+   DATATABLE COMPONENT OVERRIDES
+   ============================================================================= */
+
+/* Replace p-datatable with hb-datatable */
+.hb-datatable {
+  /* Base datatable styles */
+  border: none;
+  outline: none;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  width: 100%;
+  background-color: var(--hb-bg-primary);
+  border-radius: var(--hb-border-radius-lg);
+  box-shadow: var(--hb-shadow-base);
+  overflow: hidden;
+}
+
+/* Table element */
+.hb-datatable table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Replace p-datatable-header with hb-datatable-header */
+.hb-datatable-header {
+  background-color: var(--hb-bg-secondary);
+  border-bottom: 1px solid var(--hb-border-light);
+  padding: var(--hb-spacing-4);
+}
+
+/* Replace p-datatable-header-cell with hb-datatable-header-cell */
+.hb-datatable-header-cell {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+  font-weight: var(--hb-font-weight-semibold);
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  border-bottom: 1px solid var(--hb-border-light);
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Sortable header */
+.hb-datatable-header-cell.hb-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.hb-datatable-header-cell.hb-sortable:hover {
+  background-color: var(--hb-bg-tertiary);
+}
+
+/* Replace p-datatable-body with hb-datatable-body */
+.hb-datatable-body {
+  background-color: var(--hb-bg-primary);
+}
+
+/* Replace p-datatable-body-cell with hb-datatable-body-cell */
+.hb-datatable-body-cell {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  border-bottom: 1px solid var(--hb-border-light);
+  text-align: left;
+  vertical-align: middle;
+  color: var(--hb-text-primary);
+}
+
+/* Replace p-datatable-row with hb-datatable-row */
+.hb-datatable-row {
+  transition: background-color var(--hb-transition-base);
+}
+
+.hb-datatable-row:hover {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-datatable-row.hb-selected {
+  background-color: var(--hb-primary-50);
+}
+
+/* Replace p-paginator with hb-paginator */
+.hb-paginator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  background-color: var(--hb-bg-secondary);
+  border-top: 1px solid var(--hb-border-light);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-secondary);
+}
+
+/* Replace p-paginator-page with hb-paginator-page */
+.hb-paginator-page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 var(--hb-spacing-1);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+}
+
+.hb-paginator-page:hover:not(.hb-disabled) {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+}
+
+.hb-paginator-page.hb-active {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary);
+}
+
+.hb-paginator-page.hb-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =============================================================================
+   BUTTON COMPONENT OVERRIDES
+   ============================================================================= */
+
+/* Replace p-button with hb-button */
+.hb-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hb-spacing-2);
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 2.5rem;
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-sm);
+  transition: all var(--hb-transition-base);
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  border: 1px solid var(--hb-border-medium);
+}
+
+.hb-button:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+.hb-button:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+.hb-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button variants */
+.hb-button.hb-primary {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary);
+}
+
+.hb-button.hb-primary:hover:not(:disabled) {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+
+.hb-button.hb-secondary {
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-medium);
+}
+
+.hb-button.hb-success {
+  background-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-success);
+}
+
+.hb-button.hb-warning {
+  background-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-warning);
+}
+
+.hb-button.hb-danger {
+  background-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-danger);
+}
+
+.hb-button.hb-info {
+  background-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-info);
+}
+
+.hb-button.hb-text {
+  background-color: transparent;
+  color: var(--hb-text-primary);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.hb-button.hb-text:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  transform: none;
+}
+
+/* =============================================================================
+   INPUT COMPONENT OVERRIDES
+   ============================================================================= */
+
+/* Replace p-inputtext with hb-inputtext */
+.hb-inputtext {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-normal);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  display: block;
+  width: 100%;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 2.5rem;
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-sm);
+  transition: all var(--hb-transition-base);
+}
+
+.hb-inputtext::placeholder {
+  color: var(--hb-text-muted);
+  opacity: 1;
+}
+
+.hb-inputtext:hover:not(:disabled) {
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-inputtext:focus {
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+.hb-inputtext:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hb-inputtext:read-only {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-secondary);
+}
+
+/* =============================================================================
+   SELECT COMPONENT OVERRIDES
+   ============================================================================= */
+
+/* Replace p-select with hb-select */
+.hb-select {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+/* Replace p-select-trigger with hb-select-trigger */
+.hb-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 2.5rem;
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-normal);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+.hb-select-trigger::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid var(--hb-text-secondary);
+  margin-left: var(--hb-spacing-2);
+  transition: transform var(--hb-transition-base);
+}
+
+.hb-select-trigger:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-select-trigger:focus {
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+.hb-select-trigger:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hb-select-trigger.hb-open {
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hb-select-trigger.hb-open::after {
+  transform: rotate(180deg);
+}
+
+/* Replace p-select-panel with hb-select-panel */
+.hb-select-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--hb-z-index-dropdown);
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-light);
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-lg);
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: var(--hb-spacing-1);
+}
+
+/* Replace p-select-item with hb-select-item */
+.hb-select-item {
+  padding: var(--hb-spacing-2) var(--hb-spacing-4);
+  cursor: pointer;
+  transition: background-color var(--hb-transition-base);
+  color: var(--hb-text-primary);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+}
+
+.hb-select-item:hover {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-select-item.hb-selected {
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-medium);
+}
+
+.hb-select-item.hb-disabled {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  background: none;
+}
+
+.hb-select-item.hb-disabled:hover {
+  background: none;
+}
+
+/* =============================================================================
+   MESSAGE COMPONENT OVERRIDES
+   ============================================================================= */
+
+/* Replace p-message with hb-message */
+.hb-message {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  border-radius: var(--hb-border-radius-md);
+  border: 1px solid;
+  margin-bottom: var(--hb-spacing-4);
+}
+
+.hb-message.hb-info {
+  background-color: var(--hb-info-50);
+  color: var(--hb-info-700);
+  border-color: var(--hb-info-200);
+}
+
+.hb-message.hb-success {
+  background-color: var(--hb-success-50);
+  color: var(--hb-success-700);
+  border-color: var(--hb-success-200);
+}
+
+.hb-message.hb-warning {
+  background-color: var(--hb-warning-50);
+  color: var(--hb-warning-700);
+  border-color: var(--hb-warning-200);
+}
+
+.hb-message.hb-error {
+  background-color: var(--hb-danger-50);
+  color: var(--hb-danger-700);
+  border-color: var(--hb-danger-200);
+}
+
+/* =============================================================================
+   LOADING STATES
+   ============================================================================= */
+
+/* Replace p-loading with hb-loading */
+.hb-loading {
+  position: relative;
+}
+
+.hb-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: var(--hb-z-index-fixed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hb-loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--hb-border-light);
+  border-top: 3px solid var(--hb-primary);
+  border-radius: 50%;
+  animation: hb-spin 1s linear infinite;
+  z-index: calc(var(--hb-z-index-fixed) + 1);
+}
+
+/* Loading animation */
+@keyframes hb-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+/* Disabled state */
+.hb-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hidden state */
+.hb-hidden {
+  display: none !important;
+}
+
+/* Invisible state */
+.hb-invisible {
+  visibility: hidden !important;
+}
+
+/* Focus visible */
+.hb-focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+} 

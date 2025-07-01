@@ -1,0 +1,31 @@
+/* =============================================================================
+   HB VUE THEME - DIALOG COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-dialog {
+  background-color: var(--hb-bg-primary);
+  border-radius: var(--hb-border-radius-lg);
+  box-shadow: var(--hb-shadow-xl);
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+.hb-dialog .hb-dialog-header {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+  font-weight: var(--hb-font-weight-semibold);
+  padding: var(--hb-spacing-4);
+  border-bottom: 1px solid var(--hb-border-light);
+}
+.hb-dialog .hb-dialog-content {
+  padding: var(--hb-spacing-4);
+  color: var(--hb-text-primary);
+}
+.hb-dialog .hb-dialog-footer {
+  padding: var(--hb-spacing-4);
+  border-top: 1px solid var(--hb-border-light);
+  background: var(--hb-bg-secondary);
+}
+.hb-dialog-mask {
+  background: var(--hb-bg-overlay);
+} 

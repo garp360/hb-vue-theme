@@ -1,0 +1,158 @@
+/* =============================================================================
+   HB VUE THEME - INPUT COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-inputtext,
+.hb-inputnumber {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-normal);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  display: block;
+  width: 100%;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 2.5rem;
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-sm);
+  transition: all var(--hb-transition-base);
+}
+.hb-inputtext::placeholder,
+.hb-inputnumber::placeholder {
+  color: var(--hb-text-muted);
+  opacity: 1;
+}
+.hb-inputtext:hover:not(:disabled),
+.hb-inputnumber:hover:not(:disabled) {
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+}
+.hb-inputtext:focus,
+.hb-inputnumber:focus {
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+.hb-inputtext:disabled,
+.hb-inputnumber:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.hb-inputtext:read-only,
+.hb-inputnumber:read-only {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-secondary);
+}
+
+/* INPUT SIZES */
+.hb-inputtext-sm,
+.hb-inputnumber-sm {
+  font-size: var(--hb-font-size-sm);
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  min-height: 2rem;
+}
+.hb-inputtext-lg,
+.hb-inputnumber-lg {
+  font-size: var(--hb-font-size-lg);
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  min-height: 3rem;
+}
+
+/* FILLED VARIANT */
+.hb-inputtext-filled,
+.hb-inputnumber-filled {
+  background-color: var(--hb-bg-secondary);
+  border-color: transparent;
+}
+.hb-inputtext-filled:hover:not(:disabled),
+.hb-inputnumber-filled:hover:not(:disabled) {
+  background-color: var(--hb-bg-tertiary);
+}
+.hb-inputtext-filled:focus,
+.hb-inputnumber-filled:focus {
+  background-color: var(--hb-bg-primary);
+  border-color: var(--hb-border-focus);
+}
+
+/* OUTLINED VARIANT */
+.hb-inputtext-outlined,
+.hb-inputnumber-outlined {
+  background-color: var(--hb-bg-primary);
+  border-color: var(--hb-border-medium);
+}
+
+/* VALID/INVALID STATES */
+.hb-inputtext.ng-valid,
+.hb-inputnumber.ng-valid {
+  border-color: var(--hb-success);
+}
+.hb-inputtext.ng-valid:focus,
+.hb-inputnumber.ng-valid:focus {
+  border-color: var(--hb-success);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+.hb-inputtext.ng-invalid,
+.hb-inputnumber.ng-invalid {
+  border-color: var(--hb-danger);
+}
+.hb-inputtext.ng-invalid:focus,
+.hb-inputnumber.ng-invalid:focus {
+  border-color: var(--hb-danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* INPUT WITH ICONS */
+.hb-inputtext-left-icon,
+.hb-inputnumber-left-icon {
+  padding-left: 2.5rem;
+}
+.hb-inputtext-left-icon::before,
+.hb-inputnumber-left-icon::before {
+  content: '';
+  position: absolute;
+  left: var(--hb-spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+}
+.hb-inputtext-right-icon,
+.hb-inputnumber-right-icon {
+  padding-right: 2.5rem;
+}
+.hb-inputtext-right-icon::after,
+.hb-inputnumber-right-icon::after {
+  content: '';
+  position: absolute;
+  right: var(--hb-spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+}
+
+/* INPUT GROUPS */
+.hb-input-group {
+  display: flex;
+  align-items: stretch;
+}
+.hb-input-group .hb-inputtext,
+.hb-input-group .hb-inputnumber {
+  border-radius: 0;
+  margin-left: -1px;
+} 

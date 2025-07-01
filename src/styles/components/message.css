@@ -1,0 +1,32 @@
+/* =============================================================================
+   HB VUE THEME - MESSAGE COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-message {
+  border-radius: var(--hb-border-radius-md);
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-normal);
+  margin-bottom: var(--hb-spacing-4);
+  border: 1px solid transparent;
+}
+.hb-message.hb-message-info {
+  background-color: var(--hb-info-50);
+  color: var(--hb-info-700);
+  border-color: var(--hb-info-200);
+}
+.hb-message.hb-message-success {
+  background-color: var(--hb-success-50);
+  color: var(--hb-success-700);
+  border-color: var(--hb-success-200);
+}
+.hb-message.hb-message-warning {
+  background-color: var(--hb-warning-50);
+  color: var(--hb-warning-700);
+  border-color: var(--hb-warning-200);
+}
+.hb-message.hb-message-error {
+  background-color: var(--hb-danger-50);
+  color: var(--hb-danger-700);
+  border-color: var(--hb-danger-200);
+} 

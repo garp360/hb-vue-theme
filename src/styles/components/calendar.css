@@ -1,0 +1,51 @@
+/* =============================================================================
+   HB VUE THEME - CALENDAR COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-calendar {
+  background-color: var(--hb-bg-primary);
+  border-radius: var(--hb-border-radius-lg);
+  box-shadow: var(--hb-shadow-base);
+  padding: var(--hb-spacing-4);
+  border: 1px solid var(--hb-border-light);
+}
+.hb-calendar .hb-calendar-header {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+  font-weight: var(--hb-font-weight-semibold);
+  padding: var(--hb-spacing-3);
+  border-bottom: 1px solid var(--hb-border-light);
+  border-top-left-radius: var(--hb-border-radius-lg);
+  border-top-right-radius: var(--hb-border-radius-lg);
+}
+.hb-calendar .hb-calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--hb-spacing-2);
+}
+.hb-calendar .hb-calendar-day {
+  text-align: center;
+  padding: var(--hb-spacing-2);
+  border-radius: var(--hb-border-radius-md);
+  cursor: pointer;
+  transition: background var(--hb-transition-base);
+  color: var(--hb-text-primary);
+}
+.hb-calendar .hb-calendar-day.hb-calendar-day-today {
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-bold);
+}
+.hb-calendar .hb-calendar-day.hb-calendar-day-selected {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  font-weight: var(--hb-font-weight-bold);
+}
+.hb-calendar .hb-calendar-day:hover:not(.hb-calendar-day-selected) {
+  background-color: var(--hb-bg-secondary);
+}
+.hb-calendar .hb-calendar-day.hb-calendar-day-disabled {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  background: none;
+} 

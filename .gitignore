@@ -151,6 +151,7 @@ Thumbs.db
 # Temporary folders
 tmp/
 temp/
+_examples
 
 # Build artifacts
 *.tgz
