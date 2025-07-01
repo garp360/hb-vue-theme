@@ -1,0 +1,34 @@
+// =============================================================================
+// HB VUE THEME - MESSAGE COMPONENT STYLES
+// =============================================================================
+// Custom styling for PrimeVue Message component with 'hb' prefix
+
+.hb-message {
+  border-radius: $hb-border-radius-md;
+  padding: $hb-spacing-3 $hb-spacing-4;
+  font-size: $hb-font-size-base;
+  font-weight: $hb-font-weight-normal;
+  margin-bottom: $hb-spacing-4;
+  border: 1px solid transparent;
+
+  &.hb-message-info {
+    background-color: $hb-info-50;
+    color: $hb-info-700;
+    border-color: $hb-info-200;
+  }
+  &.hb-message-success {
+    background-color: $hb-success-50;
+    color: $hb-success-700;
+    border-color: $hb-success-200;
+  }
+  &.hb-message-warning {
+    background-color: $hb-warning-50;
+    color: $hb-warning-700;
+    border-color: $hb-warning-200;
+  }
+  &.hb-message-error {
+    background-color: $hb-danger-50;
+    color: $hb-danger-700;
+    border-color: $hb-danger-200;
+  }
+} 

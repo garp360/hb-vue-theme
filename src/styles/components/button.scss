@@ -1,0 +1,433 @@
+// =============================================================================
+// HB VUE THEME - BUTTON COMPONENT STYLES
+// =============================================================================
+// Custom styling for PrimeVue Button component with 'hb' prefix
+// This file demonstrates how to completely customize a PrimeVue component
+
+// =============================================================================
+// BUTTON BASE STYLES
+// =============================================================================
+
+// Base button styles - these apply to all button variants
+.hb-button {
+  // Reset default button styles
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: $hb-font-family-primary;
+  font-size: $hb-font-size-base;
+  font-weight: $hb-font-weight-medium;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+  
+  // Layout and spacing
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $hb-spacing-2;
+  padding: $hb-spacing-3 $hb-spacing-4;
+  min-height: 2.5rem;
+  
+  // Visual styling
+  border-radius: $hb-border-radius-md;
+  box-shadow: $hb-shadow-sm;
+  transition: all $hb-transition-base;
+  
+  // Default state (secondary button)
+  background-color: $hb-bg-primary;
+  color: $hb-text-primary;
+  border: 1px solid $hb-border-medium;
+  
+  // Hover state
+  &:hover:not(:disabled) {
+    background-color: $hb-bg-secondary;
+    border-color: $hb-border-dark;
+    box-shadow: $hb-shadow-base;
+    transform: translateY(-1px);
+  }
+  
+  // Active/pressed state
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: $hb-shadow-sm;
+  }
+  
+  // Focus state for accessibility
+  &:focus-visible {
+    outline: 2px solid $hb-border-focus;
+    outline-offset: 2px;
+  }
+  
+  // Disabled state
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  // Icon styling within buttons
+  .pi {
+    font-size: $hb-font-size-base;
+  }
+}
+
+// =============================================================================
+// BUTTON VARIANTS
+// =============================================================================
+
+// Primary button - main call-to-action buttons
+.hb-button-primary {
+  background-color: $hb-primary;
+  color: $hb-text-inverse;
+  border-color: $hb-primary;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-primary-hover;
+    border-color: $hb-primary-hover;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $hb-primary-active;
+    border-color: $hb-primary-active;
+  }
+}
+
+// Secondary button - alternative actions
+.hb-button-secondary {
+  background-color: $hb-secondary;
+  color: $hb-text-inverse;
+  border-color: $hb-secondary;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-secondary-dark;
+    border-color: $hb-secondary-dark;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $hb-secondary-700;
+    border-color: $hb-secondary-700;
+  }
+}
+
+// Success button - positive actions
+.hb-button-success {
+  background-color: $hb-success;
+  color: $hb-text-inverse;
+  border-color: $hb-success;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-success-600;
+    border-color: $hb-success-600;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $hb-success-700;
+    border-color: $hb-success-700;
+  }
+}
+
+// Warning button - caution actions
+.hb-button-warning {
+  background-color: $hb-warning;
+  color: $hb-text-inverse;
+  border-color: $hb-warning;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-warning-600;
+    border-color: $hb-warning-600;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $hb-warning-700;
+    border-color: $hb-warning-700;
+  }
+}
+
+// Danger button - destructive actions
+.hb-button-danger {
+  background-color: $hb-danger;
+  color: $hb-text-inverse;
+  border-color: $hb-danger;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-danger-600;
+    border-color: $hb-danger-600;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $hb-danger-700;
+    border-color: $hb-danger-700;
+  }
+}
+
+// Info button - informational actions
+.hb-button-info {
+  background-color: $hb-info;
+  color: $hb-text-inverse;
+  border-color: $hb-info;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-info-600;
+    border-color: $hb-info-600;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $hb-info-700;
+    border-color: $hb-info-700;
+  }
+}
+
+// =============================================================================
+// BUTTON SIZES
+// =============================================================================
+
+// Small button
+.hb-button-sm {
+  font-size: $hb-font-size-sm;
+  padding: $hb-spacing-2 $hb-spacing-3;
+  min-height: 2rem;
+  
+  .pi {
+    font-size: $hb-font-size-sm;
+  }
+}
+
+// Large button
+.hb-button-lg {
+  font-size: $hb-font-size-lg;
+  padding: $hb-spacing-4 $hb-spacing-6;
+  min-height: 3rem;
+  
+  .pi {
+    font-size: $hb-font-size-lg;
+  }
+}
+
+// Extra large button
+.hb-button-xl {
+  font-size: $hb-font-size-xl;
+  padding: $hb-spacing-5 $hb-spacing-8;
+  min-height: 3.5rem;
+  
+  .pi {
+    font-size: $hb-font-size-xl;
+  }
+}
+
+// =============================================================================
+// BUTTON SHAPES
+// =============================================================================
+
+// Rounded button
+.hb-button-rounded {
+  border-radius: $hb-border-radius-full;
+}
+
+// Pill-shaped button
+.hb-button-pill {
+  border-radius: $hb-border-radius-full;
+  padding-left: $hb-spacing-6;
+  padding-right: $hb-spacing-6;
+}
+
+// =============================================================================
+// BUTTON STATES
+// =============================================================================
+
+// Loading state
+.hb-button-loading {
+  position: relative;
+  color: transparent !important;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: hb-spin 1s linear infinite;
+  }
+}
+
+// Outline button variants
+.hb-button-outlined {
+  background-color: transparent;
+  
+  &.hb-button-primary {
+    color: $hb-primary;
+    border-color: $hb-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-primary;
+      color: $hb-text-inverse;
+    }
+  }
+  
+  &.hb-button-secondary {
+    color: $hb-secondary;
+    border-color: $hb-secondary;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-secondary;
+      color: $hb-text-inverse;
+    }
+  }
+  
+  &.hb-button-success {
+    color: $hb-success;
+    border-color: $hb-success;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-success;
+      color: $hb-text-inverse;
+    }
+  }
+  
+  &.hb-button-warning {
+    color: $hb-warning;
+    border-color: $hb-warning;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-warning;
+      color: $hb-text-inverse;
+    }
+  }
+  
+  &.hb-button-danger {
+    color: $hb-danger;
+    border-color: $hb-danger;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-danger;
+      color: $hb-text-inverse;
+    }
+  }
+  
+  &.hb-button-info {
+    color: $hb-info;
+    border-color: $hb-info;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-info;
+      color: $hb-text-inverse;
+    }
+  }
+}
+
+// Text button variants (no background)
+.hb-button-text {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  
+  &:hover:not(:disabled) {
+    background-color: $hb-bg-secondary;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  &.hb-button-primary {
+    color: $hb-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-primary-50;
+    }
+  }
+  
+  &.hb-button-secondary {
+    color: $hb-secondary;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-secondary-50;
+    }
+  }
+  
+  &.hb-button-success {
+    color: $hb-success;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-success-50;
+    }
+  }
+  
+  &.hb-button-warning {
+    color: $hb-warning;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-warning-50;
+    }
+  }
+  
+  &.hb-button-danger {
+    color: $hb-danger;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-danger-50;
+    }
+  }
+  
+  &.hb-button-info {
+    color: $hb-info;
+    
+    &:hover:not(:disabled) {
+      background-color: $hb-info-50;
+    }
+  }
+}
+
+// =============================================================================
+// BUTTON GROUPS
+// =============================================================================
+
+// Button group container
+.hb-button-group {
+  display: inline-flex;
+  
+  .hb-button {
+    border-radius: 0;
+    margin-left: -1px;
+    
+    &:first-child {
+      border-radius: $hb-border-radius-md 0 0 $hb-border-radius-md;
+      margin-left: 0;
+    }
+    
+    &:last-child {
+      border-radius: 0 $hb-border-radius-md $hb-border-radius-md 0;
+    }
+    
+    &:only-child {
+      border-radius: $hb-border-radius-md;
+    }
+  }
+}
+
+// =============================================================================
+// RESPONSIVE BUTTON STYLES
+// =============================================================================
+
+@media (max-width: $hb-breakpoint-sm) {
+  .hb-button {
+    // Make buttons more touch-friendly on mobile
+    min-height: 2.75rem;
+    padding: $hb-spacing-3 $hb-spacing-4;
+  }
+  
+  .hb-button-sm {
+    min-height: 2.25rem;
+  }
+  
+  .hb-button-lg {
+    min-height: 3.25rem;
+  }
+} 

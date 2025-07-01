@@ -1,0 +1,81 @@
+{
+  "name": "hb-vue-theme",
+  "version": "1.0.7",
+  "description": "Custom PrimeVue 4 theme with 'hb' prefix using design tokens and PrimeFlex",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./preset": {
+      "import": "./dist/preset.esm.js",
+      "require": "./dist/preset.js"
+    },
+    "./tokens": {
+      "import": "./dist/tokens.esm.js",
+      "require": "./dist/tokens.js"
+    },
+    "./css": "./dist/theme.css",
+    "./scss": "./dist/theme.scss",
+    "./styles": {
+      "import": "./dist/css-loader.esm.js",
+      "require": "./dist/css-loader.js"
+    }
+  },
+  "files": [
+    "dist",
+    "preset-installer.js",
+    "README.md",
+    "INSTALLATION.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:dist && npm run generate:css",
+    "build:dist": "vite build",
+    "generate:css": "node scripts/generate-css.js",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vue",
+    "primevue",
+    "theme",
+    "design-tokens",
+    "primeflex",
+    "css-variables",
+    "ui-components",
+    "vue3"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/hb-vue-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/hb-vue-theme/issues"
+  },
+  "homepage": "https://github.com/yourusername/hb-vue-theme#readme",
+  "peerDependencies": {
+    "primeflex": "^3.3.1",
+    "primevue": "^4.0.0",
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "hb-vue-theme": "^1.0.7",
+    "primeicons": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "primeflex": "^3.3.1",
+    "sass": "^1.69.0",
+    "vite": "^5.0.0"
+  }
+}
