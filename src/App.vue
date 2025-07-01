@@ -10,6 +10,7 @@
     </header>
     
     <main class="hb-main">
+      <ComponentShowcase />
       <DataTableDemo />
     </main>
     
@@ -21,11 +22,13 @@
 
 <script>
 import DataTableDemo from './components/DataTableDemo.vue'
+import ComponentShowcase from './components/ComponentShowcase.vue'
 
 export default {
   name: 'App',
   components: {
-    DataTableDemo
+    DataTableDemo,
+    ComponentShowcase
   },
   mounted() {
     // Log theme information

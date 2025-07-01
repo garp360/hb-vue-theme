@@ -1,0 +1,290 @@
+/* =============================================================================
+   HB VUE THEME - TEXTAREA COMPONENT
+   ============================================================================= */
+
+/* =============================================================================
+   TEXTAREA ROOT
+   ============================================================================= */
+
+.hb-textarea {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-normal);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 6rem;
+  resize: vertical;
+  transition: all var(--hb-transition-base);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+.hb-textarea:focus {
+  outline: none;
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hb-textarea:hover:not(:disabled) {
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-textarea:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+  resize: none;
+}
+
+.hb-textarea:read-only {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-secondary);
+  cursor: default;
+}
+
+/* =============================================================================
+   TEXTAREA PLACEHOLDER
+   ============================================================================= */
+
+.hb-textarea::placeholder {
+  color: var(--hb-text-muted);
+  opacity: 1;
+}
+
+.hb-textarea:disabled::placeholder {
+  color: var(--hb-text-disabled);
+}
+
+/* =============================================================================
+   TEXTAREA SIZES
+   ============================================================================= */
+
+.hb-textarea.hb-sm {
+  font-size: var(--hb-font-size-sm);
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  min-height: 4rem;
+}
+
+.hb-textarea.hb-lg {
+  font-size: var(--hb-font-size-lg);
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  min-height: 8rem;
+}
+
+/* =============================================================================
+   TEXTAREA VARIANTS
+   ============================================================================= */
+
+/* Filled variant */
+.hb-textarea.hb-filled {
+  background-color: var(--hb-bg-secondary);
+  border-color: transparent;
+}
+
+.hb-textarea.hb-filled:hover:not(:disabled) {
+  background-color: var(--hb-bg-tertiary);
+  border-color: transparent;
+}
+
+.hb-textarea.hb-filled:focus {
+  background-color: var(--hb-bg-primary);
+  border-color: var(--hb-border-focus);
+}
+
+/* Outlined variant */
+.hb-textarea.hb-outlined {
+  background-color: transparent;
+  border-width: 2px;
+}
+
+.hb-textarea.hb-outlined:focus {
+  border-width: 2px;
+}
+
+/* =============================================================================
+   TEXTAREA STATES
+   ============================================================================= */
+
+.hb-textarea.hb-invalid {
+  border-color: var(--hb-danger);
+}
+
+.hb-textarea.hb-invalid:focus {
+  border-color: var(--hb-danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.hb-textarea.hb-valid {
+  border-color: var(--hb-success);
+}
+
+.hb-textarea.hb-valid:focus {
+  border-color: var(--hb-success);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* =============================================================================
+   TEXTAREA WITH LABEL
+   ============================================================================= */
+
+.hb-textarea-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.hb-textarea-label {
+  display: block;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-sm);
+  font-weight: var(--hb-font-weight-medium);
+  color: var(--hb-text-primary);
+  margin-bottom: var(--hb-spacing-2);
+  line-height: var(--hb-line-height-normal);
+}
+
+.hb-textarea-wrapper .hb-textarea {
+  margin-top: 0;
+}
+
+.hb-textarea-wrapper.hb-required .hb-textarea-label::after {
+  content: ' *';
+  color: var(--hb-danger);
+}
+
+/* =============================================================================
+   TEXTAREA WITH ICON
+   ============================================================================= */
+
+.hb-textarea-with-icon {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.hb-textarea-with-icon .hb-textarea {
+  padding-right: calc(var(--hb-spacing-4) + 1.5rem);
+}
+
+.hb-textarea-icon {
+  position: absolute;
+  top: var(--hb-spacing-3);
+  right: var(--hb-spacing-4);
+  color: var(--hb-text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hb-textarea-with-icon.hb-icon-left .hb-textarea {
+  padding-left: calc(var(--hb-spacing-4) + 1.5rem);
+  padding-right: var(--hb-spacing-4);
+}
+
+.hb-textarea-with-icon.hb-icon-left .hb-textarea-icon {
+  left: var(--hb-spacing-4);
+  right: auto;
+}
+
+/* =============================================================================
+   TEXTAREA CHARACTER COUNT
+   ============================================================================= */
+
+.hb-textarea-character-count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--hb-spacing-2);
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-muted);
+}
+
+.hb-textarea-character-count.hb-error {
+  color: var(--hb-danger);
+}
+
+.hb-textarea-character-count.hb-warning {
+  color: var(--hb-warning);
+}
+
+/* =============================================================================
+   TEXTAREA AUTO RESIZE
+   ============================================================================= */
+
+.hb-textarea.hb-auto-resize {
+  resize: none;
+  overflow: hidden;
+  min-height: 2.5rem;
+  max-height: 20rem;
+}
+
+/* =============================================================================
+   TEXTAREA ACCESSIBILITY
+   ============================================================================= */
+
+.hb-textarea:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+/* =============================================================================
+   TEXTAREA RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .hb-textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .hb-textarea.hb-sm {
+    font-size: 16px;
+  }
+  
+  .hb-textarea.hb-lg {
+    font-size: 16px;
+  }
+}
+
+/* =============================================================================
+   TEXTAREA ANIMATIONS
+   ============================================================================= */
+
+@keyframes hb-textarea-focus {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+.hb-textarea:focus {
+  animation: hb-textarea-focus 0.2s ease-out;
+}
+
+/* =============================================================================
+   TEXTAREA UTILITIES
+   ============================================================================= */
+
+.hb-textarea-no-resize {
+  resize: none;
+}
+
+.hb-textarea-resize-horizontal {
+  resize: horizontal;
+}
+
+.hb-textarea-resize-vertical {
+  resize: vertical;
+}
+
+.hb-textarea-resize-both {
+  resize: both;
+} 

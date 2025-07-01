@@ -1,0 +1,257 @@
+/* =============================================================================
+   HB VUE THEME - RADIOBUTTON COMPONENT
+   ============================================================================= */
+
+/* =============================================================================
+   RADIOBUTTON ROOT
+   ============================================================================= */
+
+.hb-radiobutton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  color: var(--hb-text-primary);
+  line-height: var(--hb-line-height-normal);
+}
+
+.hb-radiobutton:focus-within {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--hb-border-radius-sm);
+}
+
+/* =============================================================================
+   RADIOBUTTON INPUT (HIDDEN)
+   ============================================================================= */
+
+.hb-radiobutton input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* =============================================================================
+   RADIOBUTTON BOX
+   ============================================================================= */
+
+.hb-radiobutton-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-full);
+  background-color: var(--hb-bg-primary);
+  transition: all var(--hb-transition-base);
+  flex-shrink: 0;
+  margin-right: var(--hb-spacing-2);
+}
+
+.hb-radiobutton:hover .hb-radiobutton-box {
+  border-color: var(--hb-border-dark);
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-radiobutton input[type="radio"]:checked + .hb-radiobutton-box {
+  border-color: var(--hb-primary);
+}
+
+.hb-radiobutton input[type="radio"]:checked + .hb-radiobutton-box:hover {
+  border-color: var(--hb-primary-hover);
+}
+
+.hb-radiobutton input[type="radio"]:disabled + .hb-radiobutton-box {
+  background-color: var(--hb-bg-tertiary);
+  border-color: var(--hb-border-light);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =============================================================================
+   RADIOBUTTON ICON (DOT)
+   ============================================================================= */
+
+.hb-radiobutton-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--hb-primary);
+  border-radius: var(--hb-border-radius-full);
+  opacity: 0;
+  transition: opacity var(--hb-transition-base);
+  pointer-events: none;
+}
+
+.hb-radiobutton input[type="radio"]:checked ~ .hb-radiobutton-icon {
+  opacity: 1;
+}
+
+/* =============================================================================
+   RADIOBUTTON LABEL
+   ============================================================================= */
+
+.hb-radiobutton-label {
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-normal);
+  color: var(--hb-text-primary);
+  line-height: var(--hb-line-height-normal);
+  cursor: pointer;
+  user-select: none;
+}
+
+.hb-radiobutton input[type="radio"]:disabled ~ .hb-radiobutton-label {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+}
+
+/* =============================================================================
+   RADIOBUTTON SIZES
+   ============================================================================= */
+
+.hb-radiobutton.hb-sm .hb-radiobutton-box {
+  width: 1rem;
+  height: 1rem;
+}
+
+.hb-radiobutton.hb-sm .hb-radiobutton-icon {
+  width: 0.375rem;
+  height: 0.375rem;
+}
+
+.hb-radiobutton.hb-lg .hb-radiobutton-box {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.hb-radiobutton.hb-lg .hb-radiobutton-icon {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+/* =============================================================================
+   RADIOBUTTON STATES
+   ============================================================================= */
+
+.hb-radiobutton.hb-invalid .hb-radiobutton-box {
+  border-color: var(--hb-danger);
+}
+
+.hb-radiobutton.hb-invalid:hover .hb-radiobutton-box {
+  border-color: var(--hb-danger-600);
+}
+
+.hb-radiobutton.hb-valid .hb-radiobutton-box {
+  border-color: var(--hb-success);
+}
+
+.hb-radiobutton.hb-valid:hover .hb-radiobutton-box {
+  border-color: var(--hb-success-600);
+}
+
+/* =============================================================================
+   RADIOBUTTON GROUP
+   ============================================================================= */
+
+.hb-radiobutton-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hb-spacing-2);
+}
+
+.hb-radiobutton-group.hb-horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--hb-spacing-4);
+}
+
+/* =============================================================================
+   RADIOBUTTON ACCESSIBILITY
+   ============================================================================= */
+
+.hb-radiobutton input[type="radio"]:focus-visible + .hb-radiobutton-box {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+.hb-radiobutton input[type="radio"]:focus-visible ~ .hb-radiobutton-label {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--hb-border-radius-sm);
+}
+
+/* =============================================================================
+   RADIOBUTTON ANIMATIONS
+   ============================================================================= */
+
+@keyframes hb-radiobutton-check {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.hb-radiobutton input[type="radio"]:checked ~ .hb-radiobutton-icon {
+  animation: hb-radiobutton-check 0.2s ease-out;
+}
+
+/* =============================================================================
+   RADIOBUTTON VARIANTS
+   ============================================================================= */
+
+/* Button variant */
+.hb-radiobutton.hb-button .hb-radiobutton-box {
+  display: none;
+}
+
+.hb-radiobutton.hb-button {
+  padding: var(--hb-spacing-2) var(--hb-spacing-4);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  background-color: var(--hb-bg-primary);
+  transition: all var(--hb-transition-base);
+  margin-right: var(--hb-spacing-2);
+}
+
+.hb-radiobutton.hb-button:hover {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+}
+
+.hb-radiobutton.hb-button input[type="radio"]:checked + .hb-radiobutton-label {
+  color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-medium);
+}
+
+.hb-radiobutton.hb-button input[type="radio"]:checked {
+  background-color: var(--hb-primary-50);
+  border-color: var(--hb-primary);
+}
+
+.hb-radiobutton.hb-button input[type="radio"]:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+} 

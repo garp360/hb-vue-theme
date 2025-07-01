@@ -667,7 +667,79 @@ export const hbComponentTokens = {
   '--terminal-border-radius': 'var(--hb-border-radius-lg)',
   '--terminal-header-bg': 'var(--hb-neutral-800)',
   '--terminal-header-color': 'var(--hb-neutral-200)',
-  '--terminal-header-padding': 'var(--hb-spacing-3) var(--hb-spacing-4)'
+  '--terminal-header-padding': 'var(--hb-spacing-3) var(--hb-spacing-4)',
+  
+  // Checkbox Component
+  '--checkbox-size': '1.25rem',
+  '--checkbox-border-radius': 'var(--hb-border-radius-sm)',
+  '--checkbox-border-color': 'var(--hb-border-medium)',
+  '--checkbox-bg': 'var(--hb-bg-primary)',
+  '--checkbox-checked-bg': 'var(--hb-primary)',
+  '--checkbox-checked-border-color': 'var(--hb-primary)',
+  '--checkbox-icon-size': '0.75rem',
+  '--checkbox-icon-color': 'var(--hb-text-inverse)',
+  '--checkbox-disabled-opacity': '0.6',
+  '--checkbox-switch-width': '2.5rem',
+  '--checkbox-switch-height': '1.25rem',
+  '--checkbox-switch-thumb-size': '1rem',
+  
+  // RadioButton Component
+  '--radiobutton-size': '1.25rem',
+  '--radiobutton-border-radius': 'var(--hb-border-radius-full)',
+  '--radiobutton-border-color': 'var(--hb-border-medium)',
+  '--radiobutton-bg': 'var(--hb-bg-primary)',
+  '--radiobutton-checked-border-color': 'var(--hb-primary)',
+  '--radiobutton-dot-size': '0.5rem',
+  '--radiobutton-dot-color': 'var(--hb-primary)',
+  '--radiobutton-disabled-opacity': '0.6',
+  
+  // Textarea Component
+  '--textarea-padding': 'var(--hb-spacing-3) var(--hb-spacing-4)',
+  '--textarea-border-radius': 'var(--hb-border-radius-md)',
+  '--textarea-border-color': 'var(--hb-border-medium)',
+  '--textarea-bg': 'var(--hb-bg-primary)',
+  '--textarea-color': 'var(--hb-text-primary)',
+  '--textarea-placeholder-color': 'var(--hb-text-muted)',
+  '--textarea-focus-border-color': 'var(--hb-border-focus)',
+  '--textarea-focus-box-shadow': '0 0 0 3px rgba(59, 130, 246, 0.1)',
+  '--textarea-min-height': '6rem',
+  '--textarea-disabled-bg': 'var(--hb-bg-tertiary)',
+  '--textarea-disabled-color': 'var(--hb-text-disabled)',
+  
+  // Card Component
+  '--card-bg': 'var(--hb-bg-primary)',
+  '--card-border-color': 'var(--hb-border-light)',
+  '--card-border-radius': 'var(--hb-border-radius-lg)',
+  '--card-shadow': 'var(--hb-shadow-sm)',
+  '--card-shadow-hover': 'var(--hb-shadow-md)',
+  '--card-header-bg': 'var(--hb-bg-secondary)',
+  '--card-header-padding': 'var(--hb-spacing-6)',
+  '--card-content-padding': 'var(--hb-spacing-6)',
+  '--card-footer-bg': 'var(--hb-bg-secondary)',
+  '--card-footer-padding': 'var(--hb-spacing-6)',
+  '--card-title-font-size': 'var(--hb-font-size-xl)',
+  '--card-title-font-weight': 'var(--hb-font-weight-semibold)',
+  '--card-subtitle-font-size': 'var(--hb-font-size-sm)',
+  '--card-subtitle-color': 'var(--hb-text-secondary)',
+  
+  // Tooltip Component
+  '--tooltip-bg': 'var(--hb-neutral-900)',
+  '--tooltip-color': 'var(--hb-text-inverse)',
+  '--tooltip-border-radius': 'var(--hb-border-radius-md)',
+  '--tooltip-padding': 'var(--hb-spacing-2) var(--hb-spacing-3)',
+  '--tooltip-font-size': 'var(--hb-font-size-sm)',
+  '--tooltip-shadow': 'var(--hb-shadow-lg)',
+  '--tooltip-max-width': '20rem',
+  '--tooltip-arrow-size': '0.5rem',
+  '--tooltip-z-index': 'var(--hb-z-index-tooltip)',
+  '--tooltip-transition': 'opacity var(--hb-transition-base)',
+  '--tooltip-info-bg': 'var(--hb-info-600)',
+  '--tooltip-success-bg': 'var(--hb-success-600)',
+  '--tooltip-warning-bg': 'var(--hb-warning-600)',
+  '--tooltip-danger-bg': 'var(--hb-danger-600)',
+  '--tooltip-light-bg': 'var(--hb-bg-primary)',
+  '--tooltip-light-color': 'var(--hb-text-primary)',
+  '--tooltip-light-border': '1px solid var(--hb-border-light)'
 }
 
 // =============================================================================
@@ -791,6 +863,52 @@ export const hbPreset = {
     message: {
       '--message-border-radius': 'var(--hb-border-radius-md)',
       '--message-padding': 'var(--hb-spacing-3) var(--hb-spacing-4)'
+    },
+    
+    // Form Components
+    checkbox: {
+      '--checkbox-size': 'var(--hb-checkbox-size)',
+      '--checkbox-border-radius': 'var(--hb-checkbox-border-radius)',
+      '--checkbox-border-color': 'var(--hb-checkbox-border-color)',
+      '--checkbox-bg': 'var(--hb-checkbox-bg)',
+      '--checkbox-checked-bg': 'var(--hb-checkbox-checked-bg)',
+      '--checkbox-checked-border-color': 'var(--hb-checkbox-checked-border-color)'
+    },
+    
+    radiobutton: {
+      '--radiobutton-size': 'var(--hb-radiobutton-size)',
+      '--radiobutton-border-radius': 'var(--hb-radiobutton-border-radius)',
+      '--radiobutton-border-color': 'var(--hb-radiobutton-border-color)',
+      '--radiobutton-bg': 'var(--hb-radiobutton-bg)',
+      '--radiobutton-checked-border-color': 'var(--hb-radiobutton-checked-border-color)'
+    },
+    
+    textarea: {
+      '--textarea-padding': 'var(--hb-textarea-padding)',
+      '--textarea-border-radius': 'var(--hb-textarea-border-radius)',
+      '--textarea-border-color': 'var(--hb-textarea-border-color)',
+      '--textarea-bg': 'var(--hb-textarea-bg)',
+      '--textarea-focus-border-color': 'var(--hb-textarea-focus-border-color)'
+    },
+    
+    // Layout Components
+    card: {
+      '--card-bg': 'var(--hb-card-bg)',
+      '--card-border-color': 'var(--hb-card-border-color)',
+      '--card-border-radius': 'var(--hb-card-border-radius)',
+      '--card-shadow': 'var(--hb-card-shadow)',
+      '--card-header-bg': 'var(--hb-card-header-bg)',
+      '--card-content-padding': 'var(--hb-card-content-padding)'
+    },
+    
+    // Overlay Components
+    tooltip: {
+      '--tooltip-bg': 'var(--hb-tooltip-bg)',
+      '--tooltip-color': 'var(--hb-tooltip-color)',
+      '--tooltip-border-radius': 'var(--hb-tooltip-border-radius)',
+      '--tooltip-padding': 'var(--hb-tooltip-padding)',
+      '--tooltip-shadow': 'var(--hb-tooltip-shadow)',
+      '--tooltip-z-index': 'var(--hb-tooltip-z-index)'
     }
   }
 }
