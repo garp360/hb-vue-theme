@@ -1,0 +1,195 @@
+/* =============================================================================
+   HB VUE THEME - DATEPICKER COMPONENT STYLES (CSS ONLY)
+   ============================================================================= */
+
+.hb-datepicker {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.hb-datepicker .hb-datepicker-input {
+  width: 100%;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-base);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hb-datepicker .hb-datepicker-input:focus {
+  outline: none;
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hb-datepicker .hb-datepicker-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 280px;
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-lg);
+  box-shadow: var(--hb-shadow-lg);
+  margin-top: var(--hb-spacing-1);
+}
+
+.hb-datepicker .hb-datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  background-color: var(--hb-bg-secondary);
+  border-bottom: 1px solid var(--hb-border-light);
+  border-radius: var(--hb-border-radius-lg) var(--hb-border-radius-lg) 0 0;
+}
+
+.hb-datepicker .hb-datepicker-title {
+  font-size: var(--hb-font-size-lg);
+  font-weight: var(--hb-font-weight-semibold);
+  color: var(--hb-text-primary);
+  text-align: center;
+  flex: 1;
+}
+
+.hb-datepicker .hb-datepicker-prev-button,
+.hb-datepicker .hb-datepicker-next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  border-radius: var(--hb-border-radius-base);
+  color: var(--hb-text-secondary);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hb-datepicker .hb-datepicker-prev-button:hover,
+.hb-datepicker .hb-datepicker-next-button:hover {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+}
+
+.hb-datepicker .hb-datepicker-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hb-datepicker .hb-datepicker-day {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-primary);
+  background: none;
+  border: none;
+  border-radius: var(--hb-border-radius-base);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hb-datepicker .hb-datepicker-day.hb-datepicker-day-today {
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-semibold);
+}
+
+.hb-datepicker .hb-datepicker-day.hb-datepicker-day-selected {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  font-weight: var(--hb-font-weight-semibold);
+}
+
+.hb-datepicker .hb-datepicker-day:hover:not(.hb-datepicker-day-selected) {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-datepicker .hb-datepicker-day.hb-datepicker-day-disabled {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  background: none;
+}
+
+.hb-datepicker .hb-datepicker-day.hb-datepicker-day-other-month {
+  color: var(--hb-text-muted);
+}
+
+.hb-datepicker .hb-datepicker-header-cell {
+  padding: var(--hb-spacing-2);
+  font-size: var(--hb-font-size-sm);
+  font-weight: var(--hb-font-weight-medium);
+  color: var(--hb-text-secondary);
+  text-align: center;
+}
+
+.hb-datepicker .hb-datepicker-footer {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  border-top: 1px solid var(--hb-border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hb-datepicker .hb-datepicker-today-button {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--hb-border-radius-base);
+  transition: background-color 0.2s ease;
+}
+
+.hb-datepicker .hb-datepicker-today-button:hover {
+  background-color: var(--hb-primary-50);
+}
+
+.hb-datepicker .hb-datepicker-clear-button {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--hb-border-radius-base);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hb-datepicker .hb-datepicker-clear-button:hover {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+}
+
+/* Size variants */
+.hb-datepicker.hb-sm .hb-datepicker-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-datepicker.hb-lg .hb-datepicker-input {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  font-size: var(--hb-font-size-lg);
+}
+
+/* Disabled state */
+.hb-datepicker.hb-disabled .hb-datepicker-input {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+}
+
+.hb-datepicker.hb-disabled .hb-datepicker-input:focus {
+  border-color: var(--hb-border-medium);
+  box-shadow: none;
+} 

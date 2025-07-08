@@ -34,7 +34,7 @@
 /* DataTable table header (thead) */
 .hb-datatable-thead {
   background-color: var(--hb-bg-secondary);
-  border-bottom: 2px solid var(--hb-border-medium);
+  border-bottom: 1px solid var(--hb-border-medium);
 }
 
 .hb-datatable-thead th {

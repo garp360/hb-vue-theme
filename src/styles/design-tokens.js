@@ -351,15 +351,15 @@ export const hbComponentTokens = {
   '--multiselect-token-border-radius': 'var(--hb-border-radius-sm)',
   '--multiselect-token-padding': 'var(--hb-spacing-1) var(--hb-spacing-2)',
   
-  // Calendar Component
-  '--calendar-bg': 'var(--hb-bg-primary)',
-  '--calendar-border-radius': 'var(--hb-border-radius-lg)',
-  '--calendar-header-bg': 'var(--hb-bg-secondary)',
-  '--calendar-day-hover-bg': 'var(--hb-bg-secondary)',
-  '--calendar-day-selected-bg': 'var(--hb-primary)',
-  '--calendar-day-selected-color': 'var(--hb-text-inverse)',
-  '--calendar-day-today-bg': 'var(--hb-primary-50)',
-  '--calendar-day-today-color': 'var(--hb-primary)',
+  // DatePicker Component
+  '--datepicker-bg': 'var(--hb-bg-primary)',
+  '--datepicker-border-radius': 'var(--hb-border-radius-lg)',
+  '--datepicker-header-bg': 'var(--hb-bg-secondary)',
+  '--datepicker-day-hover-bg': 'var(--hb-bg-secondary)',
+  '--datepicker-day-selected-bg': 'var(--hb-primary)',
+  '--datepicker-day-selected-color': 'var(--hb-text-inverse)',
+  '--datepicker-day-today-bg': 'var(--hb-primary-50)',
+  '--datepicker-day-today-color': 'var(--hb-primary)',
   
   // Checkbox Component
   '--checkbox-size': '1.25rem',
