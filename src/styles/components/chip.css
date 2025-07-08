@@ -1,0 +1,489 @@
+/* =============================================================================
+   HB CHIP COMPONENT STYLES
+   Based on PrimeVue Lara preset with standard sizing
+   ============================================================================= */
+
+/* Main chip container */
+.hb-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);  /* Standard PrimeVue padding */
+  background-color: var(--hb-bg-secondary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-full);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);  /* Standard 16px */
+  font-weight: var(--hb-font-weight-medium);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  white-space: nowrap;
+  user-select: none;
+  transition: all var(--hb-transition-base);
+  cursor: default;
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* Chip with clickable state */
+.hb-chip.hb-clickable {
+  cursor: pointer;
+}
+
+.hb-chip.hb-clickable:hover {
+  background-color: var(--hb-bg-tertiary);
+  border-color: var(--hb-border-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-chip.hb-clickable:active {
+  transform: translateY(0);
+}
+
+/* Chip with removable state */
+.hb-chip.hb-removable {
+  padding-right: var(--hb-spacing-2);
+}
+
+/* Chip remove button */
+.hb-chip-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;  /* Standard PrimeVue size */
+  height: 1.25rem;  /* Standard PrimeVue size */
+  background-color: transparent;
+  border: none;
+  border-radius: var(--hb-border-radius-full);
+  color: var(--hb-text-secondary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  margin-left: var(--hb-spacing-1);
+  font-size: var(--hb-font-size-sm);
+  font-weight: var(--hb-font-weight-bold);
+}
+
+.hb-chip-remove:hover {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+}
+
+.hb-chip-remove:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+/* Chip icon */
+.hb-chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;  /* Standard PrimeVue size */
+  height: 1rem;  /* Standard PrimeVue size */
+  color: var(--hb-text-secondary);
+  flex-shrink: 0;
+  font-size: var(--hb-font-size-sm);
+}
+
+/* Chip image */
+.hb-chip-image {
+  width: 1.5rem;  /* Standard PrimeVue size */
+  height: 1.5rem;  /* Standard PrimeVue size */
+  border-radius: var(--hb-border-radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Chip content */
+.hb-chip-content {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.hb-chip-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Chip variants */
+.hb-chip.hb-primary {
+  background-color: var(--hb-primary-50);
+  border-color: var(--hb-primary);
+  color: var(--hb-primary);
+}
+
+.hb-chip.hb-primary.hb-clickable:hover {
+  background-color: var(--hb-primary-100);
+  border-color: var(--hb-primary-hover);
+}
+
+.hb-chip.hb-secondary {
+  background-color: var(--hb-secondary-50);
+  border-color: var(--hb-secondary);
+  color: var(--hb-secondary);
+}
+
+.hb-chip.hb-secondary.hb-clickable:hover {
+  background-color: var(--hb-secondary-100);
+  border-color: var(--hb-secondary-hover);
+}
+
+.hb-chip.hb-success {
+  background-color: var(--hb-success-50);
+  border-color: var(--hb-success);
+  color: var(--hb-success);
+}
+
+.hb-chip.hb-success.hb-clickable:hover {
+  background-color: var(--hb-success-100);
+  border-color: var(--hb-success-hover);
+}
+
+.hb-chip.hb-warning {
+  background-color: var(--hb-warning-50);
+  border-color: var(--hb-warning);
+  color: var(--hb-warning);
+}
+
+.hb-chip.hb-warning.hb-clickable:hover {
+  background-color: var(--hb-warning-100);
+  border-color: var(--hb-warning-hover);
+}
+
+.hb-chip.hb-danger {
+  background-color: var(--hb-danger-50);
+  border-color: var(--hb-danger);
+  color: var(--hb-danger);
+}
+
+.hb-chip.hb-danger.hb-clickable:hover {
+  background-color: var(--hb-danger-100);
+  border-color: var(--hb-danger-hover);
+}
+
+.hb-chip.hb-info {
+  background-color: var(--hb-info-50);
+  border-color: var(--hb-info);
+  color: var(--hb-info);
+}
+
+.hb-chip.hb-info.hb-clickable:hover {
+  background-color: var(--hb-info-100);
+  border-color: var(--hb-info-hover);
+}
+
+/* Chip sizes - Fixed to ensure proper sizing hierarchy */
+.hb-chip.hb-chip-sm {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-sm);  /* 14px - smaller than normal */
+  gap: var(--hb-spacing-1);
+}
+
+.hb-chip.hb-chip-sm .hb-chip-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-chip.hb-chip-sm .hb-chip-image {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hb-chip.hb-chip-sm .hb-chip-remove {
+  width: 1rem;
+  height: 1rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-chip.hb-chip-lg {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  font-size: var(--hb-font-size-lg);  /* 18px - larger than normal */
+  gap: var(--hb-spacing-3);
+}
+
+.hb-chip.hb-chip-lg .hb-chip-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: var(--hb-font-size-base);
+}
+
+.hb-chip.hb-chip-lg .hb-chip-image {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.hb-chip.hb-chip-lg .hb-chip-remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--hb-font-size-base);
+}
+
+/* Chip outlined variant */
+.hb-chip.hb-chip-outlined {
+  background-color: transparent;
+  border-width: 2px;
+}
+
+.hb-chip.hb-chip-outlined.hb-clickable:hover {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-chip.hb-chip-outlined.hb-primary {
+  border-color: var(--hb-primary);
+  color: var(--hb-primary);
+}
+
+.hb-chip.hb-chip-outlined.hb-primary.hb-clickable:hover {
+  background-color: var(--hb-primary-50);
+}
+
+.hb-chip.hb-chip-outlined.hb-secondary {
+  border-color: var(--hb-secondary);
+  color: var(--hb-secondary);
+}
+
+.hb-chip.hb-chip-outlined.hb-secondary.hb-clickable:hover {
+  background-color: var(--hb-secondary-50);
+}
+
+.hb-chip.hb-chip-outlined.hb-success {
+  border-color: var(--hb-success);
+  color: var(--hb-success);
+}
+
+.hb-chip.hb-chip-outlined.hb-success.hb-clickable:hover {
+  background-color: var(--hb-success-50);
+}
+
+.hb-chip.hb-chip-outlined.hb-warning {
+  border-color: var(--hb-warning);
+  color: var(--hb-warning);
+}
+
+.hb-chip.hb-chip-outlined.hb-warning.hb-clickable:hover {
+  background-color: var(--hb-warning-50);
+}
+
+.hb-chip.hb-chip-outlined.hb-danger {
+  border-color: var(--hb-danger);
+  color: var(--hb-danger);
+}
+
+.hb-chip.hb-chip-outlined.hb-danger.hb-clickable:hover {
+  background-color: var(--hb-danger-50);
+}
+
+.hb-chip.hb-chip-outlined.hb-info {
+  border-color: var(--hb-info);
+  color: var(--hb-info);
+}
+
+.hb-chip.hb-chip-outlined.hb-info.hb-clickable:hover {
+  background-color: var(--hb-info-50);
+}
+
+/* Chip with shadow */
+.hb-chip.hb-chip-shadow {
+  box-shadow: var(--hb-shadow-md);
+}
+
+.hb-chip.hb-chip-shadow.hb-clickable:hover {
+  box-shadow: var(--hb-shadow-lg);
+}
+
+/* Chip with gradient */
+.hb-chip.hb-chip-gradient {
+  background: linear-gradient(135deg, var(--hb-primary), var(--hb-primary-hover));
+  border-color: transparent;
+  color: var(--hb-text-inverse);
+}
+
+.hb-chip.hb-chip-gradient.hb-clickable:hover {
+  background: linear-gradient(135deg, var(--hb-primary-hover), var(--hb-primary-active));
+}
+
+/* Chip with custom styling */
+.hb-chip.hb-chip-custom {
+  background-color: var(--hb-bg-primary);
+  border: 2px dashed var(--hb-border-medium);
+  color: var(--hb-text-secondary);
+}
+
+.hb-chip.hb-chip-custom.hb-clickable:hover {
+  border-color: var(--hb-primary);
+  color: var(--hb-primary);
+}
+
+/* Chip disabled state */
+.hb-chip.hb-chip-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hb-chip.hb-chip-disabled.hb-clickable:hover {
+  transform: none;
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* Chip loading state */
+.hb-chip.hb-chip-loading {
+  position: relative;
+  color: transparent;
+}
+
+.hb-chip.hb-chip-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--hb-border-light);
+  border-top: 2px solid var(--hb-primary);
+  border-radius: 50%;
+  animation: hb-chip-spin 1s linear infinite;
+}
+
+@keyframes hb-chip-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Chip pulse animation */
+.hb-chip.hb-chip-pulse {
+  animation: hb-chip-pulse 2s infinite;
+}
+
+@keyframes hb-chip-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Chip glow effect */
+.hb-chip.hb-chip-glow {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* Chip borderless variant */
+.hb-chip.hb-chip-borderless {
+  border: none;
+  box-shadow: none;
+}
+
+.hb-chip.hb-chip-borderless.hb-clickable:hover {
+  background-color: var(--hb-bg-tertiary);
+  transform: none;
+}
+
+/* Chip shape variants */
+.hb-chip.hb-chip-pill {
+  border-radius: var(--hb-border-radius-full);
+}
+
+.hb-chip.hb-chip-square {
+  border-radius: var(--hb-border-radius-sm);
+}
+
+.hb-chip.hb-chip-rounded {
+  border-radius: var(--hb-border-radius-md);
+}
+
+/* Chip badge */
+.hb-chip-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 var(--hb-spacing-1);
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-radius: var(--hb-border-radius-full);
+  font-size: var(--hb-font-size-xs);
+  font-weight: var(--hb-font-weight-bold);
+  line-height: 1;
+  margin-left: var(--hb-spacing-1);
+}
+
+.hb-chip.hb-chip-sm .hb-chip-badge {
+  min-width: 1rem;
+  height: 1rem;
+  font-size: 0.625rem;
+  padding: 0 var(--hb-spacing-0-5);
+}
+
+.hb-chip.hb-chip-lg .hb-chip-badge {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--hb-font-size-sm);
+  padding: 0 var(--hb-spacing-1-5);
+}
+
+/* Chip counter */
+.hb-chip-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 var(--hb-spacing-1);
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-secondary);
+  border-radius: var(--hb-border-radius-full);
+  font-size: var(--hb-font-size-xs);
+  font-weight: var(--hb-font-weight-medium);
+  line-height: 1;
+  margin-left: var(--hb-spacing-1);
+}
+
+/* Chip group */
+.hb-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hb-spacing-2);
+  align-items: center;
+}
+
+.hb-chip-group.hb-chip-group-compact {
+  gap: var(--hb-spacing-1);
+}
+
+.hb-chip-group.hb-chip-group-large {
+  gap: var(--hb-spacing-3);
+}
+
+/* Chip selected state */
+.hb-chip.hb-chip-selected {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-chip.hb-chip-selected.hb-clickable:hover {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hb-chip {
+    font-size: var(--hb-font-size-sm);
+    padding: var(--hb-spacing-1-5) var(--hb-spacing-2-5);
+  }
+  
+  .hb-chip-group {
+    gap: var(--hb-spacing-1);
+  }
+  
+  .hb-chip.hb-chip-lg {
+    font-size: var(--hb-font-size-base);
+    padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  }
+} 

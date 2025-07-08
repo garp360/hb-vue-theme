@@ -1,0 +1,449 @@
+/* =============================================================================
+   HB VUE THEME - DRAWER COMPONENT STYLES
+   ============================================================================= */
+
+/* Main drawer container */
+.hb-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--hb-z-index-overlay);
+  display: flex;
+  align-items: stretch;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+}
+
+/* Drawer overlay */
+.hb-drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity var(--hb-transition-base);
+}
+
+.hb-drawer.hb-visible .hb-drawer-overlay {
+  opacity: 1;
+}
+
+/* Drawer panel */
+.hb-drawer-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--hb-bg-primary);
+  box-shadow: var(--hb-shadow-xl);
+  transition: transform var(--hb-transition-base);
+  overflow: hidden;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+/* Drawer positions */
+.hb-drawer.hb-left .hb-drawer-panel {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+}
+
+.hb-drawer.hb-right .hb-drawer-panel {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(100%);
+}
+
+.hb-drawer.hb-top .hb-drawer-panel {
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  min-width: auto;
+  max-width: none;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+.hb-drawer.hb-bottom .hb-drawer-panel {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  min-width: auto;
+  max-width: none;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+/* Drawer visible state */
+.hb-drawer.hb-visible .hb-drawer-panel {
+  transform: translate(0, 0);
+}
+
+/* Drawer header */
+.hb-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  background-color: var(--hb-bg-secondary);
+  border-bottom: 1px solid var(--hb-border-light);
+  min-height: 4rem;
+}
+
+.hb-drawer-header-title {
+  font-size: var(--hb-font-size-lg);
+  font-weight: var(--hb-font-weight-semibold);
+  color: var(--hb-text-primary);
+  margin: 0;
+}
+
+.hb-drawer-header-subtitle {
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-secondary);
+  margin-top: var(--hb-spacing-1);
+}
+
+/* Drawer close button */
+.hb-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--hb-border-radius-sm);
+  color: var(--hb-text-secondary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  flex-shrink: 0;
+}
+
+.hb-drawer-close:hover {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+}
+
+.hb-drawer-close:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+/* Drawer content */
+.hb-drawer-content {
+  flex: 1;
+  padding: var(--hb-spacing-5);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Drawer footer */
+.hb-drawer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--hb-spacing-3);
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  background-color: var(--hb-bg-secondary);
+  border-top: 1px solid var(--hb-border-light);
+  min-height: 4rem;
+}
+
+/* Drawer sizes */
+.hb-drawer.hb-sm .hb-drawer-panel {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.hb-drawer.hb-lg .hb-drawer-panel {
+  min-width: 350px;
+  max-width: 600px;
+}
+
+.hb-drawer.hb-xl .hb-drawer-panel {
+  min-width: 500px;
+  max-width: 800px;
+}
+
+.hb-drawer.hb-full .hb-drawer-panel {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+/* Drawer with custom styling */
+.hb-drawer.hb-outlined .hb-drawer-panel {
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-drawer.hb-borderless .hb-drawer-header,
+.hb-drawer.hb-borderless .hb-drawer-footer {
+  border: none;
+}
+
+/* Drawer with shadow variants */
+.hb-drawer.hb-shadow-sm .hb-drawer-panel {
+  box-shadow: var(--hb-shadow-sm);
+}
+
+.hb-drawer.hb-shadow-lg .hb-drawer-panel {
+  box-shadow: var(--hb-shadow-lg);
+}
+
+.hb-drawer.hb-shadow-xl .hb-drawer-panel {
+  box-shadow: var(--hb-shadow-xl);
+}
+
+/* Drawer with rounded corners */
+.hb-drawer.hb-rounded .hb-drawer-panel {
+  border-radius: var(--hb-border-radius-lg);
+  margin: var(--hb-spacing-4);
+}
+
+.hb-drawer.hb-rounded.hb-left .hb-drawer-panel {
+  border-top-right-radius: var(--hb-border-radius-lg);
+  border-bottom-right-radius: var(--hb-border-radius-lg);
+  margin-left: var(--hb-spacing-4);
+  margin-right: 0;
+}
+
+.hb-drawer.hb-rounded.hb-right .hb-drawer-panel {
+  border-top-left-radius: var(--hb-border-radius-lg);
+  border-bottom-left-radius: var(--hb-border-radius-lg);
+  margin-right: var(--hb-spacing-4);
+  margin-left: 0;
+}
+
+.hb-drawer.hb-rounded.hb-top .hb-drawer-panel {
+  border-bottom-left-radius: var(--hb-border-radius-lg);
+  border-bottom-right-radius: var(--hb-border-radius-lg);
+  margin-top: var(--hb-spacing-4);
+  margin-bottom: 0;
+}
+
+.hb-drawer.hb-rounded.hb-bottom .hb-drawer-panel {
+  border-top-left-radius: var(--hb-border-radius-lg);
+  border-top-right-radius: var(--hb-border-radius-lg);
+  margin-bottom: var(--hb-spacing-4);
+  margin-top: 0;
+}
+
+/* Drawer with compact spacing */
+.hb-drawer.hb-compact .hb-drawer-header,
+.hb-drawer.hb-compact .hb-drawer-footer {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 3rem;
+}
+
+.hb-drawer.hb-compact .hb-drawer-content {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+}
+
+/* Drawer with large spacing */
+.hb-drawer.hb-large .hb-drawer-header,
+.hb-drawer.hb-large .hb-drawer-footer {
+  padding: var(--hb-spacing-5) var(--hb-spacing-6);
+  min-height: 5rem;
+}
+
+.hb-drawer.hb-large .hb-drawer-content {
+  padding: var(--hb-spacing-6) var(--hb-spacing-7);
+}
+
+/* Drawer with loading state */
+.hb-drawer.hb-loading .hb-drawer-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-drawer.hb-loading .hb-drawer-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: hb-drawer-loading 1.5s infinite;
+}
+
+@keyframes hb-drawer-loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Drawer with backdrop blur */
+.hb-drawer.hb-blur .hb-drawer-overlay {
+  backdrop-filter: blur(8px);
+}
+
+/* Drawer with custom colors */
+.hb-drawer.hb-custom .hb-drawer-header {
+  background-color: var(--hb-custom-color, var(--hb-primary));
+  color: var(--hb-custom-text-color, var(--hb-text-inverse));
+}
+
+.hb-drawer.hb-custom .hb-drawer-header-title {
+  color: inherit;
+}
+
+/* Drawer with animation variants */
+.hb-drawer.hb-slide .hb-drawer-panel {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hb-drawer.hb-bounce .hb-drawer-panel {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hb-drawer.hb-elastic .hb-drawer-panel {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Drawer with handle */
+.hb-drawer.hb-handle .hb-drawer-panel::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 4px;
+  background-color: var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-full);
+  opacity: 0.5;
+}
+
+.hb-drawer.hb-handle.hb-left .hb-drawer-panel::before,
+.hb-drawer.hb-handle.hb-right .hb-drawer-panel::before {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hb-drawer.hb-handle.hb-top .hb-drawer-panel::before,
+.hb-drawer.hb-handle.hb-bottom .hb-drawer-panel::before {
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+/* Drawer with resizable handle */
+.hb-drawer.hb-resizable .hb-drawer-resize-handle {
+  position: absolute;
+  background-color: var(--hb-border-light);
+  transition: background-color var(--hb-transition-base);
+}
+
+.hb-drawer.hb-resizable.hb-left .hb-drawer-resize-handle {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+.hb-drawer.hb-resizable.hb-right .hb-drawer-resize-handle {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+.hb-drawer.hb-resizable.hb-top .hb-drawer-resize-handle {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.hb-drawer.hb-resizable.hb-bottom .hb-drawer-resize-handle {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.hb-drawer.hb-resizable .hb-drawer-resize-handle:hover {
+  background-color: var(--hb-primary);
+}
+
+/* Drawer with nested content */
+.hb-drawer-nested {
+  border-left: 1px solid var(--hb-border-light);
+  margin-left: var(--hb-spacing-4);
+  padding-left: var(--hb-spacing-4);
+}
+
+/* Drawer with scrollbar styling */
+.hb-drawer-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hb-drawer-content::-webkit-scrollbar-track {
+  background-color: var(--hb-bg-tertiary);
+}
+
+.hb-drawer-content::-webkit-scrollbar-thumb {
+  background-color: var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-sm);
+}
+
+.hb-drawer-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hb-border-dark);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-drawer .hb-drawer-panel {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .hb-drawer.hb-left .hb-drawer-panel,
+  .hb-drawer.hb-right .hb-drawer-panel {
+    min-width: 280px;
+    max-width: 280px;
+  }
+  
+  .hb-drawer.hb-top .hb-drawer-panel,
+  .hb-drawer.hb-bottom .hb-drawer-panel {
+    min-height: 50vh;
+    max-height: 50vh;
+  }
+  
+  .hb-drawer.hb-rounded .hb-drawer-panel {
+    margin: var(--hb-spacing-2);
+  }
+  
+  .hb-drawer-header,
+  .hb-drawer-footer {
+    padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  }
+  
+  .hb-drawer-content {
+    padding: var(--hb-spacing-4);
+  }
+} 

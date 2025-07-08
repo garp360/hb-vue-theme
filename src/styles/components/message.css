@@ -10,22 +10,22 @@
   margin-bottom: var(--hb-spacing-4);
   border: 1px solid transparent;
 }
-.hb-message.hb-message-info {
+.hb-message.hb-info {
   background-color: var(--hb-info-50);
   color: var(--hb-info-700);
   border-color: var(--hb-info-200);
 }
-.hb-message.hb-message-success {
+.hb-message.hb-success {
   background-color: var(--hb-success-50);
   color: var(--hb-success-700);
   border-color: var(--hb-success-200);
 }
-.hb-message.hb-message-warning {
+.hb-message.hb-warning {
   background-color: var(--hb-warning-50);
   color: var(--hb-warning-700);
   border-color: var(--hb-warning-200);
 }
-.hb-message.hb-message-error {
+.hb-message.hb-error {
   background-color: var(--hb-danger-50);
   color: var(--hb-danger-700);
   border-color: var(--hb-danger-200);

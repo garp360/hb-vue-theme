@@ -1,4 +1,14 @@
 :root {
+  /* =============================================================================
+     HB VUE THEME - DESIGN TOKENS
+     Based on PrimeVue Lara preset with custom 'hb-' prefix
+     ============================================================================= */
+
+  /* =============================================================================
+     COLOR PALETTE - Lara-inspired
+     ============================================================================= */
+  
+  /* Primary Colors */
   --hb-primary-50: #eff6ff;
   --hb-primary-100: #dbeafe;
   --hb-primary-200: #bfdbfe;
@@ -9,6 +19,8 @@
   --hb-primary-700: #1d4ed8;
   --hb-primary-800: #1e40af;
   --hb-primary-900: #1e3a8a;
+  
+  /* Secondary Colors */
   --hb-secondary-50: #f8fafc;
   --hb-secondary-100: #f1f5f9;
   --hb-secondary-200: #e2e8f0;
@@ -19,6 +31,8 @@
   --hb-secondary-700: #334155;
   --hb-secondary-800: #1e293b;
   --hb-secondary-900: #0f172a;
+  
+  /* Success Colors */
   --hb-success-50: #f0fdf4;
   --hb-success-100: #dcfce7;
   --hb-success-200: #bbf7d0;
@@ -29,6 +43,8 @@
   --hb-success-700: #15803d;
   --hb-success-800: #166534;
   --hb-success-900: #14532d;
+  
+  /* Warning Colors */
   --hb-warning-50: #fffbeb;
   --hb-warning-100: #fef3c7;
   --hb-warning-200: #fde68a;
@@ -39,6 +55,8 @@
   --hb-warning-700: #b45309;
   --hb-warning-800: #92400e;
   --hb-warning-900: #78350f;
+  
+  /* Danger Colors */
   --hb-danger-50: #fef2f2;
   --hb-danger-100: #fee2e2;
   --hb-danger-200: #fecaca;
@@ -49,6 +67,8 @@
   --hb-danger-700: #b91c1c;
   --hb-danger-800: #991b1b;
   --hb-danger-900: #7f1d1d;
+  
+  /* Info Colors */
   --hb-info-50: #f0f9ff;
   --hb-info-100: #e0f2fe;
   --hb-info-200: #bae6fd;
@@ -59,6 +79,8 @@
   --hb-info-700: #0369a1;
   --hb-info-800: #075985;
   --hb-info-900: #0c4a6e;
+  
+  /* Neutral Colors */
   --hb-neutral-50: #fafafa;
   --hb-neutral-100: #f5f5f5;
   --hb-neutral-200: #e5e5e5;
@@ -69,68 +91,227 @@
   --hb-neutral-700: #404040;
   --hb-neutral-800: #262626;
   --hb-neutral-900: #171717;
-  --hb-primary: #3b82f6;
-  --hb-primary-light: #60a5fa;
-  --hb-primary-dark: #2563eb;
-  --hb-primary-hover: #2563eb;
-  --hb-primary-active: #1d4ed8;
-  --hb-secondary: #64748b;
-  --hb-secondary-light: #94a3b8;
-  --hb-secondary-dark: #475569;
-  --hb-success: #22c55e;
-  --hb-warning: #f59e0b;
-  --hb-danger: #ef4444;
-  --hb-info: #0ea5e9;
-  --hb-text-primary: #171717;
-  --hb-text-secondary: #525252;
-  --hb-text-muted: #737373;
-  --hb-text-disabled: #a3a3a3;
-  --hb-text-inverse: #fafafa;
+
+  /* =============================================================================
+     SEMANTIC COLOR MAPPINGS
+     ============================================================================= */
+  
+  /* Primary */
+  --hb-primary: var(--hb-primary-500);
+  --hb-primary-light: var(--hb-primary-400);
+  --hb-primary-dark: var(--hb-primary-600);
+  --hb-primary-hover: var(--hb-primary-600);
+  --hb-primary-active: var(--hb-primary-700);
+  
+  /* Secondary */
+  --hb-secondary: var(--hb-secondary-500);
+  --hb-secondary-light: var(--hb-secondary-400);
+  --hb-secondary-dark: var(--hb-secondary-600);
+  --hb-secondary-hover: var(--hb-secondary-600);
+  
+  /* Semantic Colors */
+  --hb-success: var(--hb-success-500);
+  --hb-success-hover: var(--hb-success-600);
+  --hb-warning: var(--hb-warning-500);
+  --hb-warning-hover: var(--hb-warning-600);
+  --hb-danger: var(--hb-danger-500);
+  --hb-danger-hover: var(--hb-danger-600);
+  --hb-info: var(--hb-info-500);
+  --hb-info-hover: var(--hb-info-600);
+  
+  /* Text Colors */
+  --hb-text-primary: var(--hb-neutral-900);
+  --hb-text-secondary: var(--hb-neutral-600);
+  --hb-text-muted: var(--hb-neutral-500);
+  --hb-text-disabled: var(--hb-neutral-400);
+  --hb-text-inverse: var(--hb-neutral-50);
+  
+  /* Background Colors */
   --hb-bg-primary: #ffffff;
-  --hb-bg-secondary: #fafafa;
-  --hb-bg-tertiary: #f5f5f5;
+  --hb-bg-secondary: var(--hb-neutral-50);
+  --hb-bg-tertiary: var(--hb-neutral-100);
   --hb-bg-overlay: rgba(0, 0, 0, 0.5);
-  --hb-border-light: #e5e5e5;
-  --hb-border-medium: #d4d4d4;
-  --hb-border-dark: #a3a3a3;
-  --hb-border-focus: #3b82f6;
+  
+  /* Border Colors */
+  --hb-border-light: var(--hb-neutral-200);
+  --hb-border-medium: var(--hb-neutral-300);
+  --hb-border-dark: var(--hb-neutral-400);
+  --hb-border-focus: var(--hb-primary-500);
+
+  /* =============================================================================
+     TYPOGRAPHY - PrimeVue Standard Sizes
+     ============================================================================= */
+  
+  /* Font Families */
   --hb-font-family-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --hb-font-family-mono: 'Courier New', Courier, monospace;
-  --hb-font-size-xs: 0.75rem;
-  --hb-font-size-sm: 0.875rem;
-  --hb-font-size-base: 1rem;
-  --hb-font-size-lg: 1.125rem;
-  --hb-font-size-xl: 1.25rem;
-  --hb-font-size-2xl: 1.5rem;
-  --hb-font-size-3xl: 1.875rem;
-  --hb-font-size-4xl: 2.25rem;
+  
+  /* Font Sizes - PrimeVue Standard */
+  --hb-font-size-xs: 0.75rem;      /* 12px */
+  --hb-font-size-sm: 0.875rem;     /* 14px */
+  --hb-font-size-base: 1rem;       /* 16px - PrimeVue standard */
+  --hb-font-size-lg: 1.125rem;     /* 18px */
+  --hb-font-size-xl: 1.25rem;      /* 20px */
+  --hb-font-size-2xl: 1.5rem;      /* 24px */
+  --hb-font-size-3xl: 1.875rem;    /* 30px */
+  --hb-font-size-4xl: 2.25rem;     /* 36px */
+  
+  /* Font Weights */
   --hb-font-weight-light: 300;
   --hb-font-weight-normal: 400;
   --hb-font-weight-medium: 500;
   --hb-font-weight-semibold: 600;
   --hb-font-weight-bold: 700;
+  
+  /* Line Heights */
   --hb-line-height-tight: 1.25;
-  --hb-line-height-normal: 1.5;
+  --hb-line-height-normal: 1.5;    /* PrimeVue standard */
   --hb-line-height-relaxed: 1.75;
+
+  /* =============================================================================
+     SPACING - PrimeVue Standard
+     ============================================================================= */
+  
   --hb-spacing-0: 0;
-  --hb-spacing-1: 0.25rem;
-  --hb-spacing-2: 0.5rem;
-  --hb-spacing-3: 0.75rem;
-  --hb-spacing-4: 1rem;
-  --hb-spacing-5: 1.25rem;
-  --hb-spacing-6: 1.5rem;
-  --hb-spacing-8: 2rem;
-  --hb-spacing-10: 2.5rem;
-  --hb-spacing-12: 3rem;
-  --hb-spacing-16: 4rem;
-  --hb-spacing-20: 5rem;
-  --hb-spacing-24: 6rem;
+  --hb-spacing-1: 0.25rem;         /* 4px */
+  --hb-spacing-2: 0.5rem;          /* 8px */
+  --hb-spacing-3: 0.75rem;         /* 12px */
+  --hb-spacing-4: 1rem;            /* 16px - PrimeVue standard */
+  --hb-spacing-5: 1.25rem;         /* 20px */
+  --hb-spacing-6: 1.5rem;          /* 24px */
+  --hb-spacing-8: 2rem;            /* 32px */
+  --hb-spacing-10: 2.5rem;         /* 40px */
+  --hb-spacing-12: 3rem;           /* 48px */
+  --hb-spacing-16: 4rem;           /* 64px */
+  --hb-spacing-20: 5rem;           /* 80px */
+  --hb-spacing-24: 6rem;           /* 96px */
+
+  /* =============================================================================
+     BORDER RADIUS - PrimeVue Standard
+     ============================================================================= */
+  
   --hb-border-radius-none: 0;
-  --hb-border-radius-sm: 0.125rem;
-  --hb-border-radius-base: 0.25rem;
-  --hb-border-radius-md: 0.375rem;
-  --hb-border-radius-lg: 0.5rem;
-  --hb-border-radius-xl: 0.75rem;
-  --hb-border-radius-2xl: 1rem;
+  --hb-border-radius-sm: 0.125rem;  /* 2px */
+  --hb-border-radius-base: 0.25rem; /* 4px */
+  --hb-border-radius-md: 0.375rem;  /* 6px */
+  --hb-border-radius-lg: 0.5rem;    /* 8px - PrimeVue standard */
+  --hb-border-radius-xl: 0.75rem;   /* 12px */
+  --hb-border-radius-2xl: 1rem;     /* 16px */
   --hb-border-radius-full: 9999px;
+
+  /* =============================================================================
+     SHADOWS - PrimeVue Standard
+     ============================================================================= */
+  
+  --hb-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --hb-shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --hb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --hb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --hb-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* =============================================================================
+     TRANSITIONS - PrimeVue Standard
+     ============================================================================= */
+  
+  --hb-transition-fast: 150ms ease-in-out;
+  --hb-transition-base: 250ms ease-in-out;  /* PrimeVue standard */
+  --hb-transition-slow: 350ms ease-in-out;
+
+  /* =============================================================================
+     Z-INDEX - PrimeVue Standard
+     ============================================================================= */
+  
+  --hb-z-index-dropdown: 1000;
+  --hb-z-index-sticky: 1020;
+  --hb-z-index-fixed: 1030;
+  --hb-z-index-modal-backdrop: 1040;
+  --hb-z-index-modal: 1050;
+  --hb-z-index-popover: 1060;
+  --hb-z-index-tooltip: 1070;
+
+  /* =============================================================================
+     BREAKPOINTS - PrimeVue Standard
+     ============================================================================= */
+  
+  --hb-breakpoint-sm: 640px;
+  --hb-breakpoint-md: 768px;
+  --hb-breakpoint-lg: 1024px;
+  --hb-breakpoint-xl: 1280px;
+  --hb-breakpoint-2xl: 1536px;
+
+  /* =============================================================================
+     PRIMEVUE COMPATIBILITY VARIABLES
+     ============================================================================= */
+  
+  /* Primary Colors */
+  --primary-color: var(--hb-primary);
+  --primary-color-text: var(--hb-text-inverse);
+  
+  /* Surface Colors */
+  --surface-ground: var(--hb-bg-secondary);
+  --surface-section: var(--hb-bg-primary);
+  --surface-card: var(--hb-bg-primary);
+  --surface-overlay: var(--hb-bg-primary);
+  --surface-border: var(--hb-border-light);
+  --surface-hover: var(--hb-bg-secondary);
+  
+  /* Focus Ring */
+  --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  
+  /* Mask Background */
+  --maskbg: var(--hb-bg-overlay);
+  
+  /* Text Colors */
+  --text-color: var(--hb-text-primary);
+  --text-color-secondary: var(--hb-text-secondary);
+  --text-muted-color: var(--hb-text-muted);
+  
+  /* Border Radius */
+  --border-radius: var(--hb-border-radius-md);
+  --border-radius-sm: var(--hb-border-radius-sm);
+  --border-radius-lg: var(--hb-border-radius-lg);
+  
+  /* Content Padding */
+  --content-padding: var(--hb-spacing-4);
+  --inline-spacing: var(--hb-spacing-2);
+  
+  /* Transitions */
+  --transition-duration: var(--hb-transition-base);
+  
+  /* Typography */
+  --font-family: var(--hb-font-family-primary);
+  --font-size: var(--hb-font-size-base);
+  --font-weight: var(--hb-font-weight-normal);
+  --font-weight-bold: var(--hb-font-weight-bold);
+  
+  /* Shadows */
+  --shadow-1: var(--hb-shadow-sm);
+  --shadow-2: var(--hb-shadow-base);
+  --shadow-3: var(--hb-shadow-md);
+  --shadow-4: var(--hb-shadow-lg);
+  --shadow-5: var(--hb-shadow-xl);
+  
+  /* Button Variables */
+  --button-padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  --button-border-radius: var(--hb-border-radius-md);
+  --button-font-weight: var(--hb-font-weight-medium);
+  --button-transition: var(--hb-transition-base);
+  --button-primary-bg: var(--hb-primary);
+  --button-primary-color: var(--hb-text-inverse);
+  --button-primary-hover-bg: var(--hb-primary-hover);
+  --button-secondary-bg: var(--hb-bg-primary);
+  --button-secondary-color: var(--hb-text-primary);
+  --button-secondary-border: var(--hb-border-medium);
+  --button-success-bg: var(--hb-success);
+  --button-success-color: var(--hb-text-inverse);
+  --button-success-hover-bg: var(--hb-success-600);
+  --button-warning-bg: var(--hb-warning);
+  --button-warning-color: var(--hb-text-inverse);
+  --button-warning-hover-bg: var(--hb-warning-600);
+  --button-danger-bg: var(--hb-danger);
+  --button-danger-color: var(--hb-text-inverse);
+  --button-danger-hover-bg: var(--hb-danger-600);
+  --button-info-bg: var(--hb-info);
+  --button-info-color: var(--hb-text-inverse);
+  --button-info-hover-bg: var(--hb-info-600);
 } 

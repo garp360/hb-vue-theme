@@ -1,158 +1,230 @@
 /* =============================================================================
-   HB VUE THEME - INPUT COMPONENT STYLES (CSS ONLY)
+   HB INPUT COMPONENT STYLES
+   Based on PrimeVue Lara preset with standard sizing
    ============================================================================= */
 
-.hb-inputtext,
-.hb-inputnumber {
-  border: none;
-  outline: none;
-  background: none;
+.hb-inputtext {
+  /* Base Input Styles */
+  display: inline-block;
+  width: 100%;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);  /* Standard PrimeVue padding */
   font-family: var(--hb-font-family-primary);
-  font-size: var(--hb-font-size-base);
+  font-size: var(--hb-font-size-base);               /* Standard 16px */
   font-weight: var(--hb-font-weight-normal);
   line-height: var(--hb-line-height-normal);
   color: var(--hb-text-primary);
-  display: block;
-  width: 100%;
-  padding: var(--hb-spacing-3) var(--hb-spacing-4);
-  min-height: 2.5rem;
   background-color: var(--hb-bg-primary);
   border: 1px solid var(--hb-border-medium);
   border-radius: var(--hb-border-radius-md);
-  box-shadow: var(--hb-shadow-sm);
   transition: all var(--hb-transition-base);
+  box-sizing: border-box;
 }
-.hb-inputtext::placeholder,
-.hb-inputnumber::placeholder {
+
+.hb-inputtext::placeholder {
   color: var(--hb-text-muted);
   opacity: 1;
 }
-.hb-inputtext:hover:not(:disabled),
-.hb-inputnumber:hover:not(:disabled) {
+
+.hb-inputtext:hover {
   border-color: var(--hb-border-dark);
-  box-shadow: var(--hb-shadow-base);
 }
-.hb-inputtext:focus,
-.hb-inputnumber:focus {
+
+.hb-inputtext:focus {
+  outline: none;
   border-color: var(--hb-border-focus);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  outline: none;
 }
-.hb-inputtext:disabled,
-.hb-inputnumber:disabled {
-  background-color: var(--hb-bg-tertiary);
+
+.hb-inputtext:disabled {
+  background-color: var(--hb-bg-secondary);
   color: var(--hb-text-disabled);
   cursor: not-allowed;
   opacity: 0.6;
 }
-.hb-inputtext:read-only,
-.hb-inputnumber:read-only {
-  background-color: var(--hb-bg-secondary);
-  color: var(--hb-text-secondary);
-}
 
-/* INPUT SIZES */
-.hb-inputtext-sm,
-.hb-inputnumber-sm {
-  font-size: var(--hb-font-size-sm);
-  padding: var(--hb-spacing-2) var(--hb-spacing-3);
-  min-height: 2rem;
-}
-.hb-inputtext-lg,
-.hb-inputnumber-lg {
-  font-size: var(--hb-font-size-lg);
-  padding: var(--hb-spacing-4) var(--hb-spacing-5);
-  min-height: 3rem;
-}
-
-/* FILLED VARIANT */
-.hb-inputtext-filled,
-.hb-inputnumber-filled {
-  background-color: var(--hb-bg-secondary);
-  border-color: transparent;
-}
-.hb-inputtext-filled:hover:not(:disabled),
-.hb-inputnumber-filled:hover:not(:disabled) {
-  background-color: var(--hb-bg-tertiary);
-}
-.hb-inputtext-filled:focus,
-.hb-inputnumber-filled:focus {
-  background-color: var(--hb-bg-primary);
-  border-color: var(--hb-border-focus);
-}
-
-/* OUTLINED VARIANT */
-.hb-inputtext-outlined,
-.hb-inputnumber-outlined {
-  background-color: var(--hb-bg-primary);
-  border-color: var(--hb-border-medium);
-}
-
-/* VALID/INVALID STATES */
-.hb-inputtext.ng-valid,
-.hb-inputnumber.ng-valid {
-  border-color: var(--hb-success);
-}
-.hb-inputtext.ng-valid:focus,
-.hb-inputnumber.ng-valid:focus {
-  border-color: var(--hb-success);
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
-}
-.hb-inputtext.ng-invalid,
-.hb-inputnumber.ng-invalid {
+.hb-inputtext.hb-input-error {
   border-color: var(--hb-danger);
 }
-.hb-inputtext.ng-invalid:focus,
-.hb-inputnumber.ng-invalid:focus {
+
+.hb-inputtext.hb-input-error:focus {
   border-color: var(--hb-danger);
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
-/* INPUT WITH ICONS */
-.hb-inputtext-left-icon,
-.hb-inputnumber-left-icon {
-  padding-left: 2.5rem;
+.hb-inputtext.hb-input-success {
+  border-color: var(--hb-success);
 }
-.hb-inputtext-left-icon::before,
-.hb-inputnumber-left-icon::before {
-  content: '';
+
+.hb-inputtext.hb-input-success:focus {
+  border-color: var(--hb-success);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Input Sizes */
+.hb-inputtext.hb-sm {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-inputtext.hb-lg {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  font-size: var(--hb-font-size-lg);
+}
+
+/* Input with Icon */
+.hb-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.hb-input-wrapper .hb-input {
+  padding-left: var(--hb-spacing-10);
+}
+
+.hb-input-wrapper .hb-input-icon {
   position: absolute;
   left: var(--hb-spacing-3);
   top: 50%;
   transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.6;
-}
-.hb-inputtext-right-icon,
-.hb-inputnumber-right-icon {
-  padding-right: 2.5rem;
-}
-.hb-inputtext-right-icon::after,
-.hb-inputnumber-right-icon::after {
-  content: '';
-  position: absolute;
-  right: var(--hb-spacing-3);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.6;
+  color: var(--hb-text-muted);
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* INPUT GROUPS */
+.hb-input-wrapper .hb-input:focus + .hb-input-icon {
+  color: var(--hb-primary);
+}
+
+/* Input with Right Icon */
+.hb-input-wrapper.hb-input-wrapper-right .hb-input {
+  padding-left: var(--hb-spacing-4);
+  padding-right: var(--hb-spacing-10);
+}
+
+.hb-input-wrapper.hb-input-wrapper-right .hb-input-icon {
+  left: auto;
+  right: var(--hb-spacing-3);
+}
+
+/* Input with Both Icons */
+.hb-input-wrapper.hb-input-wrapper-both .hb-input {
+  padding-left: var(--hb-spacing-10);
+  padding-right: var(--hb-spacing-10);
+}
+
+.hb-input-wrapper.hb-input-wrapper-both .hb-input-icon-left {
+  left: var(--hb-spacing-3);
+  right: auto;
+}
+
+.hb-input-wrapper.hb-input-wrapper-both .hb-input-icon-right {
+  left: auto;
+  right: var(--hb-spacing-3);
+}
+
+/* Input Group */
 .hb-input-group {
   display: flex;
   align-items: stretch;
+  width: 100%;
 }
-.hb-input-group .hb-inputtext,
-.hb-input-group .hb-inputnumber {
+
+.hb-input-group .hb-input {
   border-radius: 0;
   margin-left: -1px;
+  flex: 1;
+}
+
+.hb-input-group .hb-input:first-child {
+  margin-left: 0;
+  border-top-left-radius: var(--hb-border-radius-md);
+  border-bottom-left-radius: var(--hb-border-radius-md);
+}
+
+.hb-input-group .hb-input:last-child {
+  border-top-right-radius: var(--hb-border-radius-md);
+  border-bottom-right-radius: var(--hb-border-radius-md);
+}
+
+.hb-input-group .hb-button {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.hb-input-group .hb-button:first-child {
+  margin-left: 0;
+  border-top-left-radius: var(--hb-border-radius-md);
+  border-bottom-left-radius: var(--hb-border-radius-md);
+}
+
+.hb-input-group .hb-button:last-child {
+  border-top-right-radius: var(--hb-border-radius-md);
+  border-bottom-right-radius: var(--hb-border-radius-md);
+}
+
+/* Textarea */
+.hb-textarea {
+  min-height: 6rem;
+  resize: vertical;
+  font-family: var(--hb-font-family-primary);
+}
+
+/* Number Input */
+.hb-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.hb-input[type="number"]::-webkit-outer-spin-button,
+.hb-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Search Input */
+.hb-input[type="search"] {
+  -webkit-appearance: none;
+}
+
+.hb-input[type="search"]::-webkit-search-decoration,
+.hb-input[type="search"]::-webkit-search-cancel-button,
+.hb-input[type="search"]::-webkit-search-results-button,
+.hb-input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/* File Input */
+.hb-input[type="file"] {
+  padding: var(--hb-spacing-2);
+  line-height: 1.2;
+}
+
+.hb-input[type="file"]::-webkit-file-upload-button {
+  background: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border: none;
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  border-radius: var(--hb-border-radius-sm);
+  margin-right: var(--hb-spacing-3);
+  cursor: pointer;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-sm);
+  transition: background-color var(--hb-transition-base);
+}
+
+.hb-input[type="file"]::-webkit-file-upload-button:hover {
+  background: var(--hb-primary-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .hb-input {
+    padding: var(--hb-spacing-2-5) var(--hb-spacing-3);
+    font-size: var(--hb-font-size-sm);
+  }
+  
+  .hb-input.hb-input-lg {
+    padding: var(--hb-spacing-3) var(--hb-spacing-4);
+    font-size: var(--hb-font-size-base);
+  }
 } 

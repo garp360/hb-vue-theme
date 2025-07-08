@@ -1,143 +1,516 @@
 /* =============================================================================
-   HB VUE THEME - BUTTON COMPONENT STYLES (CSS ONLY)
+   HB BUTTON COMPONENT STYLES
+   Based on PrimeVue Lara preset with standard sizing
+   Proper cascade order: base -> size -> severity -> states
+   ============================================================================= */
+
+/* =============================================================================
+   BASE BUTTON STYLES
    ============================================================================= */
 
 .hb-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-family: var(--hb-font-family-primary);
-  font-size: var(--hb-font-size-base);
-  font-weight: var(--hb-font-weight-medium);
-  line-height: 1;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  white-space: nowrap;
+  /* Base Button Styles */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--hb-spacing-2);
-  padding: var(--hb-spacing-3) var(--hb-spacing-4);
-  min-height: 2.5rem;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);  /* Standard PrimeVue padding */
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);               /* Standard 16px */
+  font-weight: var(--hb-font-weight-medium);
+  line-height: var(--hb-line-height-normal);
+  text-decoration: none;
+  border: 1px solid transparent;
   border-radius: var(--hb-border-radius-md);
-  box-shadow: var(--hb-shadow-sm);
+  cursor: pointer;
   transition: all var(--hb-transition-base);
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  
+  /* Default appearance */
   background-color: var(--hb-bg-primary);
   color: var(--hb-text-primary);
-  border: 1px solid var(--hb-border-medium);
+  border-color: var(--hb-border-medium);
+  box-shadow: var(--hb-shadow-sm);
 }
-.hb-button:hover:not(:disabled) {
+
+/* =============================================================================
+   SIZE VARIANTS (apply after base)
+   ============================================================================= */
+
+.hb-button.hb-button-sm {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  gap: var(--hb-spacing-1);
+  min-height: 2rem;
+}
+
+.hb-button.hb-button-lg {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  gap: var(--hb-spacing-3);
+  min-height: 3rem;
+}
+
+/* =============================================================================
+   SEVERITY VARIANTS (apply after size)
+   ============================================================================= */
+
+/* PRIMARY */
+.hb-button.hb-button-primary {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* SECONDARY */
+.hb-button.hb-button-secondary {
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-medium);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* SUCCESS */
+.hb-button.hb-button-success {
+  background-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-success);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* WARNING */
+.hb-button.hb-button-warning {
+  background-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-warning);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* DANGER */
+.hb-button.hb-button-danger {
+  background-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-danger);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* INFO */
+.hb-button.hb-button-info {
+  background-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-info);
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* TEXT */
+.hb-button.hb-button-text {
+  background-color: transparent;
+  color: var(--hb-text-primary);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* =============================================================================
+   HOVER STATES (apply after severity)
+   ============================================================================= */
+
+/* Default hover (for buttons without severity) */
+.hb-button:hover:not(:disabled):not([class*="hb-button-"]) {
   background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
   border-color: var(--hb-border-dark);
   box-shadow: var(--hb-shadow-base);
   transform: translateY(-1px);
 }
-.hb-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: var(--hb-shadow-sm);
-}
-.hb-button:focus-visible {
-  outline: 2px solid var(--hb-border-focus);
-  outline-offset: 2px;
-}
-.hb-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-.hb-button .pi {
-  font-size: var(--hb-font-size-base);
+
+/* Primary hover */
+.hb-button.hb-button-primary:hover:not(:disabled) {
+  background-color: var(--hb-primary-hover);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary-hover);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
 }
 
-/* BUTTON VARIANTS */
-.hb-button-primary {
+/* Secondary hover */
+.hb-button.hb-button-secondary:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Success hover */
+.hb-button.hb-button-success:hover:not(:disabled) {
+  background-color: var(--hb-success-600);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-success-600);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Warning hover */
+.hb-button.hb-button-warning:hover:not(:disabled) {
+  background-color: var(--hb-warning-600);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-warning-600);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Danger hover */
+.hb-button.hb-button-danger:hover:not(:disabled) {
+  background-color: var(--hb-danger-600);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-danger-600);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Info hover */
+.hb-button.hb-button-info:hover:not(:disabled) {
+  background-color: var(--hb-info-600);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-info-600);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Text hover */
+.hb-button.hb-button-text:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+/* =============================================================================
+   ACTIVE STATES (apply after hover)
+   ============================================================================= */
+
+/* Default active (for buttons without severity) */
+.hb-button:active:not(:disabled):not([class*="hb-button-"]) {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Primary active */
+.hb-button.hb-button-primary:active:not(:disabled) {
+  background-color: var(--hb-primary-active);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary-active);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Secondary active */
+.hb-button.hb-button-secondary:active:not(:disabled) {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Success active */
+.hb-button.hb-button-success:active:not(:disabled) {
+  background-color: var(--hb-success-700);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-success-700);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Warning active */
+.hb-button.hb-button-warning:active:not(:disabled) {
+  background-color: var(--hb-warning-700);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-warning-700);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Danger active */
+.hb-button.hb-button-danger:active:not(:disabled) {
+  background-color: var(--hb-danger-700);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-danger-700);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Info active */
+.hb-button.hb-button-info:active:not(:disabled) {
+  background-color: var(--hb-info-700);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-info-700);
+  box-shadow: var(--hb-shadow-sm);
+  transform: translateY(0);
+}
+
+/* Text active */
+.hb-button.hb-button-text:active:not(:disabled) {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+/* =============================================================================
+   FOCUS STATES (apply after active)
+   ============================================================================= */
+
+/* Default focus */
+.hb-button:focus-visible:not(:disabled):not([class*="hb-button-"]) {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+
+/* Primary focus */
+.hb-button.hb-button-primary:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Secondary focus */
+.hb-button.hb-button-secondary:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.2);
+}
+
+/* Success focus */
+.hb-button.hb-button-success:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-success);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* Warning focus */
+.hb-button.hb-button-warning:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-warning);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+/* Danger focus */
+.hb-button.hb-button-danger:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-danger);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Info focus */
+.hb-button.hb-button-info:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-info);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+/* Text focus */
+.hb-button.hb-button-text:focus-visible:not(:disabled) {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+
+/* =============================================================================
+   DISABLED STATES (apply after all other states)
+   ============================================================================= */
+
+/* Default disabled */
+.hb-button:disabled,
+.hb-button.hb-button-disabled {
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-medium);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Primary disabled */
+.hb-button.hb-button-primary:disabled,
+.hb-button.hb-button-primary.hb-button-disabled {
   background-color: var(--hb-primary);
   color: var(--hb-text-inverse);
   border-color: var(--hb-primary);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-.hb-button-primary:hover:not(:disabled) {
-  background-color: var(--hb-primary-hover);
-  border-color: var(--hb-primary-hover);
+
+/* Secondary disabled */
+.hb-button.hb-button-secondary:disabled,
+.hb-button.hb-button-secondary.hb-button-disabled {
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-medium);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-.hb-button-primary:active:not(:disabled) {
-  background-color: var(--hb-primary-active);
-  border-color: var(--hb-primary-active);
-}
-.hb-button-secondary {
-  background-color: var(--hb-secondary);
-  color: var(--hb-text-inverse);
-  border-color: var(--hb-secondary);
-}
-.hb-button-secondary:hover:not(:disabled) {
-  background-color: var(--hb-secondary-dark);
-  border-color: var(--hb-secondary-dark);
-}
-.hb-button-secondary:active:not(:disabled) {
-  background-color: var(--hb-secondary-700);
-  border-color: var(--hb-secondary-700);
-}
-.hb-button-success {
+
+/* Success disabled */
+.hb-button.hb-button-success:disabled,
+.hb-button.hb-button-success.hb-button-disabled {
   background-color: var(--hb-success);
   color: var(--hb-text-inverse);
   border-color: var(--hb-success);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-.hb-button-success:hover:not(:disabled) {
-  background-color: var(--hb-success-600);
-  border-color: var(--hb-success-600);
-}
-.hb-button-success:active:not(:disabled) {
-  background-color: var(--hb-success-700);
-  border-color: var(--hb-success-700);
-}
-.hb-button-warning {
+
+/* Warning disabled */
+.hb-button.hb-button-warning:disabled,
+.hb-button.hb-button-warning.hb-button-disabled {
   background-color: var(--hb-warning);
   color: var(--hb-text-inverse);
   border-color: var(--hb-warning);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-.hb-button-warning:hover:not(:disabled) {
-  background-color: var(--hb-warning-600);
-  border-color: var(--hb-warning-600);
-}
-.hb-button-warning:active:not(:disabled) {
-  background-color: var(--hb-warning-700);
-  border-color: var(--hb-warning-700);
-}
-.hb-button-danger {
+
+/* Danger disabled */
+.hb-button.hb-button-danger:disabled,
+.hb-button.hb-button-danger.hb-button-disabled {
   background-color: var(--hb-danger);
   color: var(--hb-text-inverse);
   border-color: var(--hb-danger);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-.hb-button-danger:hover:not(:disabled) {
-  background-color: var(--hb-danger-600);
-  border-color: var(--hb-danger-600);
-}
-.hb-button-danger:active:not(:disabled) {
-  background-color: var(--hb-danger-700);
-  border-color: var(--hb-danger-700);
-}
-.hb-button-info {
+
+/* Info disabled */
+.hb-button.hb-button-info:disabled,
+.hb-button.hb-button-info.hb-button-disabled {
   background-color: var(--hb-info);
   color: var(--hb-text-inverse);
   border-color: var(--hb-info);
-}
-.hb-button-info:hover:not(:disabled) {
-  background-color: var(--hb-info-600);
-  border-color: var(--hb-info-600);
-}
-.hb-button-info:active:not(:disabled) {
-  background-color: var(--hb-info-700);
-  border-color: var(--hb-info-700);
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
-/* BUTTON SIZES */
-.hb-button-sm {
-  font-size: var(--hb-font-size-sm);
-  padding: var(--hb-spacing-2) var(--hb-spacing-3);
-  min-height: 2rem;
+/* Text disabled */
+.hb-button.hb-button-text:disabled,
+.hb-button.hb-button-text.hb-button-disabled {
+  background-color: transparent;
+  color: var(--hb-text-primary);
+  border-color: transparent;
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-.hb-button-sm .pi {
-  font-size: var(--hb-font-size-sm);
+
+/* =============================================================================
+   ADDITIONAL BUTTON FEATURES
+   ============================================================================= */
+
+/* Loading state */
+.hb-button.hb-button-loading {
+  position: relative;
+  color: transparent;
+}
+
+.hb-button.hb-button-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin: -0.5rem 0 0 -0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: hb-spin 1s linear infinite;
+}
+
+@keyframes hb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon styles */
+.hb-button .hb-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Icon-only buttons */
+.hb-button.hb-button-icon-only {
+  padding: var(--hb-spacing-3);
+  min-width: 2.5rem;
+}
+
+.hb-button.hb-button-icon-only.hb-button-sm {
+  padding: var(--hb-spacing-2);
+  min-width: 2rem;
+}
+
+.hb-button.hb-button-icon-only.hb-button-lg {
+  padding: var(--hb-spacing-4);
+  min-width: 3rem;
+}
+
+/* Button groups */
+.hb-button-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hb-button-group .hb-button {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.hb-button-group .hb-button:first-child {
+  border-radius: var(--hb-border-radius-md) 0 0 var(--hb-border-radius-md);
+  margin-left: 0;
+}
+
+.hb-button-group .hb-button:last-child {
+  border-radius: 0 var(--hb-border-radius-md) var(--hb-border-radius-md) 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .hb-button {
+    padding: var(--hb-spacing-2) var(--hb-spacing-3);
+    font-size: var(--hb-font-size-sm);
+  }
+  
+  .hb-button.hb-button-lg {
+    padding: var(--hb-spacing-3) var(--hb-spacing-5);
+    font-size: var(--hb-font-size-base);
+  }
 } 

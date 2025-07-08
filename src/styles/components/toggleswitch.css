@@ -1,0 +1,352 @@
+/* =============================================================================
+   HB VUE THEME - TOGGLESWITCH COMPONENT STYLES
+   ============================================================================= */
+
+/* Main toggle switch container */
+.hb-toggleswitch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Toggle switch input (hidden) */
+.hb-toggleswitch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Toggle switch track */
+.hb-toggleswitch-track {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: var(--hb-bg-tertiary);
+  border: 2px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-full);
+  transition: all var(--hb-transition-base);
+  cursor: pointer;
+}
+
+/* Toggle switch thumb */
+.hb-toggleswitch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(1.5rem - 4px);
+  height: calc(1.5rem - 4px);
+  background-color: var(--hb-bg-primary);
+  border-radius: var(--hb-border-radius-full);
+  box-shadow: var(--hb-shadow-sm);
+  transition: all var(--hb-transition-base);
+  cursor: pointer;
+}
+
+/* Toggle switch checked state */
+.hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+}
+
+.hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(1.5rem);
+  background-color: var(--hb-text-inverse);
+}
+
+/* Toggle switch hover states */
+.hb-toggleswitch:hover .hb-toggleswitch-track {
+  border-color: var(--hb-border-dark);
+}
+
+.hb-toggleswitch:hover .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+
+/* Toggle switch focus states */
+.hb-toggleswitch-input:focus-visible + .hb-toggleswitch-track {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+/* Toggle switch disabled state */
+.hb-toggleswitch.hb-disabled,
+.hb-toggleswitch-input:disabled + .hb-toggleswitch-track {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hb-toggleswitch.hb-disabled .hb-toggleswitch-track,
+.hb-toggleswitch-input:disabled + .hb-toggleswitch-track {
+  background-color: var(--hb-bg-tertiary);
+  border-color: var(--hb-border-light);
+}
+
+.hb-toggleswitch.hb-disabled .hb-toggleswitch-input:checked + .hb-toggleswitch-track,
+.hb-toggleswitch-input:disabled:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-text-disabled);
+  border-color: var(--hb-text-disabled);
+}
+
+/* Toggle switch label */
+.hb-toggleswitch-label {
+  margin-left: var(--hb-spacing-3);
+  font-weight: var(--hb-font-weight-medium);
+  cursor: pointer;
+}
+
+.hb-toggleswitch.hb-disabled .hb-toggleswitch-label,
+.hb-toggleswitch-input:disabled ~ .hb-toggleswitch-label {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Toggle switch with label on left */
+.hb-toggleswitch.hb-label-left .hb-toggleswitch-label {
+  margin-left: 0;
+  margin-right: var(--hb-spacing-3);
+  order: -1;
+}
+
+/* Toggle switch variants */
+.hb-toggleswitch.hb-primary .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+}
+
+.hb-toggleswitch.hb-secondary .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-secondary);
+  border-color: var(--hb-secondary);
+}
+
+.hb-toggleswitch.hb-success .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-success);
+  border-color: var(--hb-success);
+}
+
+.hb-toggleswitch.hb-warning .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-warning);
+  border-color: var(--hb-warning);
+}
+
+.hb-toggleswitch.hb-danger .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-danger);
+  border-color: var(--hb-danger);
+}
+
+.hb-toggleswitch.hb-info .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-info);
+  border-color: var(--hb-info);
+}
+
+/* Toggle switch sizes */
+.hb-toggleswitch.hb-sm .hb-toggleswitch-track {
+  width: 2.5rem;
+  height: 1.25rem;
+}
+
+.hb-toggleswitch.hb-sm .hb-toggleswitch-thumb {
+  width: calc(1.25rem - 4px);
+  height: calc(1.25rem - 4px);
+}
+
+.hb-toggleswitch.hb-sm .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(1.25rem);
+}
+
+.hb-toggleswitch.hb-lg .hb-toggleswitch-track {
+  width: 4rem;
+  height: 2rem;
+}
+
+.hb-toggleswitch.hb-lg .hb-toggleswitch-thumb {
+  width: calc(2rem - 4px);
+  height: calc(2rem - 4px);
+}
+
+.hb-toggleswitch.hb-lg .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(2rem);
+}
+
+.hb-toggleswitch.hb-xl .hb-toggleswitch-track {
+  width: 5rem;
+  height: 2.5rem;
+}
+
+.hb-toggleswitch.hb-xl .hb-toggleswitch-thumb {
+  width: calc(2.5rem - 4px);
+  height: calc(2.5rem - 4px);
+}
+
+.hb-toggleswitch.hb-xl .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(2.5rem);
+}
+
+/* Toggle switch with custom styling */
+.hb-toggleswitch.hb-outlined .hb-toggleswitch-track {
+  background-color: transparent;
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-toggleswitch.hb-outlined .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: transparent;
+  border-color: var(--hb-primary);
+}
+
+.hb-toggleswitch.hb-outlined .hb-toggleswitch-thumb {
+  background-color: var(--hb-border-medium);
+}
+
+.hb-toggleswitch.hb-outlined .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  background-color: var(--hb-primary);
+}
+
+/* Toggle switch with shadow */
+.hb-toggleswitch.hb-shadow .hb-toggleswitch-track {
+  box-shadow: var(--hb-shadow-sm);
+}
+
+.hb-toggleswitch.hb-shadow .hb-toggleswitch-thumb {
+  box-shadow: var(--hb-shadow-base);
+}
+
+/* Toggle switch with gradient */
+.hb-toggleswitch.hb-gradient .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background: linear-gradient(45deg, var(--hb-primary), var(--hb-primary-hover));
+  border-color: var(--hb-primary);
+}
+
+/* Toggle switch with custom colors */
+.hb-toggleswitch.hb-custom .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  background-color: var(--hb-custom-color, var(--hb-primary));
+  border-color: var(--hb-custom-color, var(--hb-primary));
+}
+
+/* Toggle switch with icon */
+.hb-toggleswitch.hb-icon .hb-toggleswitch-track {
+  position: relative;
+}
+
+.hb-toggleswitch-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--hb-font-size-xs);
+  color: var(--hb-text-muted);
+  transition: all var(--hb-transition-base);
+}
+
+.hb-toggleswitch-icon.hb-on {
+  left: var(--hb-spacing-1);
+  color: var(--hb-text-inverse);
+}
+
+.hb-toggleswitch-icon.hb-off {
+  right: var(--hb-spacing-1);
+  color: var(--hb-text-secondary);
+}
+
+.hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-icon.hb-on {
+  opacity: 1;
+}
+
+.hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-icon.hb-off {
+  opacity: 0;
+}
+
+.hb-toggleswitch-input:not(:checked) + .hb-toggleswitch-track .hb-toggleswitch-icon.hb-on {
+  opacity: 0;
+}
+
+.hb-toggleswitch-input:not(:checked) + .hb-toggleswitch-track .hb-toggleswitch-icon.hb-off {
+  opacity: 1;
+}
+
+/* Toggle switch with loading state */
+.hb-toggleswitch.hb-loading .hb-toggleswitch-track {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-toggleswitch.hb-loading .hb-toggleswitch-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: hb-toggleswitch-loading 1.5s infinite;
+}
+
+@keyframes hb-toggleswitch-loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Toggle switch with pulse effect */
+.hb-toggleswitch.hb-pulse .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  animation: hb-toggleswitch-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hb-toggleswitch-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+/* Toggle switch with glow effect */
+.hb-toggleswitch.hb-glow .hb-toggleswitch-input:checked + .hb-toggleswitch-track {
+  box-shadow: 0 0 10px var(--hb-primary);
+}
+
+/* Toggle switch with smooth animation */
+.hb-toggleswitch.hb-smooth .hb-toggleswitch-track,
+.hb-toggleswitch.hb-smooth .hb-toggleswitch-thumb {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Toggle switch with bounce animation */
+.hb-toggleswitch.hb-bounce .hb-toggleswitch-thumb {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Toggle switch with elastic animation */
+.hb-toggleswitch.hb-elastic .hb-toggleswitch-thumb {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-toggleswitch {
+    font-size: var(--hb-font-size-sm);
+  }
+  
+  .hb-toggleswitch-label {
+    margin-left: var(--hb-spacing-2);
+  }
+  
+  .hb-toggleswitch.hb-label-left .hb-toggleswitch-label {
+    margin-right: var(--hb-spacing-2);
+  }
+} 

@@ -344,14 +344,15 @@
   border: 1px solid var(--hb-border-medium);
 }
 
-.hb-button:hover:not(:disabled) {
+/* General button hover - only for buttons without severity classes */
+.hb-button:not([class*="hb-button-"])[class*="hb-"]:hover:not(:disabled) {
   background-color: var(--hb-bg-secondary);
   border-color: var(--hb-border-dark);
   box-shadow: var(--hb-shadow-base);
   transform: translateY(-1px);
 }
 
-.hb-button:active:not(:disabled) {
+.hb-button:not([class*="hb-button-"])[class*="hb-"]:active:not(:disabled) {
   transform: translateY(0);
   box-shadow: var(--hb-shadow-sm);
 }
@@ -382,43 +383,38 @@
   animation: hb-spin 1s linear infinite;
 }
 
-/* Button variants */
-.hb-button.hb-primary {
+/* Button variants - using correct class names */
+.hb-button.hb-button-primary {
   background-color: var(--hb-primary);
   color: var(--hb-text-inverse);
   border-color: var(--hb-primary);
 }
 
-.hb-button.hb-primary:hover:not(:disabled) {
-  background-color: var(--hb-primary-hover);
-  border-color: var(--hb-primary-hover);
-}
-
-.hb-button.hb-secondary {
+.hb-button.hb-button-secondary {
   background-color: var(--hb-bg-primary);
   color: var(--hb-text-primary);
   border-color: var(--hb-border-medium);
 }
 
-.hb-button.hb-success {
+.hb-button.hb-button-success {
   background-color: var(--hb-success);
   color: var(--hb-text-inverse);
   border-color: var(--hb-success);
 }
 
-.hb-button.hb-warning {
+.hb-button.hb-button-warning {
   background-color: var(--hb-warning);
   color: var(--hb-text-inverse);
   border-color: var(--hb-warning);
 }
 
-.hb-button.hb-danger {
+.hb-button.hb-button-danger {
   background-color: var(--hb-danger);
   color: var(--hb-text-inverse);
   border-color: var(--hb-danger);
 }
 
-.hb-button.hb-info {
+.hb-button.hb-button-info {
   background-color: var(--hb-info);
   color: var(--hb-text-inverse);
   border-color: var(--hb-info);

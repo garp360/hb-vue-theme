@@ -1,15 +1,13 @@
 /* =============================================================================
-   HB VUE THEME - TOOLTIP COMPONENT
+   HB TOOLTIP COMPONENT STYLES
+   Based on PrimeVue Lara preset with standard sizing
    ============================================================================= */
 
-/* =============================================================================
-   TOOLTIP ROOT
-   ============================================================================= */
-
+/* Tooltip Container */
 .hb-tooltip {
   position: absolute;
   z-index: var(--hb-z-index-tooltip);
-  display: none;
+  display: block;
   max-width: 20rem;
   padding: var(--hb-spacing-2) var(--hb-spacing-3);
   background-color: var(--hb-neutral-900);
@@ -25,18 +23,18 @@
   user-select: none;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity var(--hb-transition-base);
+  visibility: hidden;
+  transition: opacity var(--hb-transition-base), visibility var(--hb-transition-base);
 }
 
-.hb-tooltip.hb-show {
-  display: block;
+/* Show tooltip */
+.hb-tooltip.hb-show,
+.hb-tooltip[data-show="true"] {
   opacity: 1;
+  visibility: visible;
 }
 
-/* =============================================================================
-   TOOLTIP ARROW
-   ============================================================================= */
-
+/* Tooltip Arrow */
 .hb-tooltip::before {
   content: '';
   position: absolute;
@@ -77,11 +75,7 @@
   border-right-color: var(--hb-neutral-900);
 }
 
-/* =============================================================================
-   TOOLTIP VARIANTS
-   ============================================================================= */
-
-/* Info variant */
+/* Tooltip Variants */
 .hb-tooltip.hb-info {
   background-color: var(--hb-info-600);
   color: var(--hb-text-inverse);
@@ -94,7 +88,6 @@
   border-right-color: var(--hb-info-600);
 }
 
-/* Success variant */
 .hb-tooltip.hb-success {
   background-color: var(--hb-success-600);
   color: var(--hb-text-inverse);
@@ -107,7 +100,6 @@
   border-right-color: var(--hb-success-600);
 }
 
-/* Warning variant */
 .hb-tooltip.hb-warning {
   background-color: var(--hb-warning-600);
   color: var(--hb-text-inverse);
@@ -120,7 +112,6 @@
   border-right-color: var(--hb-warning-600);
 }
 
-/* Danger variant */
 .hb-tooltip.hb-danger {
   background-color: var(--hb-danger-600);
   color: var(--hb-text-inverse);
@@ -133,7 +124,6 @@
   border-right-color: var(--hb-danger-600);
 }
 
-/* Light variant */
 .hb-tooltip.hb-light {
   background-color: var(--hb-bg-primary);
   color: var(--hb-text-primary);
@@ -148,25 +138,18 @@
   border-right-color: var(--hb-border-light);
 }
 
-/* =============================================================================
-   TOOLTIP SIZES
-   ============================================================================= */
-
-.hb-tooltip.hb-sm {
+/* Tooltip Sizes */
+.hb-tooltip.hb-tooltip-sm {
   font-size: var(--hb-font-size-xs);
   padding: var(--hb-spacing-1) var(--hb-spacing-2);
 }
 
-.hb-tooltip.hb-lg {
+.hb-tooltip.hb-tooltip-lg {
   font-size: var(--hb-font-size-base);
   padding: var(--hb-spacing-3) var(--hb-spacing-4);
 }
 
-/* =============================================================================
-   TOOLTIP POSITIONS
-   ============================================================================= */
-
-/* Top position */
+/* Tooltip Positions */
 .hb-tooltip.hb-top {
   bottom: 100%;
   left: 50%;
@@ -174,7 +157,6 @@
   margin-bottom: var(--hb-spacing-2);
 }
 
-/* Bottom position */
 .hb-tooltip.hb-bottom {
   top: 100%;
   left: 50%;
@@ -182,7 +164,6 @@
   margin-top: var(--hb-spacing-2);
 }
 
-/* Left position */
 .hb-tooltip.hb-left {
   right: 100%;
   top: 50%;
@@ -190,7 +171,6 @@
   margin-right: var(--hb-spacing-2);
 }
 
-/* Right position */
 .hb-tooltip.hb-right {
   left: 100%;
   top: 50%;
@@ -198,42 +178,54 @@
   margin-left: var(--hb-spacing-2);
 }
 
-/* Top-left position */
+/* Corner positions */
 .hb-tooltip.hb-top-left {
   bottom: 100%;
   left: 0;
   margin-bottom: var(--hb-spacing-2);
 }
 
-/* Top-right position */
+.hb-tooltip.hb-top-left::before {
+  left: 1rem;
+  transform: none;
+}
+
 .hb-tooltip.hb-top-right {
   bottom: 100%;
   right: 0;
   margin-bottom: var(--hb-spacing-2);
 }
 
-/* Bottom-left position */
+.hb-tooltip.hb-top-right::before {
+  right: 1rem;
+  transform: none;
+}
+
 .hb-tooltip.hb-bottom-left {
   top: 100%;
   left: 0;
   margin-top: var(--hb-spacing-2);
 }
 
-/* Bottom-right position */
+.hb-tooltip.hb-bottom-left::before {
+  left: 1rem;
+  transform: none;
+}
+
 .hb-tooltip.hb-bottom-right {
   top: 100%;
   right: 0;
   margin-top: var(--hb-spacing-2);
 }
 
-/* =============================================================================
-   TOOLTIP CONTENT
-   ============================================================================= */
+.hb-tooltip.hb-bottom-right::before {
+  right: 1rem;
+  transform: none;
+}
 
+/* Tooltip Content */
 .hb-tooltip-content {
   display: block;
-  word-wrap: break-word;
-  white-space: normal;
 }
 
 .hb-tooltip-title {
@@ -243,16 +235,14 @@
 
 .hb-tooltip-text {
   font-weight: var(--hb-font-weight-normal);
+  line-height: var(--hb-line-height-normal);
 }
 
-/* =============================================================================
-   TOOLTIP ANIMATIONS
-   ============================================================================= */
-
+/* Tooltip Animations */
 @keyframes hb-tooltip-fade-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(-0.5rem);
   }
   to {
     opacity: 1;
@@ -267,89 +257,75 @@
   }
   to {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(-0.5rem);
   }
 }
 
-.hb-tooltip.hb-animate {
-  animation: hb-tooltip-fade-in 0.2s ease-out;
+.hb-tooltip.hb-tooltip-animate {
+  animation: hb-tooltip-fade-in var(--hb-transition-base) ease-out;
 }
 
-.hb-tooltip.hb-animate-out {
-  animation: hb-tooltip-fade-out 0.2s ease-out;
+.hb-tooltip.hb-tooltip-animate-out {
+  animation: hb-tooltip-fade-out var(--hb-transition-base) ease-in;
 }
 
-/* =============================================================================
-   TOOLTIP DELAY
-   ============================================================================= */
-
-.hb-tooltip.hb-delay {
+/* Tooltip Delay */
+.hb-tooltip.hb-tooltip-delay {
   transition-delay: 0.5s;
 }
 
-.hb-tooltip.hb-delay-long {
+.hb-tooltip.hb-tooltip-delay-long {
   transition-delay: 1s;
 }
 
-/* =============================================================================
-   TOOLTIP RESPONSIVE
-   ============================================================================= */
-
+/* Responsive Design */
 @media (max-width: 768px) {
   .hb-tooltip {
-    max-width: 15rem;
+    max-width: 16rem;
     font-size: var(--hb-font-size-xs);
-    padding: var(--hb-spacing-1) var(--hb-spacing-2);
+    padding: var(--hb-spacing-1-5) var(--hb-spacing-2-5);
   }
   
-  .hb-tooltip.hb-lg {
-    max-width: 18rem;
+  .hb-tooltip.hb-tooltip-lg {
     font-size: var(--hb-font-size-sm);
     padding: var(--hb-spacing-2) var(--hb-spacing-3);
   }
 }
 
-/* =============================================================================
-   TOOLTIP UTILITIES
-   ============================================================================= */
-
-.hb-tooltip-no-arrow::before {
+/* Tooltip Modifiers */
+.hb-tooltip.hb-tooltip-no-arrow::before {
   display: none;
 }
 
-.hb-tooltip-no-shadow {
+.hb-tooltip.hb-tooltip-no-shadow {
   box-shadow: none;
 }
 
-.hb-tooltip-permanent {
-  pointer-events: auto;
+.hb-tooltip.hb-tooltip-permanent {
+  opacity: 1;
+  visibility: visible;
 }
 
-.hb-tooltip-clickable {
+.hb-tooltip.hb-tooltip-clickable {
   pointer-events: auto;
   cursor: pointer;
 }
 
-.hb-tooltip-clickable:hover {
+.hb-tooltip.hb-tooltip-clickable:hover {
   background-color: var(--hb-neutral-800);
 }
 
-/* =============================================================================
-   TOOLTIP ACCESSIBILITY
-   ============================================================================= */
-
+/* Accessibility */
 .hb-tooltip[role="tooltip"] {
-  display: none;
+  position: absolute;
 }
 
 .hb-tooltip[role="tooltip"][aria-hidden="false"] {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* =============================================================================
-   TOOLTIP TRIGGER
-   ============================================================================= */
-
+/* Tooltip Trigger */
 .hb-tooltip-trigger {
   position: relative;
   display: inline-block;
@@ -357,14 +333,11 @@
 
 .hb-tooltip-trigger:hover .hb-tooltip,
 .hb-tooltip-trigger:focus .hb-tooltip {
-  display: block;
   opacity: 1;
+  visibility: visible;
 }
 
-/* =============================================================================
-   TOOLTIP GROUP
-   ============================================================================= */
-
+/* Tooltip Group */
 .hb-tooltip-group {
   position: relative;
 }
@@ -373,14 +346,15 @@
   position: absolute;
 }
 
-/* =============================================================================
-   TOOLTIP CUSTOM POSITIONING
-   ============================================================================= */
-
-.hb-tooltip.hb-custom {
-  position: fixed;
+/* Custom Tooltip */
+.hb-tooltip.hb-tooltip-custom {
+  background-color: var(--hb-custom-bg, var(--hb-primary));
+  color: var(--hb-custom-color, var(--hb-text-inverse));
 }
 
-.hb-tooltip.hb-custom::before {
-  display: none;
+.hb-tooltip.hb-tooltip-custom::before {
+  border-top-color: var(--hb-custom-bg, var(--hb-primary));
+  border-bottom-color: var(--hb-custom-bg, var(--hb-primary));
+  border-left-color: var(--hb-custom-bg, var(--hb-primary));
+  border-right-color: var(--hb-custom-bg, var(--hb-primary));
 } 

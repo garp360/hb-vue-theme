@@ -1,0 +1,429 @@
+/* =============================================================================
+   HB VUE THEME - PICKLIST COMPONENT STYLES
+   ============================================================================= */
+
+/* Main picklist container */
+.hb-picklist {
+  display: flex;
+  gap: var(--hb-spacing-4);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Picklist source and target containers */
+.hb-picklist-source,
+.hb-picklist-target {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Picklist header */
+.hb-picklist-header {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  background-color: var(--hb-bg-secondary);
+  border: 1px solid var(--hb-border-medium);
+  border-bottom: none;
+  border-top-left-radius: var(--hb-border-radius-md);
+  border-top-right-radius: var(--hb-border-radius-md);
+  font-weight: var(--hb-font-weight-semibold);
+  color: var(--hb-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hb-picklist-header-title {
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-semibold);
+}
+
+.hb-picklist-header-count {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  border-radius: var(--hb-border-radius-sm);
+  font-size: var(--hb-font-size-sm);
+  font-weight: var(--hb-font-weight-medium);
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+/* Picklist list container */
+.hb-picklist-list {
+  border: 1px solid var(--hb-border-medium);
+  border-top: none;
+  border-bottom-left-radius: var(--hb-border-radius-md);
+  border-bottom-right-radius: var(--hb-border-radius-md);
+  background-color: var(--hb-bg-primary);
+  max-height: 300px;
+  overflow-y: auto;
+  min-height: 200px;
+}
+
+/* Picklist item */
+.hb-picklist-item {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  border-bottom: 1px solid var(--hb-border-light);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+
+.hb-picklist-item:last-child {
+  border-bottom: none;
+}
+
+.hb-picklist-item:hover {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-picklist-item.hb-selected {
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-medium);
+}
+
+.hb-picklist-item.hb-disabled {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  background-color: var(--hb-bg-tertiary);
+}
+
+.hb-picklist-item.hb-disabled:hover {
+  background-color: var(--hb-bg-tertiary);
+}
+
+/* Picklist item content */
+.hb-picklist-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hb-spacing-1);
+}
+
+.hb-picklist-item-title {
+  font-weight: var(--hb-font-weight-medium);
+  color: inherit;
+}
+
+.hb-picklist-item-subtitle {
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-secondary);
+}
+
+/* Picklist item with icon */
+.hb-picklist-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--hb-text-secondary);
+  flex-shrink: 0;
+}
+
+/* Picklist item with checkbox */
+.hb-picklist-item-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-sm);
+  background-color: var(--hb-bg-primary);
+  flex-shrink: 0;
+}
+
+.hb-picklist-item.hb-selected .hb-picklist-item-checkbox {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+/* Picklist controls */
+.hb-picklist-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hb-spacing-2);
+  justify-content: center;
+  padding: var(--hb-spacing-4);
+}
+
+.hb-picklist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border: none;
+  border-radius: var(--hb-border-radius-md);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  font-size: var(--hb-font-size-base);
+}
+
+.hb-picklist-button:hover:not(:disabled) {
+  background-color: var(--hb-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-picklist-button:active {
+  transform: translateY(0);
+}
+
+.hb-picklist-button:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Picklist button variants */
+.hb-picklist-button.hb-secondary {
+  background-color: var(--hb-secondary);
+}
+
+.hb-picklist-button.hb-secondary:hover:not(:disabled) {
+  background-color: var(--hb-secondary-hover);
+}
+
+.hb-picklist-button.hb-success {
+  background-color: var(--hb-success);
+}
+
+.hb-picklist-button.hb-success:hover:not(:disabled) {
+  background-color: var(--hb-success-hover);
+}
+
+.hb-picklist-button.hb-warning {
+  background-color: var(--hb-warning);
+}
+
+.hb-picklist-button.hb-warning:hover:not(:disabled) {
+  background-color: var(--hb-warning-hover);
+}
+
+.hb-picklist-button.hb-danger {
+  background-color: var(--hb-danger);
+}
+
+.hb-picklist-button.hb-danger:hover:not(:disabled) {
+  background-color: var(--hb-danger-hover);
+}
+
+/* Picklist button sizes */
+.hb-picklist.hb-sm .hb-picklist-button {
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-picklist.hb-lg .hb-picklist-button {
+  width: 3rem;
+  height: 3rem;
+  font-size: var(--hb-font-size-lg);
+}
+
+/* Picklist with custom styling */
+.hb-picklist.hb-outlined .hb-picklist-header,
+.hb-picklist.hb-outlined .hb-picklist-list {
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-picklist.hb-outlined .hb-picklist-header {
+  border-bottom: 2px solid var(--hb-border-medium);
+}
+
+.hb-picklist.hb-outlined .hb-picklist-list {
+  border-top: none;
+}
+
+/* Picklist with shadow */
+.hb-picklist.hb-shadow .hb-picklist-list {
+  box-shadow: var(--hb-shadow-base);
+}
+
+/* Picklist with rounded corners */
+.hb-picklist.hb-rounded .hb-picklist-header {
+  border-top-left-radius: var(--hb-border-radius-full);
+  border-top-right-radius: var(--hb-border-radius-full);
+}
+
+.hb-picklist.hb-rounded .hb-picklist-list {
+  border-bottom-left-radius: var(--hb-border-radius-full);
+  border-bottom-right-radius: var(--hb-border-radius-full);
+}
+
+/* Picklist with compact spacing */
+.hb-picklist.hb-compact .hb-picklist-item {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+}
+
+.hb-picklist.hb-compact .hb-picklist-header {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+}
+
+.hb-picklist.hb-compact .hb-picklist-controls {
+  padding: var(--hb-spacing-2);
+  gap: var(--hb-spacing-1);
+}
+
+/* Picklist with large spacing */
+.hb-picklist.hb-large .hb-picklist-item {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+}
+
+.hb-picklist.hb-large .hb-picklist-header {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+}
+
+.hb-picklist.hb-large .hb-picklist-controls {
+  padding: var(--hb-spacing-5);
+  gap: var(--hb-spacing-3);
+}
+
+/* Picklist with loading state */
+.hb-picklist.hb-loading .hb-picklist-list {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-picklist.hb-loading .hb-picklist-list::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: hb-picklist-loading 1.5s infinite;
+}
+
+@keyframes hb-picklist-loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Picklist with empty state */
+.hb-picklist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hb-spacing-8);
+  color: var(--hb-text-muted);
+  text-align: center;
+}
+
+.hb-picklist-empty-icon {
+  font-size: 2rem;
+  margin-bottom: var(--hb-spacing-2);
+  opacity: 0.5;
+}
+
+.hb-picklist-empty-text {
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-muted);
+}
+
+/* Picklist with search */
+.hb-picklist-search {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  border-bottom: 1px solid var(--hb-border-light);
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-picklist-search-input {
+  width: 100%;
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-sm);
+  font-size: var(--hb-font-size-sm);
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+}
+
+.hb-picklist-search-input:focus {
+  outline: none;
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Picklist with filters */
+.hb-picklist-filters {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  border-bottom: 1px solid var(--hb-border-light);
+  background-color: var(--hb-bg-secondary);
+  display: flex;
+  gap: var(--hb-spacing-2);
+  flex-wrap: wrap;
+}
+
+.hb-picklist-filter {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  border: 1px solid var(--hb-primary);
+  border-radius: var(--hb-border-radius-sm);
+  font-size: var(--hb-font-size-xs);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+}
+
+.hb-picklist-filter:hover {
+  background-color: var(--hb-primary-100);
+}
+
+.hb-picklist-filter.hb-active {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-picklist {
+    flex-direction: column;
+    gap: var(--hb-spacing-3);
+  }
+  
+  .hb-picklist-controls {
+    flex-direction: row;
+    justify-content: center;
+    padding: var(--hb-spacing-2);
+  }
+  
+  .hb-picklist-list {
+    max-height: 200px;
+    min-height: 150px;
+  }
+  
+  .hb-picklist-item {
+    padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  }
+  
+  .hb-picklist-header {
+    padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  }
+} 

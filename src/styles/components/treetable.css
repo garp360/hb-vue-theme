@@ -1,0 +1,495 @@
+/* =============================================================================
+   HB VUE THEME - TREETABLE COMPONENT STYLES
+   ============================================================================= */
+
+/* Main tree table container */
+.hb-treetable {
+  width: 100%;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-md);
+  background-color: var(--hb-bg-primary);
+  overflow: hidden;
+}
+
+/* Tree table header */
+.hb-treetable-header {
+  background-color: var(--hb-bg-secondary);
+  border-bottom: 1px solid var(--hb-border-medium);
+}
+
+.hb-treetable-header-row {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+}
+
+.hb-treetable-header-cell {
+  flex: 1;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  font-weight: var(--hb-font-weight-semibold);
+  color: var(--hb-text-primary);
+  text-align: left;
+  border-right: 1px solid var(--hb-border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+
+.hb-treetable-header-cell:last-child {
+  border-right: none;
+}
+
+.hb-treetable-header-cell.hb-sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--hb-transition-base);
+}
+
+.hb-treetable-header-cell.hb-sortable:hover {
+  background-color: var(--hb-bg-tertiary);
+}
+
+.hb-treetable-header-cell.hb-sorted {
+  color: var(--hb-primary);
+}
+
+.hb-treetable-sort-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  color: var(--hb-text-secondary);
+  transition: all var(--hb-transition-base);
+}
+
+.hb-treetable-header-cell.hb-sorted .hb-treetable-sort-icon {
+  color: var(--hb-primary);
+}
+
+.hb-treetable-header-cell.hb-sort-desc .hb-treetable-sort-icon {
+  transform: rotate(180deg);
+}
+
+/* Tree table body */
+.hb-treetable-body {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.hb-treetable-row {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  border-bottom: 1px solid var(--hb-border-light);
+  transition: background-color var(--hb-transition-base);
+}
+
+.hb-treetable-row:last-child {
+  border-bottom: none;
+}
+
+.hb-treetable-row:hover {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-treetable-row.hb-selected {
+  background-color: var(--hb-primary-50);
+  border-color: var(--hb-primary);
+}
+
+.hb-treetable-row.hb-selected:hover {
+  background-color: var(--hb-primary-100);
+}
+
+.hb-treetable-row.hb-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hb-treetable-row.hb-disabled:hover {
+  background-color: transparent;
+}
+
+/* Tree table cell */
+.hb-treetable-cell {
+  flex: 1;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  border-right: 1px solid var(--hb-border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+  min-width: 0;
+}
+
+.hb-treetable-cell:last-child {
+  border-right: none;
+}
+
+.hb-treetable-cell-content {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Tree table expand/collapse button */
+.hb-treetable-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--hb-border-radius-sm);
+  color: var(--hb-text-secondary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  flex-shrink: 0;
+}
+
+.hb-treetable-toggle:hover {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+}
+
+.hb-treetable-toggle:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+.hb-treetable-toggle.hb-expanded {
+  transform: rotate(90deg);
+}
+
+/* Tree table node level indentation */
+.hb-treetable-node-level-0 {
+  padding-left: var(--hb-spacing-4);
+}
+
+.hb-treetable-node-level-1 {
+  padding-left: calc(var(--hb-spacing-4) + 1.5rem);
+}
+
+.hb-treetable-node-level-2 {
+  padding-left: calc(var(--hb-spacing-4) + 3rem);
+}
+
+.hb-treetable-node-level-3 {
+  padding-left: calc(var(--hb-spacing-4) + 4.5rem);
+}
+
+.hb-treetable-node-level-4 {
+  padding-left: calc(var(--hb-spacing-4) + 6rem);
+}
+
+/* Tree table node icon */
+.hb-treetable-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--hb-text-secondary);
+  flex-shrink: 0;
+}
+
+/* Tree table node checkbox */
+.hb-treetable-node-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-sm);
+  background-color: var(--hb-bg-primary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  flex-shrink: 0;
+}
+
+.hb-treetable-node-checkbox.hb-checked {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-treetable-node-checkbox.hb-partial {
+  background-color: var(--hb-primary-50);
+  border-color: var(--hb-primary);
+  color: var(--hb-primary);
+}
+
+/* Tree table node content */
+.hb-treetable-node-content {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.hb-treetable-node-label {
+  font-weight: var(--hb-font-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hb-treetable-node-description {
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Tree table node badge */
+.hb-treetable-node-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 var(--hb-spacing-1);
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-radius: var(--hb-border-radius-full);
+  font-size: var(--hb-font-size-xs);
+  font-weight: var(--hb-font-weight-semibold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Tree table node status */
+.hb-treetable-node-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--hb-border-radius-full);
+  flex-shrink: 0;
+}
+
+.hb-treetable-node-status.hb-online {
+  background-color: var(--hb-success);
+}
+
+.hb-treetable-node-status.hb-offline {
+  background-color: var(--hb-danger);
+}
+
+.hb-treetable-node-status.hb-warning {
+  background-color: var(--hb-warning);
+}
+
+.hb-treetable-node-status.hb-info {
+  background-color: var(--hb-info);
+}
+
+/* Tree table loading state */
+.hb-treetable.hb-loading .hb-treetable-body {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-treetable.hb-loading .hb-treetable-body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: hb-treetable-loading 1.5s infinite;
+}
+
+@keyframes hb-treetable-loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Tree table empty state */
+.hb-treetable-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hb-spacing-8);
+  color: var(--hb-text-muted);
+  text-align: center;
+}
+
+.hb-treetable-empty-icon {
+  font-size: 2rem;
+  margin-bottom: var(--hb-spacing-2);
+  opacity: 0.5;
+}
+
+.hb-treetable-empty-text {
+  font-size: var(--hb-font-size-sm);
+  color: var(--hb-text-muted);
+}
+
+/* Tree table with custom styling */
+.hb-treetable.hb-outlined {
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-treetable.hb-borderless {
+  border: none;
+}
+
+.hb-treetable.hb-borderless .hb-treetable-header {
+  border-bottom: 1px solid var(--hb-border-light);
+}
+
+.hb-treetable.hb-borderless .hb-treetable-row {
+  border-bottom: 1px solid var(--hb-border-light);
+}
+
+/* Tree table with shadow */
+.hb-treetable.hb-shadow {
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-treetable.hb-shadow-lg {
+  box-shadow: var(--hb-shadow-lg);
+}
+
+/* Tree table with rounded corners */
+.hb-treetable.hb-rounded {
+  border-radius: var(--hb-border-radius-lg);
+}
+
+/* Tree table with compact spacing */
+.hb-treetable.hb-compact .hb-treetable-header-cell,
+.hb-treetable.hb-compact .hb-treetable-cell {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+}
+
+.hb-treetable.hb-compact .hb-treetable-header-row,
+.hb-treetable.hb-compact .hb-treetable-row {
+  min-height: 2.5rem;
+}
+
+/* Tree table with large spacing */
+.hb-treetable.hb-large .hb-treetable-header-cell,
+.hb-treetable.hb-large .hb-treetable-cell {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+}
+
+.hb-treetable.hb-large .hb-treetable-header-row,
+.hb-treetable.hb-large .hb-treetable-row {
+  min-height: 3.5rem;
+}
+
+/* Tree table with striped rows */
+.hb-treetable.hb-striped .hb-treetable-row:nth-child(even) {
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-treetable.hb-striped .hb-treetable-row:nth-child(even):hover {
+  background-color: var(--hb-bg-tertiary);
+}
+
+/* Tree table with hover effects */
+.hb-treetable.hb-hover .hb-treetable-row:hover {
+  background-color: var(--hb-primary-50);
+  border-color: var(--hb-primary);
+}
+
+/* Tree table with selection */
+.hb-treetable.hb-selectable .hb-treetable-row {
+  cursor: pointer;
+}
+
+.hb-treetable.hb-selectable .hb-treetable-row.hb-selected {
+  background-color: var(--hb-primary-50);
+  border-color: var(--hb-primary);
+}
+
+.hb-treetable.hb-selectable .hb-treetable-row.hb-selected:hover {
+  background-color: var(--hb-primary-100);
+}
+
+/* Tree table with custom colors */
+.hb-treetable.hb-custom .hb-treetable-header {
+  background-color: var(--hb-custom-color, var(--hb-primary));
+  color: var(--hb-custom-text-color, var(--hb-text-inverse));
+}
+
+.hb-treetable.hb-custom .hb-treetable-header-cell {
+  color: inherit;
+}
+
+/* Tree table with scrollbar styling */
+.hb-treetable-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hb-treetable-body::-webkit-scrollbar-track {
+  background-color: var(--hb-bg-tertiary);
+}
+
+.hb-treetable-body::-webkit-scrollbar-thumb {
+  background-color: var(--hb-border-medium);
+  border-radius: var(--hb-border-radius-sm);
+}
+
+.hb-treetable-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hb-border-dark);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-treetable {
+    font-size: var(--hb-font-size-sm);
+  }
+  
+  .hb-treetable-header-cell,
+  .hb-treetable-cell {
+    padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  }
+  
+  .hb-treetable-header-row,
+  .hb-treetable-row {
+    min-height: 2.5rem;
+  }
+  
+  .hb-treetable-body {
+    max-height: 300px;
+  }
+  
+  .hb-treetable-node-level-1 {
+    padding-left: calc(var(--hb-spacing-3) + 1.5rem);
+  }
+  
+  .hb-treetable-node-level-2 {
+    padding-left: calc(var(--hb-spacing-3) + 3rem);
+  }
+  
+  .hb-treetable-node-level-3 {
+    padding-left: calc(var(--hb-spacing-3) + 4.5rem);
+  }
+  
+  .hb-treetable-node-level-4 {
+    padding-left: calc(var(--hb-spacing-3) + 6rem);
+  }
+} 

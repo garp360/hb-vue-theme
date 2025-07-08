@@ -1,0 +1,332 @@
+/* =============================================================================
+   HB VUE THEME - SELECTBUTTON COMPONENT STYLES
+   ============================================================================= */
+
+/* Main select button container */
+.hb-selectbutton {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+  border-radius: var(--hb-border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* Select button item */
+.hb-selectbutton-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-medium);
+  color: var(--hb-text-primary);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--hb-font-weight-medium);
+  white-space: nowrap;
+  user-select: none;
+  min-width: 2.5rem;
+}
+
+.hb-selectbutton-item:first-child {
+  border-top-left-radius: var(--hb-border-radius-md);
+  border-bottom-left-radius: var(--hb-border-radius-md);
+}
+
+.hb-selectbutton-item:last-child {
+  border-top-right-radius: var(--hb-border-radius-md);
+  border-bottom-right-radius: var(--hb-border-radius-md);
+}
+
+.hb-selectbutton-item:not(:first-child):not(:last-child) {
+  border-radius: 0;
+  border-left: none;
+}
+
+.hb-selectbutton-item:hover:not(.hb-disabled) {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+}
+
+.hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-semibold);
+}
+
+.hb-selectbutton-item.hb-selected:hover {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+
+.hb-selectbutton-item.hb-disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Select button item with icon */
+.hb-selectbutton-item.hb-icon {
+  padding: var(--hb-spacing-3);
+  min-width: 2.5rem;
+}
+
+.hb-selectbutton-item.hb-icon i {
+  font-size: var(--hb-font-size-base);
+}
+
+/* Select button item with text and icon */
+.hb-selectbutton-item.hb-with-icon {
+  gap: var(--hb-spacing-2);
+}
+
+.hb-selectbutton-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Select button variants */
+.hb-selectbutton.hb-primary .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-selectbutton.hb-secondary .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-secondary);
+  border-color: var(--hb-secondary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-selectbutton.hb-success .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-success);
+  border-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+}
+
+.hb-selectbutton.hb-warning .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-warning);
+  border-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+}
+
+.hb-selectbutton.hb-danger .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-danger);
+  border-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+}
+
+.hb-selectbutton.hb-info .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-info);
+  border-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+}
+
+/* Select button sizes */
+.hb-selectbutton.hb-sm .hb-selectbutton-item {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  min-height: 2rem;
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-selectbutton.hb-lg .hb-selectbutton-item {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  min-height: 3rem;
+  font-size: var(--hb-font-size-lg);
+}
+
+/* Select button with custom styling */
+.hb-selectbutton.hb-outlined .hb-selectbutton-item {
+  background-color: transparent;
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-selectbutton.hb-outlined .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-selectbutton.hb-outlined .hb-selectbutton-item:hover:not(.hb-selected):not(.hb-disabled) {
+  background-color: var(--hb-bg-secondary);
+  border-color: var(--hb-border-dark);
+}
+
+/* Select button with rounded corners */
+.hb-selectbutton.hb-rounded .hb-selectbutton-item:first-child {
+  border-top-left-radius: var(--hb-border-radius-full);
+  border-bottom-left-radius: var(--hb-border-radius-full);
+}
+
+.hb-selectbutton.hb-rounded .hb-selectbutton-item:last-child {
+  border-top-right-radius: var(--hb-border-radius-full);
+  border-bottom-right-radius: var(--hb-border-radius-full);
+}
+
+/* Select button with shadow */
+.hb-selectbutton.hb-shadow {
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-selectbutton.hb-shadow .hb-selectbutton-item {
+  box-shadow: none;
+}
+
+/* Select button with gradient */
+.hb-selectbutton.hb-gradient .hb-selectbutton-item.hb-selected {
+  background: linear-gradient(45deg, var(--hb-primary), var(--hb-primary-hover));
+  border-color: var(--hb-primary);
+}
+
+/* Select button with custom colors */
+.hb-selectbutton.hb-custom .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-custom-color, var(--hb-primary));
+  border-color: var(--hb-custom-color, var(--hb-primary));
+  color: var(--hb-custom-text-color, var(--hb-text-inverse));
+}
+
+/* Select button with multiple selection */
+.hb-selectbutton.hb-multiple .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  border-color: var(--hb-primary);
+}
+
+.hb-selectbutton.hb-multiple .hb-selectbutton-item.hb-selected:hover {
+  background-color: var(--hb-primary-100);
+}
+
+/* Select button with compact spacing */
+.hb-selectbutton.hb-compact .hb-selectbutton-item {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+}
+
+/* Select button with large spacing */
+.hb-selectbutton.hb-large .hb-selectbutton-item {
+  padding: var(--hb-spacing-5) var(--hb-spacing-6);
+}
+
+/* Select button with focus states */
+.hb-selectbutton-item:focus-visible {
+  outline: 2px solid var(--hb-border-focus);
+  outline-offset: 2px;
+}
+
+/* Select button with loading state */
+.hb-selectbutton.hb-loading .hb-selectbutton-item {
+  position: relative;
+  color: transparent;
+}
+
+.hb-selectbutton.hb-loading .hb-selectbutton-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--hb-border-light);
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: hb-selectbutton-spin 1s linear infinite;
+}
+
+@keyframes hb-selectbutton-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Select button with ripple effect */
+.hb-selectbutton-item.hb-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-selectbutton-item.hb-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.hb-selectbutton-item.hb-ripple:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Select button with glow effect */
+.hb-selectbutton.hb-glow .hb-selectbutton-item.hb-selected {
+  box-shadow: 0 0 10px var(--hb-primary);
+}
+
+/* Select button with borderless style */
+.hb-selectbutton.hb-borderless .hb-selectbutton-item {
+  border: none;
+  background-color: var(--hb-bg-secondary);
+}
+
+.hb-selectbutton.hb-borderless .hb-selectbutton-item.hb-selected {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+/* Select button with pill style */
+.hb-selectbutton.hb-pill .hb-selectbutton-item {
+  border-radius: var(--hb-border-radius-full);
+  margin: 0 var(--hb-spacing-1);
+}
+
+.hb-selectbutton.hb-pill .hb-selectbutton-item:first-child {
+  margin-left: 0;
+}
+
+.hb-selectbutton.hb-pill .hb-selectbutton-item:last-child {
+  margin-right: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-selectbutton {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hb-selectbutton .hb-selectbutton-item {
+    border-radius: var(--hb-border-radius-md) !important;
+    margin-bottom: var(--hb-spacing-1);
+    width: 100%;
+  }
+  
+  .hb-selectbutton .hb-selectbutton-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .hb-selectbutton.hb-pill {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .hb-selectbutton.hb-pill .hb-selectbutton-item {
+    margin: var(--hb-spacing-1);
+    width: auto;
+  }
+} 

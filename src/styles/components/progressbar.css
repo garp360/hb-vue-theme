@@ -1,0 +1,275 @@
+/* =============================================================================
+   HB VUE THEME - PROGRESSBAR COMPONENT STYLES
+   Lara-inspired with dense, compact design
+   ============================================================================= */
+
+/* Main progressbar container */
+.hb-progressbar {
+  position: relative;
+  width: 100%;
+  height: 0.75rem;
+  background-color: var(--hb-bg-tertiary);
+  border-radius: var(--hb-border-radius-full);
+  overflow: hidden;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-sm);
+  line-height: var(--hb-line-height-tight);
+}
+
+/* Progressbar value */
+.hb-progressbar-value {
+  height: 100%;
+  background-color: var(--hb-primary);
+  border-radius: var(--hb-border-radius-full);
+  transition: width var(--hb-transition-base);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hb-text-inverse);
+  font-size: var(--hb-font-size-xs);
+  font-weight: var(--hb-font-weight-medium);
+  min-width: 1.5rem;
+}
+
+/* Progressbar label */
+.hb-progressbar-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--hb-text-primary);
+  font-size: var(--hb-font-size-xs);
+  font-weight: var(--hb-font-weight-medium);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Progressbar with label */
+.hb-progressbar.hb-with-label .hb-progressbar-value {
+  color: transparent;
+}
+
+/* Progressbar severity variants */
+.hb-progressbar.hb-success .hb-progressbar-value {
+  background-color: var(--hb-success);
+}
+
+.hb-progressbar.hb-warning .hb-progressbar-value {
+  background-color: var(--hb-warning);
+}
+
+.hb-progressbar.hb-danger .hb-progressbar-value {
+  background-color: var(--hb-danger);
+}
+
+.hb-progressbar.hb-info .hb-progressbar-value {
+  background-color: var(--hb-info);
+}
+
+/* Progressbar with gradient */
+.hb-progressbar.hb-gradient .hb-progressbar-value {
+  background: linear-gradient(90deg, var(--hb-primary), var(--hb-primary-hover));
+}
+
+.hb-progressbar.hb-gradient.hb-success .hb-progressbar-value {
+  background: linear-gradient(90deg, var(--hb-success), var(--hb-success-hover));
+}
+
+.hb-progressbar.hb-gradient.hb-warning .hb-progressbar-value {
+  background: linear-gradient(90deg, var(--hb-warning), var(--hb-warning-hover));
+}
+
+.hb-progressbar.hb-gradient.hb-danger .hb-progressbar-value {
+  background: linear-gradient(90deg, var(--hb-danger), var(--hb-danger-hover));
+}
+
+.hb-progressbar.hb-gradient.hb-info .hb-progressbar-value {
+  background: linear-gradient(90deg, var(--hb-info), var(--hb-info-hover));
+}
+
+/* Progressbar with stripes */
+.hb-progressbar.hb-striped .hb-progressbar-value {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 0.75rem 0.75rem;
+  animation: hb-progressbar-stripes 1s linear infinite;
+}
+
+@keyframes hb-progressbar-stripes {
+  0% {
+    background-position: 0.75rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Progressbar with animated stripes */
+.hb-progressbar.hb-animated .hb-progressbar-value {
+  animation: hb-progressbar-animate 2s ease-in-out infinite;
+}
+
+@keyframes hb-progressbar-animate {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Progressbar sizes */
+.hb-progressbar.hb-sm {
+  height: 0.5rem;
+}
+
+.hb-progressbar.hb-sm .hb-progressbar-label {
+  font-size: 0.625rem;
+}
+
+.hb-progressbar.hb-lg {
+  height: 1.25rem;
+}
+
+.hb-progressbar.hb-lg .hb-progressbar-label {
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-progressbar.hb-xl {
+  height: 1.5rem;
+}
+
+.hb-progressbar.hb-xl .hb-progressbar-label {
+  font-size: var(--hb-font-size-base);
+}
+
+/* Progressbar with custom styling */
+.hb-progressbar.hb-outlined {
+  background-color: transparent;
+  border: 1.5px solid var(--hb-border-medium);
+}
+
+.hb-progressbar.hb-outlined .hb-progressbar-value {
+  background-color: var(--hb-primary);
+  border-radius: calc(var(--hb-border-radius-full) - 1.5px);
+}
+
+/* Progressbar with rounded corners */
+.hb-progressbar.hb-rounded {
+  border-radius: var(--hb-border-radius-md);
+}
+
+.hb-progressbar.hb-rounded .hb-progressbar-value {
+  border-radius: var(--hb-border-radius-md);
+}
+
+/* Progressbar with shadow */
+.hb-progressbar.hb-shadow .hb-progressbar-value {
+  box-shadow: var(--hb-shadow-sm);
+}
+
+/* Progressbar with border */
+.hb-progressbar.hb-bordered {
+  border: 1px solid var(--hb-border-medium);
+}
+
+/* Progressbar with custom colors */
+.hb-progressbar.hb-custom .hb-progressbar-value {
+  background-color: var(--hb-custom-color, var(--hb-primary));
+}
+
+/* Progressbar with indeterminate animation */
+.hb-progressbar.hb-indeterminate .hb-progressbar-value {
+  width: 30% !important;
+  animation: hb-progressbar-indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes hb-progressbar-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Progressbar with pulse effect */
+.hb-progressbar.hb-pulse .hb-progressbar-value {
+  animation: hb-progressbar-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hb-progressbar-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Progressbar with glow effect */
+.hb-progressbar.hb-glow .hb-progressbar-value {
+  box-shadow: 0 0 10px var(--hb-primary);
+}
+
+/* Progressbar with text outside */
+.hb-progressbar.hb-text-outside {
+  margin-bottom: var(--hb-spacing-2);
+}
+
+.hb-progressbar.hb-text-outside .hb-progressbar-label {
+  position: static;
+  transform: none;
+  margin-bottom: var(--hb-spacing-1);
+  text-align: left;
+}
+
+/* Progressbar with text inside */
+.hb-progressbar.hb-text-inside .hb-progressbar-label {
+  color: var(--hb-text-inverse);
+  font-weight: var(--hb-font-weight-semibold);
+}
+
+/* Progressbar with percentage */
+.hb-progressbar.hb-percentage .hb-progressbar-label::after {
+  content: '%';
+}
+
+/* Progressbar with show value */
+.hb-progressbar.hb-show-value .hb-progressbar-label::after {
+  content: ' / 100';
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-progressbar {
+    height: 0.625rem;
+  }
+
+  .hb-progressbar.hb-lg {
+    height: 1rem;
+  }
+
+  .hb-progressbar.hb-xl {
+    height: 1.25rem;
+  }
+
+  .hb-progressbar-label {
+    font-size: 0.625rem;
+  }
+} 

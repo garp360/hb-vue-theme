@@ -1,0 +1,416 @@
+/* =============================================================================
+   HB VUE THEME - AVATAR COMPONENT STYLES
+   ============================================================================= */
+
+/* Avatar base styles */
+.hb-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--hb-border-radius-full);
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  font-weight: var(--hb-font-weight-semibold);
+  line-height: 1;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: all var(--hb-transition-base);
+}
+
+/* Avatar image */
+.hb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Avatar text */
+.hb-avatar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Avatar icon */
+.hb-avatar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.25em;
+}
+
+/* Avatar variants */
+.hb-avatar.hb-primary {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-avatar.hb-secondary {
+  background-color: var(--hb-secondary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-avatar.hb-success {
+  background-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+}
+
+.hb-avatar.hb-warning {
+  background-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+}
+
+.hb-avatar.hb-danger {
+  background-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+}
+
+.hb-avatar.hb-info {
+  background-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+}
+
+.hb-avatar.hb-light {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-primary);
+  border: 1px solid var(--hb-border-medium);
+}
+
+.hb-avatar.hb-dark {
+  background-color: var(--hb-text-primary);
+  color: var(--hb-text-inverse);
+}
+
+/* Avatar sizes */
+.hb-avatar.hb-xs {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-avatar.hb-sm {
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-avatar.hb-lg {
+  width: 3rem;
+  height: 3rem;
+  font-size: var(--hb-font-size-lg);
+}
+
+.hb-avatar.hb-xl {
+  width: 4rem;
+  height: 4rem;
+  font-size: var(--hb-font-size-xl);
+}
+
+.hb-avatar.hb-2xl {
+  width: 5rem;
+  height: 5rem;
+  font-size: var(--hb-font-size-2xl);
+}
+
+.hb-avatar.hb-3xl {
+  width: 6rem;
+  height: 6rem;
+  font-size: var(--hb-font-size-3xl);
+}
+
+/* Avatar shapes */
+.hb-avatar.hb-square {
+  border-radius: var(--hb-border-radius-sm);
+}
+
+.hb-avatar.hb-rounded {
+  border-radius: var(--hb-border-radius-md);
+}
+
+.hb-avatar.hb-circle {
+  border-radius: var(--hb-border-radius-full);
+}
+
+/* Avatar with border */
+.hb-avatar.hb-bordered {
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-avatar.hb-bordered.hb-primary {
+  border-color: var(--hb-primary);
+}
+
+.hb-avatar.hb-bordered.hb-success {
+  border-color: var(--hb-success);
+}
+
+.hb-avatar.hb-bordered.hb-warning {
+  border-color: var(--hb-warning);
+}
+
+.hb-avatar.hb-bordered.hb-danger {
+  border-color: var(--hb-danger);
+}
+
+.hb-avatar.hb-bordered.hb-info {
+  border-color: var(--hb-info);
+}
+
+/* Avatar with shadow */
+.hb-avatar.hb-shadow {
+  box-shadow: var(--hb-shadow-sm);
+}
+
+.hb-avatar.hb-shadow.hb-lg {
+  box-shadow: var(--hb-shadow-base);
+}
+
+.hb-avatar.hb-shadow.hb-xl {
+  box-shadow: var(--hb-shadow-md);
+}
+
+/* Avatar with gradient */
+.hb-avatar.hb-gradient {
+  background: linear-gradient(45deg, var(--hb-primary), var(--hb-primary-hover));
+}
+
+.hb-avatar.hb-gradient.hb-success {
+  background: linear-gradient(45deg, var(--hb-success), var(--hb-success-hover));
+}
+
+.hb-avatar.hb-gradient.hb-warning {
+  background: linear-gradient(45deg, var(--hb-warning), var(--hb-warning-hover));
+}
+
+.hb-avatar.hb-gradient.hb-danger {
+  background: linear-gradient(45deg, var(--hb-danger), var(--hb-danger-hover));
+}
+
+.hb-avatar.hb-gradient.hb-info {
+  background: linear-gradient(45deg, var(--hb-info), var(--hb-info-hover));
+}
+
+/* Avatar with status indicator */
+.hb-avatar.hb-status {
+  position: relative;
+}
+
+.hb-avatar.hb-status::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--hb-border-radius-full);
+  background-color: var(--hb-success);
+  border: 2px solid var(--hb-bg-primary);
+}
+
+.hb-avatar.hb-status.hb-offline::after {
+  background-color: var(--hb-danger);
+}
+
+.hb-avatar.hb-status.hb-away::after {
+  background-color: var(--hb-warning);
+}
+
+.hb-avatar.hb-status.hb-busy::after {
+  background-color: var(--hb-danger);
+}
+
+/* Avatar with pulse effect */
+.hb-avatar.hb-pulse {
+  position: relative;
+}
+
+.hb-avatar.hb-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background-color: inherit;
+  animation: hb-avatar-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hb-avatar-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Avatar with glow effect */
+.hb-avatar.hb-glow {
+  box-shadow: 0 0 15px currentColor;
+}
+
+/* Avatar with custom colors */
+.hb-avatar.hb-custom {
+  background-color: var(--hb-custom-color, var(--hb-primary));
+  color: var(--hb-custom-text-color, var(--hb-text-inverse));
+}
+
+/* Avatar group */
+.hb-avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.hb-avatar-group .hb-avatar {
+  margin-left: -0.5rem;
+  border: 2px solid var(--hb-bg-primary);
+}
+
+.hb-avatar-group .hb-avatar:first-child {
+  margin-left: 0;
+}
+
+.hb-avatar-group .hb-avatar:hover {
+  z-index: 1;
+  transform: scale(1.1);
+}
+
+/* Avatar with fallback */
+.hb-avatar.hb-fallback {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-secondary);
+}
+
+/* Avatar with initials */
+.hb-avatar.hb-initials .hb-avatar-text {
+  font-size: 0.75em;
+  font-weight: var(--hb-font-weight-bold);
+}
+
+/* Avatar with overlay */
+.hb-avatar.hb-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-avatar.hb-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity var(--hb-transition-base);
+}
+
+.hb-avatar.hb-overlay:hover::before {
+  opacity: 1;
+}
+
+/* Avatar with action button */
+.hb-avatar.hb-action {
+  cursor: pointer;
+}
+
+.hb-avatar.hb-action:hover {
+  transform: scale(1.05);
+}
+
+/* Avatar with loading state */
+.hb-avatar.hb-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.hb-avatar.hb-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: hb-avatar-loading 1.5s infinite;
+}
+
+@keyframes hb-avatar-loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Avatar with badge */
+.hb-avatar.hb-badge {
+  position: relative;
+}
+
+.hb-avatar.hb-badge .hb-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 var(--hb-spacing-0-5);
+  font-size: var(--hb-font-size-xs);
+  border-radius: var(--hb-border-radius-full);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-avatar {
+    width: 2rem;
+    height: 2rem;
+    font-size: var(--hb-font-size-sm);
+  }
+  
+  .hb-avatar.hb-lg {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: var(--hb-font-size-base);
+  }
+  
+  .hb-avatar.hb-xl {
+    width: 3rem;
+    height: 3rem;
+    font-size: var(--hb-font-size-lg);
+  }
+  
+  .hb-avatar.hb-2xl {
+    width: 4rem;
+    height: 4rem;
+    font-size: var(--hb-font-size-xl);
+  }
+  
+  .hb-avatar.hb-3xl {
+    width: 5rem;
+    height: 5rem;
+    font-size: var(--hb-font-size-2xl);
+  }
+} 

@@ -1,5 +1,6 @@
 /* =============================================================================
    HB VUE THEME - CARD COMPONENT
+   Lara-inspired with dense, compact design
    ============================================================================= */
 
 /* =============================================================================
@@ -13,7 +14,7 @@
   background-color: var(--hb-bg-primary);
   border: 1px solid var(--hb-border-light);
   border-radius: var(--hb-border-radius-lg);
-  box-shadow: var(--hb-shadow-sm);
+  box-shadow: var(--hb-shadow-base);
   overflow: hidden;
   transition: all var(--hb-transition-base);
   font-family: var(--hb-font-family-primary);
@@ -35,23 +36,12 @@
    ============================================================================= */
 
 .hb-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: var(--hb-spacing-6);
-  background-color: var(--hb-bg-secondary);
   border-bottom: 1px solid var(--hb-border-light);
-  min-height: 3.5rem;
+  background-color: var(--hb-bg-primary);
 }
 
-.hb-card-header-content {
-  display: flex;
-  align-items: center;
-  gap: var(--hb-spacing-3);
-  flex: 1;
-}
-
-.hb-card-title {
+.hb-card-header-title {
   font-size: var(--hb-font-size-xl);
   font-weight: var(--hb-font-weight-semibold);
   color: var(--hb-text-primary);
@@ -59,8 +49,8 @@
   line-height: var(--hb-line-height-tight);
 }
 
-.hb-card-subtitle {
-  font-size: var(--hb-font-size-sm);
+.hb-card-header-subtitle {
+  font-size: var(--hb-font-size-base);
   color: var(--hb-text-secondary);
   margin: var(--hb-spacing-1) 0 0 0;
   line-height: var(--hb-line-height-normal);
@@ -69,8 +59,8 @@
 .hb-card-header-actions {
   display: flex;
   align-items: center;
-  gap: var(--hb-spacing-2);
-  margin-left: var(--hb-spacing-4);
+  gap: var(--hb-spacing-1-5);
+  margin-left: var(--hb-spacing-3);
 }
 
 /* =============================================================================
@@ -78,13 +68,12 @@
    ============================================================================= */
 
 .hb-card-content {
-  flex: 1;
   padding: var(--hb-spacing-6);
-  line-height: var(--hb-line-height-relaxed);
+  background-color: var(--hb-bg-primary);
 }
 
-.hb-card-content:only-child {
-  padding: var(--hb-spacing-6);
+.hb-card-content:last-child {
+  border-bottom: none;
 }
 
 /* =============================================================================
@@ -92,27 +81,27 @@
    ============================================================================= */
 
 .hb-card-footer {
+  padding: var(--hb-spacing-6);
+  border-top: 1px solid var(--hb-border-light);
+  background-color: var(--hb-bg-secondary);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--hb-spacing-6);
-  background-color: var(--hb-bg-secondary);
-  border-top: 1px solid var(--hb-border-light);
-  min-height: 3.5rem;
+  justify-content: flex-end;
+  gap: var(--hb-spacing-3);
 }
 
 .hb-card-footer-content {
   display: flex;
   align-items: center;
-  gap: var(--hb-spacing-3);
+  gap: var(--hb-spacing-2);
   flex: 1;
 }
 
 .hb-card-footer-actions {
   display: flex;
   align-items: center;
-  gap: var(--hb-spacing-2);
-  margin-left: var(--hb-spacing-4);
+  gap: var(--hb-spacing-1-5);
+  margin-left: var(--hb-spacing-3);
 }
 
 /* =============================================================================
@@ -141,35 +130,33 @@
    ============================================================================= */
 
 /* Elevated variant */
-.hb-card.hb-elevated {
+.hb-card.hb-card-elevated {
   box-shadow: var(--hb-shadow-lg);
 }
 
-.hb-card.hb-elevated:hover {
+.hb-card.hb-card-elevated:hover {
   box-shadow: var(--hb-shadow-xl);
 }
 
 /* Outlined variant */
-.hb-card.hb-outlined {
+.hb-card.hb-card-outlined {
   box-shadow: none;
-  border-width: 2px;
+  border-color: var(--hb-border-medium);
 }
 
-.hb-card.hb-outlined:hover {
+.hb-card.hb-card-outlined:hover {
   box-shadow: var(--hb-shadow-sm);
-  transform: none;
+  border-color: var(--hb-border-dark);
 }
 
 /* Flat variant */
-.hb-card.hb-flat {
+.hb-card.hb-card-flat {
   box-shadow: none;
   border: none;
 }
 
-.hb-card.hb-flat:hover {
-  box-shadow: none;
-  transform: none;
-  background-color: var(--hb-bg-secondary);
+.hb-card.hb-card-flat:hover {
+  box-shadow: var(--hb-shadow-sm);
 }
 
 /* Interactive variant */
@@ -179,11 +166,11 @@
 
 .hb-card.hb-interactive:hover {
   box-shadow: var(--hb-shadow-lg);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .hb-card.hb-interactive:active {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--hb-shadow-md);
 }
 
@@ -191,31 +178,38 @@
    CARD SIZES
    ============================================================================= */
 
-.hb-card.hb-sm .hb-card-header,
-.hb-card.hb-sm .hb-card-content,
-.hb-card.hb-sm .hb-card-footer {
+.hb-card.hb-card-sm .hb-card-header,
+.hb-card.hb-card-sm .hb-card-content,
+.hb-card.hb-card-sm .hb-card-footer {
   padding: var(--hb-spacing-4);
 }
 
-.hb-card.hb-sm .hb-card-title {
+.hb-card.hb-card-sm .hb-card-header-title {
   font-size: var(--hb-font-size-lg);
 }
 
-.hb-card.hb-lg .hb-card-header,
-.hb-card.hb-lg .hb-card-content,
-.hb-card.hb-lg .hb-card-footer {
+.hb-card.hb-card-sm .hb-card-header-subtitle {
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-card.hb-card-lg .hb-card-header,
+.hb-card.hb-card-lg .hb-card-content,
+.hb-card.hb-card-lg .hb-card-footer {
   padding: var(--hb-spacing-8);
 }
 
-.hb-card.hb-lg .hb-card-title {
+.hb-card.hb-card-lg .hb-card-header-title {
   font-size: var(--hb-font-size-2xl);
+}
+
+.hb-card.hb-card-lg .hb-card-header-subtitle {
+  font-size: var(--hb-font-size-lg);
 }
 
 /* =============================================================================
    CARD LAYOUTS
    ============================================================================= */
 
-/* Horizontal layout */
 .hb-card.hb-horizontal {
   flex-direction: row;
 }
@@ -224,22 +218,29 @@
   width: 200px;
   height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .hb-card.hb-horizontal .hb-card-content {
   flex: 1;
+  padding: var(--hb-spacing-4);
 }
 
-/* Compact layout */
+/* =============================================================================
+   CARD COMPACT
+   ============================================================================= */
+
 .hb-card.hb-compact .hb-card-header,
 .hb-card.hb-compact .hb-card-content,
 .hb-card.hb-compact .hb-card-footer {
-  padding: var(--hb-spacing-4);
+  padding: var(--hb-spacing-2-5);
 }
 
 .hb-card.hb-compact .hb-card-title {
   font-size: var(--hb-font-size-base);
+}
+
+.hb-card.hb-compact .hb-card-subtitle {
+  font-size: var(--hb-font-size-xs);
 }
 
 /* =============================================================================
@@ -247,11 +248,27 @@
    ============================================================================= */
 
 .hb-card.hb-loading {
-  pointer-events: none;
-  opacity: 0.7;
+  position: relative;
+  overflow: hidden;
 }
 
 .hb-card.hb-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: hb-card-shimmer 1.5s infinite;
+}
+
+.hb-card.hb-loading::before {
   content: '';
   position: absolute;
   top: 0;
@@ -260,29 +277,17 @@
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hb-card.hb-loading::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
-  border: 3px solid var(--hb-border-light);
-  border-top: 3px solid var(--hb-primary);
-  border-radius: 50%;
-  animation: hb-spin 1s linear infinite;
-  z-index: 2;
 }
 
 .hb-card.hb-disabled {
   opacity: 0.6;
+  cursor: not-allowed;
   pointer-events: none;
+}
+
+.hb-card.hb-disabled:hover {
+  transform: none;
+  box-shadow: var(--hb-shadow-sm);
 }
 
 /* =============================================================================
@@ -307,46 +312,46 @@
 
 .hb-card-full-height {
   height: 100% !important;
+  min-height: 100%;
 }
 
 /* =============================================================================
-   CARD RESPONSIVE
+   RESPONSIVE DESIGN
    ============================================================================= */
 
 @media (max-width: 768px) {
   .hb-card.hb-horizontal {
     flex-direction: column;
   }
-  
+
   .hb-card.hb-horizontal .hb-card-image {
     width: 100%;
     height: 200px;
   }
-  
+
   .hb-card-header,
   .hb-card-content,
   .hb-card-footer {
     padding: var(--hb-spacing-4);
   }
-  
+
   .hb-card-header-actions,
   .hb-card-footer-actions {
     margin-left: var(--hb-spacing-2);
+    gap: var(--hb-spacing-1);
   }
 }
 
 /* =============================================================================
-   CARD ANIMATIONS
+   ANIMATIONS
    ============================================================================= */
 
-@keyframes hb-card-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@keyframes hb-card-shimmer {
+  0% {
+    left: -100%;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  100% {
+    left: 100%;
   }
 }
 
@@ -354,8 +359,19 @@
   animation: hb-card-fade-in 0.3s ease-out;
 }
 
+@keyframes hb-card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* =============================================================================
-   CARD ACCESSIBILITY
+   ACCESSIBILITY
    ============================================================================= */
 
 .hb-card[tabindex]:focus-visible {
@@ -366,4 +382,110 @@
 .hb-card[role="button"]:focus-visible {
   outline: 2px solid var(--hb-border-focus);
   outline-offset: 2px;
+}
+
+/* =============================================================================
+   CARD ACTIONS
+   ============================================================================= */
+
+.hb-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hb-spacing-3);
+  margin-top: var(--hb-spacing-4);
+}
+
+.hb-card-actions-left {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+
+.hb-card-actions-right {
+  display: flex;
+  align-items: center;
+  gap: var(--hb-spacing-2);
+}
+
+/* =============================================================================
+   CARD BADGE
+   ============================================================================= */
+
+.hb-card-badge {
+  position: absolute;
+  top: var(--hb-spacing-3);
+  right: var(--hb-spacing-3);
+  z-index: 1;
+}
+
+/* =============================================================================
+   CARD GRID
+   ============================================================================= */
+
+.hb-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--hb-spacing-6);
+}
+
+.hb-card-grid.hb-card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hb-card-grid.hb-card-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hb-card-grid.hb-card-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .hb-card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hb-card-grid.hb-card-grid-2,
+  .hb-card-grid.hb-card-grid-3,
+  .hb-card-grid.hb-card-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hb-card-header,
+  .hb-card-content,
+  .hb-card-footer {
+    padding: var(--hb-spacing-4);
+  }
+  
+  .hb-card-header-title {
+    font-size: var(--hb-font-size-lg);
+  }
+  
+  .hb-card-header-subtitle {
+    font-size: var(--hb-font-size-sm);
+  }
+}
+
+@media (max-width: 640px) {
+  .hb-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--hb-spacing-2);
+  }
+  
+  .hb-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--hb-spacing-2);
+  }
+  
+  .hb-card-actions-left,
+  .hb-card-actions-right {
+    justify-content: center;
+  }
 } 

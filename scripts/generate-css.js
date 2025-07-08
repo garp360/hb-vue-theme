@@ -52,24 +52,41 @@ ${componentCSS}
 
 function readComponentCSS() {
   try {
-    // Read the compiled theme CSS file that contains all component styles
-    const themeCSSPath = join(process.cwd(), 'src', 'styles', 'hb-theme.css')
-    const componentCSS = readFileSync(themeCSSPath, 'utf8')
+    // Read the main theme CSS file that contains all component imports
+    const themeCSSPath = join(process.cwd(), 'src', 'styles', 'theme.css')
+    const themeCSS = readFileSync(themeCSSPath, 'utf8')
     
-    // Extract only the component styles (skip CSS variables section)
-    const componentStylesMatch = componentCSS.match(/\/\* =============================================================================\s*\n\s*DATATABLE COMPONENT OVERRIDES\s*\n\s*= ============================================================================\s*\n\n([\s\S]*)/)
+    // Process @import statements to include all component CSS
+    const processedCSS = processImports(themeCSS, dirname(themeCSSPath))
+    
+    // Extract only the component styles (skip CSS variables and global styles)
+    const componentStylesMatch = processedCSS.match(/\/\* =============================================================================\s*\n\s*GLOBAL UTILITY CLASSES\s*\n\s*= ============================================================================\s*\n\n([\s\S]*)/)
     
     if (componentStylesMatch) {
       return componentStylesMatch[1]
     } else {
       // If no component styles section found, return everything after CSS variables
-      const afterRootMatch = componentCSS.match(/:root\s*\{[\s\S]*?\}\s*\n\s*([\s\S]*)/)
-      return afterRootMatch ? afterRootMatch[1] : componentCSS
+      const afterRootMatch = processedCSS.match(/:root\s*\{[\s\S]*?\}\s*\n\s*([\s\S]*)/)
+      return afterRootMatch ? afterRootMatch[1] : processedCSS
     }
   } catch (error) {
     console.warn('Warning: Could not read component CSS:', error.message)
     return '/* Component styles not found */'
   }
+}
+
+function processImports(cssContent, baseDir) {
+  // Replace @import statements with actual file content
+  return cssContent.replace(/@import\s+['"]([^'"]+)['"]\s*;/g, (match, importPath) => {
+    try {
+      const fullPath = join(baseDir, importPath)
+      const importedCSS = readFileSync(fullPath, 'utf8')
+      return importedCSS
+    } catch (error) {
+      console.warn(`Warning: Could not import ${importPath}:`, error.message)
+      return `/* Import failed: ${importPath} */`
+    }
+  })
 }
 
 

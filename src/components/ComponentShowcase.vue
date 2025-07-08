@@ -168,35 +168,46 @@
         <div class="hb-component-group">
           <h4 class="hb-group-title">Tooltip Components</h4>
           <div class="hb-component-examples">
-            <div class="hb-tooltip-trigger">
-              <button class="hb-button hb-primary">
+            <div class="hb-tooltip-trigger" ref="tooltip1">
+              <button class="hb-button hb-button-primary">
                 Hover for Tooltip
               </button>
-              <div class="hb-tooltip hb-top hb-show">
+              <div class="hb-tooltip hb-top" :class="{ 'hb-show': tooltipStates.tooltip1 }">
                 <div class="hb-tooltip-content">
                   <div class="hb-tooltip-text">This is a top tooltip</div>
                 </div>
               </div>
             </div>
 
-            <div class="hb-tooltip-trigger">
-              <button class="hb-button hb-info">
+            <div class="hb-tooltip-trigger" ref="tooltip2">
+              <button class="hb-button hb-button-info">
                 Info Tooltip
               </button>
-              <div class="hb-tooltip hb-bottom hb-info hb-show">
+              <div class="hb-tooltip hb-bottom hb-info" :class="{ 'hb-show': tooltipStates.tooltip2 }">
                 <div class="hb-tooltip-content">
                   <div class="hb-tooltip-text">Information tooltip</div>
                 </div>
               </div>
             </div>
 
-            <div class="hb-tooltip-trigger">
-              <button class="hb-button hb-success">
+            <div class="hb-tooltip-trigger" ref="tooltip3">
+              <button class="hb-button hb-button-success">
                 Success Tooltip
               </button>
-              <div class="hb-tooltip hb-left hb-success hb-show">
+              <div class="hb-tooltip hb-left hb-success" :class="{ 'hb-show': tooltipStates.tooltip3 }">
                 <div class="hb-tooltip-content">
                   <div class="hb-tooltip-text">Success message</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hb-tooltip-trigger" ref="tooltip4">
+              <button class="hb-button hb-button-warning">
+                Warning Tooltip
+              </button>
+              <div class="hb-tooltip hb-right hb-warning" :class="{ 'hb-show': tooltipStates.tooltip4 }">
+                <div class="hb-tooltip-content">
+                  <div class="hb-tooltip-text">Warning message</div>
                 </div>
               </div>
             </div>
@@ -212,13 +223,13 @@
         <div class="hb-component-group">
           <h4 class="hb-group-title">Button Components</h4>
           <div class="hb-component-examples">
-            <button class="hb-button hb-primary">Primary</button>
-            <button class="hb-button hb-secondary">Secondary</button>
-            <button class="hb-button hb-success">Success</button>
-            <button class="hb-button hb-warning">Warning</button>
-            <button class="hb-button hb-danger">Danger</button>
-            <button class="hb-button hb-info">Info</button>
-            <button class="hb-button hb-text">Text</button>
+            <button class="hb-button hb-button-primary">Primary</button>
+            <button class="hb-button hb-button-secondary">Secondary</button>
+            <button class="hb-button hb-button-success">Success</button>
+            <button class="hb-button hb-button-warning">Warning</button>
+            <button class="hb-button hb-button-danger">Danger</button>
+            <button class="hb-button hb-button-info">Info</button>
+            <button class="hb-button hb-button-text">Text</button>
           </div>
         </div>
 
@@ -270,10 +281,21 @@
 <script>
 export default {
   name: 'ComponentShowcase',
+  data() {
+    return {
+      tooltipStates: {
+        tooltip1: false,
+        tooltip2: false,
+        tooltip3: false,
+        tooltip4: false
+      }
+    }
+  },
   mounted() {
     // Add some interactivity for demonstration
     this.setupCheckboxInteractions()
     this.setupRadioInteractions()
+    this.setupTooltipInteractions()
   },
   methods: {
     setupCheckboxInteractions() {
@@ -290,6 +312,23 @@ export default {
         radio.addEventListener('change', (e) => {
           console.log('Radio changed:', e.target.id)
         })
+      })
+    },
+    setupTooltipInteractions() {
+      // Setup tooltip hover events
+      const tooltipRefs = ['tooltip1', 'tooltip2', 'tooltip3', 'tooltip4']
+      
+      tooltipRefs.forEach((ref, index) => {
+        const trigger = this.$refs[ref]
+        if (trigger) {
+          trigger.addEventListener('mouseenter', () => {
+            this.tooltipStates[`tooltip${index + 1}`] = true
+          })
+          
+          trigger.addEventListener('mouseleave', () => {
+            this.tooltipStates[`tooltip${index + 1}`] = false
+          })
+        }
       })
     }
   }

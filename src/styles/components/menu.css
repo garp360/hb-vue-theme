@@ -1,0 +1,179 @@
+/* =============================================================================
+   HB VUE THEME - MENU COMPONENT STYLES
+   Lara-inspired with dense, compact design
+   ============================================================================= */
+
+/* Main menu container */
+.hb-menu {
+  position: relative;
+  display: inline-block;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-sm);
+  line-height: var(--hb-line-height-tight);
+  color: var(--hb-text-primary);
+}
+
+/* Menu list */
+.hb-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-light);
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-lg);
+  min-width: 180px;
+  z-index: var(--hb-z-index-dropdown);
+}
+
+/* Menu item */
+.hb-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  color: var(--hb-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.hb-menu-item:hover:not(.hb-disabled) {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+}
+
+.hb-menu-item.hb-active {
+  background-color: var(--hb-primary-50);
+  color: var(--hb-primary);
+  font-weight: var(--hb-font-weight-medium);
+}
+
+.hb-menu-item.hb-disabled {
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Menu item with submenu */
+.hb-menu-item.hb-has-submenu {
+  justify-content: space-between;
+}
+
+.hb-menu-item.hb-has-submenu::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.25rem solid var(--hb-text-secondary);
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+  margin-left: var(--hb-spacing-1-5);
+  transition: transform var(--hb-transition-base);
+}
+
+.hb-menu-item.hb-has-submenu.hb-open::after {
+  transform: rotate(90deg);
+}
+
+/* Menu item icon */
+.hb-menu-item-icon {
+  margin-right: var(--hb-spacing-2);
+  width: 0.875rem;
+  height: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--hb-font-size-sm);
+}
+
+/* Menu item label */
+.hb-menu-item-label {
+  flex: 1;
+}
+
+/* Submenu */
+.hb-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: var(--hb-bg-primary);
+  border: 1px solid var(--hb-border-light);
+  border-radius: var(--hb-border-radius-md);
+  box-shadow: var(--hb-shadow-lg);
+  min-width: 180px;
+  z-index: calc(var(--hb-z-index-dropdown) + 1);
+  margin-left: var(--hb-spacing-0-5);
+}
+
+/* Horizontal menu */
+.hb-menu.hb-horizontal .hb-menu-list {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.hb-menu.hb-horizontal .hb-menu-item {
+  border-radius: var(--hb-border-radius-md);
+  margin-right: var(--hb-spacing-0-5);
+}
+
+.hb-menu.hb-horizontal .hb-submenu {
+  top: 100%;
+  left: 0;
+  margin-top: var(--hb-spacing-0-5);
+  margin-left: 0;
+}
+
+/* Menu separator */
+.hb-menu-separator {
+  height: 1px;
+  background-color: var(--hb-border-light);
+  margin: var(--hb-spacing-1-5) 0;
+}
+
+/* Menu group */
+.hb-menu-group {
+  padding: var(--hb-spacing-1-5) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-xs);
+  font-weight: var(--hb-font-weight-semibold);
+  color: var(--hb-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+  .hb-menu.hb-horizontal .hb-menu-list {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--hb-bg-primary);
+    border: 1px solid var(--hb-border-light);
+    border-radius: var(--hb-border-radius-md);
+    box-shadow: var(--hb-shadow-lg);
+    margin-top: var(--hb-spacing-0-5);
+  }
+  
+  .hb-menu.hb-horizontal .hb-menu-item {
+    margin-right: 0;
+    border-radius: 0;
+  }
+  
+  .hb-menu.hb-horizontal .hb-submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding-left: var(--hb-spacing-3);
+  }
+} 

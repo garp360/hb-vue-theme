@@ -12,6 +12,8 @@
     <main class="hb-main">
       <ComponentShowcase />
       <DataTableDemo />
+      <ExtendedComponentShowcase />
+      <AdvancedComponentShowcase />
     </main>
     
     <footer class="hb-footer">
@@ -23,12 +25,16 @@
 <script>
 import DataTableDemo from './components/DataTableDemo.vue'
 import ComponentShowcase from './components/ComponentShowcase.vue'
+import ExtendedComponentShowcase from './components/ExtendedComponentShowcase.vue'
+import AdvancedComponentShowcase from './components/AdvancedComponentShowcase.vue'
 
 export default {
   name: 'App',
   components: {
     DataTableDemo,
-    ComponentShowcase
+    ComponentShowcase,
+    ExtendedComponentShowcase,
+    AdvancedComponentShowcase
   },
   mounted() {
     // Log theme information

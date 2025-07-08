@@ -1,0 +1,357 @@
+/* =============================================================================
+   HB VUE THEME - INPUTGROUP COMPONENT STYLES
+   ============================================================================= */
+
+/* Main input group container */
+.hb-inputgroup {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  font-family: var(--hb-font-family-primary);
+  font-size: var(--hb-font-size-base);
+  line-height: var(--hb-line-height-normal);
+  color: var(--hb-text-primary);
+}
+
+/* Input group addon */
+.hb-inputgroup-addon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  background-color: var(--hb-bg-secondary);
+  border: 1px solid var(--hb-border-medium);
+  color: var(--hb-text-secondary);
+  font-weight: var(--hb-font-weight-medium);
+  white-space: nowrap;
+  min-width: 2.5rem;
+  transition: all var(--hb-transition-base);
+}
+
+.hb-inputgroup-addon:first-child {
+  border-top-left-radius: var(--hb-border-radius-md);
+  border-bottom-left-radius: var(--hb-border-radius-md);
+  border-right: none;
+}
+
+.hb-inputgroup-addon:last-child {
+  border-top-right-radius: var(--hb-border-radius-md);
+  border-bottom-right-radius: var(--hb-border-radius-md);
+  border-left: none;
+}
+
+.hb-inputgroup-addon:not(:first-child):not(:last-child) {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+/* Input group addon with icon */
+.hb-inputgroup-addon.hb-icon {
+  min-width: 2.5rem;
+  padding: var(--hb-spacing-3);
+}
+
+.hb-inputgroup-addon.hb-icon i {
+  font-size: var(--hb-font-size-base);
+}
+
+/* Input group addon with button */
+.hb-inputgroup-addon.hb-button {
+  padding: 0;
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  cursor: pointer;
+  transition: all var(--hb-transition-base);
+}
+
+.hb-inputgroup-addon.hb-button:hover {
+  background-color: var(--hb-primary-hover);
+  border-color: var(--hb-primary-hover);
+}
+
+.hb-inputgroup-addon.hb-button:active {
+  transform: translateY(1px);
+}
+
+/* Input group addon variants */
+.hb-inputgroup-addon.hb-primary {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-inputgroup-addon.hb-secondary {
+  background-color: var(--hb-secondary);
+  border-color: var(--hb-secondary);
+  color: var(--hb-text-inverse);
+}
+
+.hb-inputgroup-addon.hb-success {
+  background-color: var(--hb-success);
+  border-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+}
+
+.hb-inputgroup-addon.hb-warning {
+  background-color: var(--hb-warning);
+  border-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+}
+
+.hb-inputgroup-addon.hb-danger {
+  background-color: var(--hb-danger);
+  border-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+}
+
+.hb-inputgroup-addon.hb-info {
+  background-color: var(--hb-info);
+  border-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+}
+
+/* Input group input */
+.hb-inputgroup-input {
+  flex: 1;
+  border: 1px solid var(--hb-border-medium);
+  border-radius: 0;
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  min-height: 2.5rem;
+  background-color: var(--hb-bg-primary);
+  color: var(--hb-text-primary);
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  transition: all var(--hb-transition-base);
+}
+
+.hb-inputgroup-input:first-child {
+  border-top-left-radius: var(--hb-border-radius-md);
+  border-bottom-left-radius: var(--hb-border-radius-md);
+}
+
+.hb-inputgroup-input:last-child {
+  border-top-right-radius: var(--hb-border-radius-md);
+  border-bottom-right-radius: var(--hb-border-radius-md);
+}
+
+.hb-inputgroup-input:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.hb-inputgroup-input::placeholder {
+  color: var(--hb-text-muted);
+  opacity: 1;
+}
+
+.hb-inputgroup-input:hover:not(:disabled) {
+  border-color: var(--hb-border-dark);
+}
+
+.hb-inputgroup-input:focus {
+  border-color: var(--hb-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hb-inputgroup-input:disabled {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Input group with focus state */
+.hb-inputgroup.hb-focused .hb-inputgroup-addon {
+  border-color: var(--hb-border-focus);
+}
+
+.hb-inputgroup.hb-focused .hb-inputgroup-input {
+  border-color: var(--hb-border-focus);
+}
+
+/* Input group sizes */
+.hb-inputgroup.hb-sm .hb-inputgroup-addon,
+.hb-inputgroup.hb-sm .hb-inputgroup-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  min-height: 2rem;
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-inputgroup.hb-lg .hb-inputgroup-addon,
+.hb-inputgroup.hb-lg .hb-inputgroup-input {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  min-height: 3rem;
+  font-size: var(--hb-font-size-lg);
+}
+
+/* Input group with custom styling */
+.hb-inputgroup.hb-outlined .hb-inputgroup-addon,
+.hb-inputgroup.hb-outlined .hb-inputgroup-input {
+  background-color: transparent;
+  border: 2px solid var(--hb-border-medium);
+}
+
+.hb-inputgroup.hb-outlined.hb-focused .hb-inputgroup-addon,
+.hb-inputgroup.hb-outlined.hb-focused .hb-inputgroup-input {
+  border-color: var(--hb-border-focus);
+}
+
+/* Input group with validation states */
+.hb-inputgroup.hb-valid .hb-inputgroup-addon,
+.hb-inputgroup.hb-valid .hb-inputgroup-input {
+  border-color: var(--hb-success);
+}
+
+.hb-inputgroup.hb-valid.hb-focused .hb-inputgroup-addon,
+.hb-inputgroup.hb-valid.hb-focused .hb-inputgroup-input {
+  border-color: var(--hb-success);
+}
+
+.hb-inputgroup.hb-valid.hb-focused .hb-inputgroup-input {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.hb-inputgroup.hb-invalid .hb-inputgroup-addon,
+.hb-inputgroup.hb-invalid .hb-inputgroup-input {
+  border-color: var(--hb-danger);
+}
+
+.hb-inputgroup.hb-invalid.hb-focused .hb-inputgroup-addon,
+.hb-inputgroup.hb-invalid.hb-focused .hb-inputgroup-input {
+  border-color: var(--hb-danger);
+}
+
+.hb-inputgroup.hb-invalid.hb-focused .hb-inputgroup-input {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Input group with custom colors */
+.hb-inputgroup.hb-custom.hb-focused .hb-inputgroup-addon,
+.hb-inputgroup.hb-custom.hb-focused .hb-inputgroup-input {
+  border-color: var(--hb-custom-color, var(--hb-primary));
+}
+
+.hb-inputgroup.hb-custom.hb-focused .hb-inputgroup-input {
+  box-shadow: 0 0 0 3px rgba(var(--hb-custom-color-rgb, 59, 130, 246), 0.1);
+}
+
+/* Input group with shadow */
+.hb-inputgroup.hb-shadow {
+  box-shadow: var(--hb-shadow-sm);
+  border-radius: var(--hb-border-radius-md);
+  overflow: hidden;
+}
+
+.hb-inputgroup.hb-shadow .hb-inputgroup-addon,
+.hb-inputgroup.hb-shadow .hb-inputgroup-input {
+  border: none;
+  border-radius: 0;
+}
+
+/* Input group with rounded corners */
+.hb-inputgroup.hb-rounded .hb-inputgroup-addon:first-child,
+.hb-inputgroup.hb-rounded .hb-inputgroup-input:first-child {
+  border-top-left-radius: var(--hb-border-radius-full);
+  border-bottom-left-radius: var(--hb-border-radius-full);
+}
+
+.hb-inputgroup.hb-rounded .hb-inputgroup-addon:last-child,
+.hb-inputgroup.hb-rounded .hb-inputgroup-input:last-child {
+  border-top-right-radius: var(--hb-border-radius-full);
+  border-bottom-right-radius: var(--hb-border-radius-full);
+}
+
+/* Input group with compact spacing */
+.hb-inputgroup.hb-compact .hb-inputgroup-addon,
+.hb-inputgroup.hb-compact .hb-inputgroup-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+}
+
+/* Input group with large spacing */
+.hb-inputgroup.hb-large .hb-inputgroup-addon,
+.hb-inputgroup.hb-large .hb-inputgroup-input {
+  padding: var(--hb-spacing-5) var(--hb-spacing-6);
+}
+
+/* Input group with disabled state */
+.hb-inputgroup.hb-disabled .hb-inputgroup-addon,
+.hb-inputgroup.hb-disabled .hb-inputgroup-input {
+  background-color: var(--hb-bg-tertiary);
+  color: var(--hb-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.hb-inputgroup.hb-disabled .hb-inputgroup-addon.hb-button {
+  cursor: not-allowed;
+}
+
+.hb-inputgroup.hb-disabled .hb-inputgroup-addon.hb-button:hover {
+  background-color: var(--hb-primary);
+  border-color: var(--hb-primary);
+  transform: none;
+}
+
+/* Input group with loading state */
+.hb-inputgroup.hb-loading .hb-inputgroup-addon.hb-button {
+  position: relative;
+  color: transparent;
+}
+
+.hb-inputgroup.hb-loading .hb-inputgroup-addon.hb-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: hb-inputgroup-spin 1s linear infinite;
+}
+
+@keyframes hb-inputgroup-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Input group with multiple inputs */
+.hb-inputgroup.hb-multiple {
+  flex-wrap: wrap;
+  gap: var(--hb-spacing-2);
+}
+
+.hb-inputgroup.hb-multiple .hb-inputgroup-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hb-inputgroup {
+    flex-direction: column;
+  }
+  
+  .hb-inputgroup .hb-inputgroup-addon,
+  .hb-inputgroup .hb-inputgroup-input {
+    border-radius: var(--hb-border-radius-md) !important;
+    margin-bottom: var(--hb-spacing-1);
+  }
+  
+  .hb-inputgroup .hb-inputgroup-addon:last-child,
+  .hb-inputgroup .hb-inputgroup-input:last-child {
+    margin-bottom: 0;
+  }
+  
+  .hb-inputgroup.hb-multiple {
+    gap: var(--hb-spacing-1);
+  }
+  
+  .hb-inputgroup.hb-multiple .hb-inputgroup-input {
+    min-width: 100%;
+  }
+} 
