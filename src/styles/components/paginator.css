@@ -1,134 +1,190 @@
 /* =============================================================================
    HB VUE THEME - PAGINATOR COMPONENT STYLES (CSS ONLY)
+   Based on PrimeVue's default paginator styling
    ============================================================================= */
 
 .hb-paginator {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--hb-spacing-4) var(--hb-spacing-6);
-  background-color: var(--hb-bg-secondary);
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  background-color: var(--hb-bg-primary);
   border-top: 1px solid var(--hb-border-light);
   font-family: var(--hb-font-family-primary);
   font-size: var(--hb-font-size-sm);
   color: var(--hb-text-secondary);
 }
+
+/* Paginator Info Section */
 .hb-paginator-info {
   display: flex;
   align-items: center;
   gap: var(--hb-spacing-2);
-}
-.hb-paginator-text {
   color: var(--hb-text-secondary);
 }
+
+.hb-paginator-text {
+  color: var(--hb-text-secondary);
+  font-size: var(--hb-font-size-sm);
+}
+
 .hb-paginator-numbers {
   font-weight: var(--hb-font-weight-medium);
   color: var(--hb-text-primary);
 }
+
+/* Paginator Controls */
 .hb-paginator-controls {
   display: flex;
   align-items: center;
-  gap: var(--hb-spacing-2);
+  gap: var(--hb-spacing-1);
 }
-.hb-paginator-button {
+
+/* Paginator Buttons (Navigation and Page Numbers) */
+.hb-paginator-button,
+.hb-paginator-page {
+  background-color: red;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
   border: 1px solid var(--hb-border-medium);
   background-color: var(--hb-bg-primary);
   color: var(--hb-text-secondary);
-  border-radius: var(--hb-border-radius-sm);
+  border-radius: var(--hb-border-radius-md);
   cursor: pointer;
   transition: all var(--hb-transition-base);
   font-size: var(--hb-font-size-sm);
+  font-weight: var(--hb-font-weight-normal);
+  text-decoration: none;
+  user-select: none;
 }
-.hb-paginator-button:hover:not(:disabled) {
+
+.hb-paginator-button:hover:not(:disabled),
+.hb-paginator-page:hover:not(:disabled) {
   background-color: var(--hb-bg-secondary);
   border-color: var(--hb-border-dark);
   color: var(--hb-text-primary);
 }
-.hb-paginator-button:active:not(:disabled) {
+
+.hb-paginator-button:active:not(:disabled),
+.hb-paginator-page:active:not(:disabled) {
   background-color: var(--hb-bg-tertiary);
   transform: translateY(1px);
 }
-.hb-paginator-button:focus {
+
+.hb-paginator-button:focus,
+.hb-paginator-page:focus {
   outline: 2px solid var(--hb-border-focus);
   outline-offset: 2px;
 }
-.hb-paginator-button:disabled {
+
+.hb-paginator-button:disabled,
+.hb-paginator-page:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   background-color: var(--hb-bg-tertiary);
   color: var(--hb-text-disabled);
 }
-.hb-paginator-button .pi {
+
+/* Icons in buttons */
+.hb-paginator-button .pi,
+.hb-paginator-page .pi {
   font-size: var(--hb-font-size-sm);
 }
-.hb-paginator-page {
-  /* Inherit from .hb-paginator-button */
-}
+
+/* Current page styling */
 .hb-paginator-page.hb-paginator-page-current {
   background-color: var(--hb-primary);
   border-color: var(--hb-primary);
   color: var(--hb-text-inverse);
   font-weight: var(--hb-font-weight-medium);
 }
+
 .hb-paginator-page.hb-paginator-page-current:hover {
   background-color: var(--hb-primary-hover);
   border-color: var(--hb-primary-hover);
+  color: var(--hb-text-inverse);
 }
+
+/* Ellipsis styling */
 .hb-paginator-page.hb-paginator-page-ellipsis {
   cursor: default;
+  background-color: transparent;
+  border-color: transparent;
 }
+
 .hb-paginator-page.hb-paginator-page-ellipsis:hover {
-  background-color: var(--hb-bg-primary);
-  border-color: var(--hb-border-medium);
+  background-color: transparent;
+  border-color: transparent;
   color: var(--hb-text-secondary);
 }
+
+/* Dropdown for rows per page */
 .hb-paginator-dropdown {
   display: flex;
   align-items: center;
   gap: var(--hb-spacing-2);
 }
+
 .hb-paginator-label {
   color: var(--hb-text-secondary);
   font-size: var(--hb-font-size-sm);
+  white-space: nowrap;
 }
-.hb-dropdown {
+
+/* Rows per page dropdown */
+.hb-paginator-rows-per-page-dropdown {
   min-width: 80px;
   font-size: var(--hb-font-size-sm);
 }
+
+/* Paginator alignment variants */
 .hb-paginator-left {
   justify-content: flex-start;
   gap: var(--hb-spacing-4);
 }
+
 .hb-paginator-center {
   justify-content: center;
   gap: var(--hb-spacing-4);
 }
+
 .hb-paginator-right {
   justify-content: flex-end;
   gap: var(--hb-spacing-4);
 }
+
+/* Responsive Design */
 @media (max-width: 900px) {
   .hb-paginator {
     flex-direction: column;
     gap: var(--hb-spacing-3);
     padding: var(--hb-spacing-3) var(--hb-spacing-4);
   }
+  
   .hb-paginator-info {
     order: 2;
   }
+  
   .hb-paginator-controls {
     order: 1;
     width: 100%;
     justify-content: center;
   }
 }
+
 @media (max-width: 600px) {
   .hb-paginator .hb-paginator-controls {
     flex-wrap: wrap;
+    gap: var(--hb-spacing-1);
+  }
+  
+  .hb-paginator-button,
+  .hb-paginator-page {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: var(--hb-font-size-xs);
   }
 } 

@@ -4,6 +4,8 @@
    Proper cascade order: base -> size -> severity -> states
    ============================================================================= */
 
+
+
 /* =============================================================================
    BASE BUTTON STYLES
    ============================================================================= */
@@ -107,12 +109,70 @@
   box-shadow: var(--hb-shadow-sm);
 }
 
+/* HELP */
+.hb-button.hb-button-help {
+  background-color: var(--hb-help);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-help);
+  box-shadow: var(--hb-shadow-sm);
+}
+
 /* TEXT */
 .hb-button.hb-button-text {
   background-color: transparent;
   color: var(--hb-text-primary);
   border-color: transparent;
   box-shadow: none;
+}
+
+/* OUTLINED VARIANT */
+.hb-button.hb-button-outlined {
+  background-color: transparent;
+  border-width: 2px;
+}
+
+.hb-button.hb-button-primary.hb-button-outlined {
+  color: var(--hb-primary);
+  border-color: var(--hb-primary);
+}
+
+.hb-button.hb-button-secondary.hb-button-outlined {
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-medium);
+}
+
+.hb-button.hb-button-success.hb-button-outlined {
+  color: var(--hb-success);
+  border-color: var(--hb-success);
+}
+
+.hb-button.hb-button-warning.hb-button-outlined {
+  color: var(--hb-warning);
+  border-color: var(--hb-warning);
+}
+
+.hb-button.hb-button-danger.hb-button-outlined {
+  color: var(--hb-danger);
+  border-color: var(--hb-danger);
+}
+
+.hb-button.hb-button-info.hb-button-outlined {
+  color: var(--hb-info);
+  border-color: var(--hb-info);
+}
+
+.hb-button.hb-button-help.hb-button-outlined {
+  color: var(--hb-help);
+  border-color: var(--hb-help);
+}
+
+/* LINK VARIANT */
+.hb-button.hb-button-link {
+  background-color: transparent;
+  color: var(--hb-primary);
+  border-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
 }
 
 /* =============================================================================
@@ -188,6 +248,82 @@
   color: var(--hb-text-primary);
   border-color: transparent;
   box-shadow: none;
+  transform: none;
+}
+
+/* Help hover */
+.hb-button.hb-button-help:hover:not(:disabled) {
+  background-color: var(--hb-help-600);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-help-600);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Outlined hover states */
+.hb-button.hb-button-primary.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-primary);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-primary);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button.hb-button-secondary.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-bg-secondary);
+  color: var(--hb-text-primary);
+  border-color: var(--hb-border-dark);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button.hb-button-success.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-success);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-success);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button.hb-button-warning.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-warning);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-warning);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button.hb-button-danger.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-danger);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-danger);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button.hb-button-info.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-info);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-info);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+.hb-button.hb-button-help.hb-button-outlined:hover:not(:disabled) {
+  background-color: var(--hb-help);
+  color: var(--hb-text-inverse);
+  border-color: var(--hb-help);
+  box-shadow: var(--hb-shadow-base);
+  transform: translateY(-1px);
+}
+
+/* Link hover */
+.hb-button.hb-button-link:hover:not(:disabled) {
+  background-color: transparent;
+  color: var(--hb-primary-hover);
+  border-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
   transform: none;
 }
 

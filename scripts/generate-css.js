@@ -76,11 +76,13 @@ function readComponentCSS() {
 }
 
 function processImports(cssContent, baseDir) {
-  // Replace @import statements with actual file content
+  // Recursively replace @import statements with actual file content
   return cssContent.replace(/@import\s+['"]([^'"]+)['"]\s*;/g, (match, importPath) => {
     try {
       const fullPath = join(baseDir, importPath)
-      const importedCSS = readFileSync(fullPath, 'utf8')
+      let importedCSS = readFileSync(fullPath, 'utf8')
+      // Recursively process imports in the imported file
+      importedCSS = processImports(importedCSS, dirname(fullPath))
       return importedCSS
     } catch (error) {
       console.warn(`Warning: Could not import ${importPath}:`, error.message)
