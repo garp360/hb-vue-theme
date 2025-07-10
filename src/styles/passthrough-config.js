@@ -18,117 +18,63 @@ export const passthroughConfig = {
       }
     `
   },
-  // DataTable component mapping
-  datatable: {
-    root: { class: 'hb-datatable' },
-    header: { class: 'hb-datatable-header' },
-    headerRow: { class: 'hb-datatable-header-row' },
-    headerCell: { class: 'hb-datatable-header-cell' },
-    body: { class: 'hb-datatable-body' },
-    bodyRow: { class: 'hb-datatable-row' },
-    bodyCell: { class: 'hb-datatable-body-cell' },
-    footer: { class: 'hb-datatable-footer' },
-    footerRow: { class: 'hb-datatable-footer-row' },
-    footerCell: { class: 'hb-datatable-footer-cell' },
-    table: { class: 'hb-datatable-table' },
-    thead: { class: 'hb-datatable-thead' },
-    tbody: { class: 'hb-datatable-tbody' },
-    tfoot: { class: 'hb-datatable-tfoot' },
-    loadingOverlay: { class: 'hb-datatable-loading-overlay' },
-    loadingIcon: { class: 'hb-datatable-loading-icon' },
-    emptyMessage: { class: 'hb-datatable-empty-message' },
-    paginator: { class: 'hb-paginator' }
-  },
-  
-  // Column component mapping
-  column: {
-    root: { class: 'hb-column' },
-    header: { class: 'hb-column-header' },
-    headerContent: { class: 'hb-column-header-content' },
-    headerTitle: { class: 'hb-column-header-title' },
-    sortIcon: { class: 'hb-column-sort-icon' },
-    filterOverlay: { class: 'hb-column-filter-overlay' },
-    filterInput: { class: 'hb-column-filter-input' },
-    filterButton: { class: 'hb-column-filter-button' },
-    filterClearButton: { class: 'hb-column-filter-clear-button' },
-    body: { class: 'hb-column-body' },
-    bodyCell: { class: 'hb-column-body-cell' }
-  },
   
   // Button component mapping
   button: {
     root: ({ props }) => {
-      console.log('Button PassThrough called with props:', props)
-      
       const classes = ['hb-button']
       
       // Size variants
       if (props.size === 'small') {
         classes.push('hb-button-sm')
-        console.log('Added hb-button-sm class')
       }
       if (props.size === 'large') {
         classes.push('hb-button-lg')
-        console.log('Added hb-button-lg class')
       }
       
       // Severity variants
       if (props.severity === 'primary') {
         classes.push('hb-button-primary')
-        console.log('Added hb-button-primary class')
       }
       if (props.severity === 'secondary') {
         classes.push('hb-button-secondary')
-        console.log('Added hb-button-secondary class')
       }
       if (props.severity === 'success') {
         classes.push('hb-button-success')
-        console.log('Added hb-button-success class')
       }
       if (props.severity === 'warning') {
         classes.push('hb-button-warning')
-        console.log('Added hb-button-warning class')
       }
       if (props.severity === 'danger') {
         classes.push('hb-button-danger')
-        console.log('Added hb-button-danger class')
       }
       if (props.severity === 'info') {
         classes.push('hb-button-info')
-        console.log('Added hb-button-info class')
       }
       if (props.severity === 'help') {
         classes.push('hb-button-help')
-        console.log('Added hb-button-help class')
       }
       
       // Variant styles
       if (props.outlined) {
         classes.push('hb-button-outlined')
-        console.log('Added hb-button-outlined class')
       }
       if (props.text) {
         classes.push('hb-button-text')
-        console.log('Added hb-button-text class')
       }
       if (props.link) {
         classes.push('hb-button-link')
-        console.log('Added hb-button-link class')
       }
       
       // States
       if (props.loading) {
         classes.push('hb-button-loading')
-        console.log('Added hb-button-loading class')
       }
       if (props.disabled) {
         classes.push('hb-button-disabled')
-        console.log('Added hb-button-disabled class')
       }
       
-      const result = { class: classes.join(' ') }
-      console.log('Final classes:', result.class)
-      return result
+      return { class: classes.join(' ') }
     },
     label: { class: 'hb-button-label' },
     icon: { class: 'hb-button-icon' },
@@ -158,34 +104,6 @@ export const passthroughConfig = {
     filterIcon: { class: 'hb-select-filter-icon' },
     closeButton: { class: 'hb-select-close-button' },
     closeIcon: { class: 'hb-select-close-icon' }
-  },
-  
-  // Paginator component mapping
-  paginator: {
-    root: { class: 'hb-paginator' },
-    info: { class: 'hb-paginator-info' },
-    text: { class: 'hb-paginator-text' },
-    numbers: { class: 'hb-paginator-numbers' },
-    controls: { class: 'hb-paginator-controls' },
-    button: { class: 'hb-paginator-button' },
-    firstPageButton: { class: 'hb-paginator-first' },
-    prevPageButton: { class: 'hb-paginator-prev' },
-    nextPageButton: { class: 'hb-paginator-next' },
-    lastPageButton: { class: 'hb-paginator-last' },
-    pageButton: { class: 'hb-paginator-page' },
-    pages: { class: 'hb-paginator-pages' },
-    pageLinks: { class: 'hb-paginator-page-links' },
-    rowsPerPageDropdown: { class: 'hb-paginator-rows-per-page-dropdown' },
-    current: { class: 'hb-paginator-current' },
-    rppOptions: { class: 'hb-paginator-rpp-options' },
-    rppOption: { class: 'hb-paginator-rpp-option' },
-    start: { class: 'hb-paginator-start' },
-    end: { class: 'hb-paginator-end' },
-    totalRecords: { class: 'hb-paginator-total-records' },
-    jumpToPageDropdown: { class: 'hb-paginator-jump-to-page-dropdown' },
-    jumpToPageInput: { class: 'hb-paginator-jump-to-page-input' },
-    dropdown: { class: 'hb-paginator-dropdown' },
-    label: { class: 'hb-paginator-label' }
   },
   
   // Message component mapping
@@ -277,17 +195,6 @@ export const passthroughConfig = {
     resizerHandle: { class: 'hb-dialog-resizer-handle' }
   },
   
-  // InputNumber component mapping
-  inputnumber: {
-    root: { class: 'hb-inputnumber' },
-    input: { class: 'hb-inputnumber-input' },
-    buttonGroup: { class: 'hb-inputnumber-button-group' },
-    upButton: { class: 'hb-inputnumber-up-button' },
-    downButton: { class: 'hb-inputnumber-down-button' },
-    upIcon: { class: 'hb-inputnumber-up-icon' },
-    downIcon: { class: 'hb-inputnumber-down-icon' }
-  },
-  
   // Checkbox component mapping
   checkbox: {
     root: { class: 'hb-checkbox' },
@@ -309,6 +216,78 @@ export const passthroughConfig = {
   // Textarea component mapping
   textarea: {
     root: { class: 'hb-textarea' }
+  },
+  
+  // Card component mapping
+  card: {
+    root: { class: 'hb-card' },
+    header: { class: 'hb-card-header' },
+    title: { class: 'hb-card-title' },
+    subtitle: { class: 'hb-card-subtitle' },
+    content: { class: 'hb-card-content' },
+    footer: { class: 'hb-card-footer' }
+  },
+  
+  // Tooltip component mapping
+  tooltip: {
+    root: { class: 'hb-tooltip' },
+    text: { class: 'hb-tooltip-text' },
+    arrow: { class: 'hb-tooltip-arrow' }
+  },
+  
+  // Paginator component mapping
+  paginator: {
+    root: { class: 'hb-paginator' },
+    content: { class: 'hb-paginator-content' },
+    first: { class: 'hb-paginator-first' },
+    prev: { class: 'hb-paginator-prev' },
+    next: { class: 'hb-paginator-next' },
+    last: { class: 'hb-paginator-last' },
+    page: { class: 'hb-paginator-page' },
+    pages: { class: 'hb-paginator-pages' },
+    rowsperpage: { class: 'hb-paginator-rows-dropdown' },
+    jumptopageinput: { class: 'hb-paginator-jump-input' },
+    jumptopagedropdown: { class: 'hb-paginator-jump-dropdown' },
+    current: { class: 'hb-paginator-report' },
+    start: { class: 'hb-paginator-start' },
+    end: { class: 'hb-paginator-end' }
+  },
+  
+  // DataTable component mapping
+  datatable: {
+    root: { class: 'hb-datatable' },
+    header: { class: 'hb-datatable-header' },
+    headerRow: { class: 'hb-datatable-header-row' },
+    headerCell: { class: 'hb-datatable-header-cell' },
+    body: { class: 'hb-datatable-body' },
+    bodyRow: { class: 'hb-datatable-row' },
+    bodyCell: { class: 'hb-datatable-body-cell' },
+    footer: { class: 'hb-datatable-footer' },
+    footerRow: { class: 'hb-datatable-footer-row' },
+    footerCell: { class: 'hb-datatable-footer-cell' },
+    table: { class: 'hb-datatable-table' },
+    thead: { class: 'hb-datatable-thead' },
+    tbody: { class: 'hb-datatable-tbody' },
+    tfoot: { class: 'hb-datatable-tfoot' },
+    loadingOverlay: { class: 'hb-datatable-loading-overlay' },
+    loadingIcon: { class: 'hb-datatable-loading-icon' },
+    emptyMessage: { class: 'hb-datatable-empty-message' },
+    paginator: { class: 'hb-paginator' }
+  },
+  
+  // Column component mapping
+  column: {
+    root: { class: 'hb-column' },
+    header: { class: 'hb-column-header' },
+    headerContent: { class: 'hb-column-header-content' },
+    headerTitle: { class: 'hb-column-header-title' },
+    sortIcon: { class: 'hb-column-sort-icon' },
+    filterOverlay: { class: 'hb-column-filter-overlay' },
+    filterInput: { class: 'hb-column-filter-input' },
+    filterButton: { class: 'hb-column-filter-button' },
+    filterClearButton: { class: 'hb-column-filter-clear-button' },
+    body: { class: 'hb-column-body' },
+    bodyCell: { class: 'hb-column-body-cell' }
   },
   
   // Password component mapping
@@ -407,27 +386,10 @@ export const passthroughConfig = {
     panel: { class: 'hb-accordion-panel' }
   },
   
-  // Card component mapping
-  card: {
-    root: { class: 'hb-card' },
-    header: { class: 'hb-card-header' },
-    title: { class: 'hb-card-title' },
-    subtitle: { class: 'hb-card-subtitle' },
-    content: { class: 'hb-card-content' },
-    footer: { class: 'hb-card-footer' }
-  },
-  
   // Divider component mapping
   divider: {
     root: { class: 'hb-divider' },
     content: { class: 'hb-divider-content' }
-  },
-  
-  // Tooltip component mapping
-  tooltip: {
-    root: { class: 'hb-tooltip' },
-    text: { class: 'hb-tooltip-text' },
-    arrow: { class: 'hb-tooltip-arrow' }
   },
   
   // OverlayPanel component mapping
@@ -567,6 +529,17 @@ export const passthroughConfig = {
     loadingIcon: { class: 'hb-treetable-loading-icon' },
     emptyMessage: { class: 'hb-treetable-empty-message' },
     paginator: { class: 'hb-paginator' }
+  },
+  
+  // InputNumber component mapping
+  inputnumber: {
+    root: { class: 'hb-inputnumber' },
+    input: { class: 'hb-inputnumber-input' },
+    buttonGroup: { class: 'hb-inputnumber-button-group' },
+    upButton: { class: 'hb-inputnumber-up-button' },
+    downButton: { class: 'hb-inputnumber-down-button' },
+    upIcon: { class: 'hb-inputnumber-up-icon' },
+    downIcon: { class: 'hb-inputnumber-down-icon' }
   }
 }
 

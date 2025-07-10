@@ -59,16 +59,27 @@ function readComponentCSS() {
     // Process @import statements to include all component CSS
     const processedCSS = processImports(themeCSS, dirname(themeCSSPath))
     
-    // Extract only the component styles (skip CSS variables and global styles)
-    const componentStylesMatch = processedCSS.match(/\/\* =============================================================================\s*\n\s*GLOBAL UTILITY CLASSES\s*\n\s*= ============================================================================\s*\n\n([\s\S]*)/)
-    
-    if (componentStylesMatch) {
-      return componentStylesMatch[1]
+    // Extract component styles (everything before GLOBAL UTILITY CLASSES)
+    const globalUtilIndex = processedCSS.indexOf('GLOBAL UTILITY CLASSES')
+    let css = ''
+    if (globalUtilIndex > 0) {
+      // Get everything before GLOBAL UTILITY CLASSES, but skip the @import statements
+      const afterImportsIndex = processedCSS.indexOf('@import')
+      if (afterImportsIndex >= 0) {
+        const lastImportIndex = processedCSS.lastIndexOf('@import')
+        const afterLastImport = processedCSS.indexOf(';', lastImportIndex) + 1
+        css = processedCSS.substring(afterLastImport, globalUtilIndex).trim()
+      } else {
+        css = processedCSS.substring(0, globalUtilIndex).trim()
+      }
     } else {
-      // If no component styles section found, return everything after CSS variables
+      // Fallback: return everything after CSS variables
       const afterRootMatch = processedCSS.match(/:root\s*\{[\s\S]*?\}\s*\n\s*([\s\S]*)/)
-      return afterRootMatch ? afterRootMatch[1] : processedCSS
+      css = afterRootMatch ? afterRootMatch[1] : processedCSS
     }
+    // Remove any trailing unclosed comment
+    css = css.replace(/\/\*[^*]*$/, '')
+    return css.trim()
   } catch (error) {
     console.warn('Warning: Could not read component CSS:', error.message)
     return '/* Component styles not found */'
