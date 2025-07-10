@@ -97,14 +97,14 @@
 .hb-paginator-page[aria-current="page"] {
   background-color: var(--hb-primary-500);
   border-color: var(--hb-primary-500);
-  color: var(--hb-white);
+  color: var(--hb-text-inverse);
   font-weight: var(--hb-font-weight-semibold);
 }
 
 .hb-paginator-page[aria-current="page"]:hover {
   background-color: var(--hb-primary-600);
   border-color: var(--hb-primary-600);
-  color: var(--hb-white);
+  color: var(--hb-text-inverse);
 }
 
 /* Rows Per Page Dropdown */
