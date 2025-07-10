@@ -45,7 +45,7 @@ app.use(PrimeVue, {
   prefix: 'hb',
   
   // Enable ripple effects
-  ripple: true,
+  ripple: false,
   
   // Configure input styles
   inputStyle: 'filled',
