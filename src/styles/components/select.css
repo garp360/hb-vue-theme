@@ -166,7 +166,7 @@
   padding: var(--hb-spacing-2);
   background-image: none;
   padding-right: var(--hb-spacing-4);
-  min-height: 6rem;
+  min-height: calc(6rem * var(--hb-size-multiplier));
 }
 
 .hb-select[multiple] option {

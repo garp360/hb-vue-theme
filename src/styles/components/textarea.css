@@ -19,7 +19,7 @@
   border: 1px solid var(--hb-border-medium);
   border-radius: var(--hb-border-radius-md);
   padding: var(--hb-spacing-3) var(--hb-spacing-4);
-  min-height: 6rem;
+  min-height: calc(6rem * var(--hb-size-multiplier));
   resize: vertical;
   transition: all var(--hb-transition-base);
   box-shadow: var(--hb-shadow-sm);
@@ -70,13 +70,13 @@
 .hb-textarea.hb-sm {
   font-size: var(--hb-font-size-sm);
   padding: var(--hb-spacing-2) var(--hb-spacing-3);
-  min-height: 4rem;
+  min-height: calc(4rem * var(--hb-size-multiplier));
 }
 
 .hb-textarea.hb-lg {
   font-size: var(--hb-font-size-lg);
   padding: var(--hb-spacing-4) var(--hb-spacing-5);
-  min-height: 8rem;
+  min-height: calc(8rem * var(--hb-size-multiplier));
 }
 
 /* =============================================================================
@@ -221,7 +221,7 @@
 .hb-textarea.hb-auto-resize {
   resize: none;
   overflow: hidden;
-  min-height: 2.5rem;
+  min-height: calc(2.5rem * var(--hb-size-multiplier));
   max-height: 20rem;
 }
 

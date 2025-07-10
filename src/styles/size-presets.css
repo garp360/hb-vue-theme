@@ -1,0 +1,341 @@
+/* =============================================================================
+   HB VUE THEME - SIZE PRESETS
+   Apply these classes to :root or any container to scale all components
+   ============================================================================= */
+
+/* =============================================================================
+   SIZE PRESETS - Apply to :root for global scaling
+   ============================================================================= */
+
+/* Extra Small - 75% of normal size */
+.hb-size-xs {
+  --hb-size-multiplier: 0.75;
+  --hb-font-size-multiplier: 0.875;
+}
+
+/* Small - 87.5% of normal size */
+.hb-size-sm {
+  --hb-size-multiplier: 0.875;
+  --hb-font-size-multiplier: 0.9375;
+}
+
+/* Normal - 100% (default) */
+.hb-size-normal {
+  --hb-size-multiplier: 1;
+  --hb-font-size-multiplier: 1;
+}
+
+/* Large - 125% of normal size */
+.hb-size-lg {
+  --hb-size-multiplier: 1.25;
+  --hb-font-size-multiplier: 1.125;
+}
+
+/* Extra Large - 150% of normal size */
+.hb-size-xl {
+  --hb-size-multiplier: 1.5;
+  --hb-font-size-multiplier: 1.25;
+}
+
+/* =============================================================================
+   COMPONENT-SPECIFIC SIZE OVERRIDES
+   ============================================================================= */
+
+/* Button Size Overrides */
+.hb-size-xs .hb-button {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+}
+
+.hb-size-sm .hb-button {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+}
+
+.hb-size-lg .hb-button {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+}
+
+.hb-size-xl .hb-button {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+}
+
+/* Input Size Overrides */
+.hb-size-xs .hb-inputtext {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+}
+
+.hb-size-sm .hb-inputtext {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+}
+
+.hb-size-lg .hb-inputtext {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+}
+
+.hb-size-xl .hb-inputtext {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+}
+
+/* Textarea Size Overrides */
+.hb-size-xs .hb-textarea {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: calc(4rem * var(--hb-size-multiplier));
+}
+
+.hb-size-sm .hb-textarea {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: calc(4.5rem * var(--hb-size-multiplier));
+}
+
+.hb-size-lg .hb-textarea {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: calc(6rem * var(--hb-size-multiplier));
+}
+
+.hb-size-xl .hb-textarea {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: calc(7rem * var(--hb-size-multiplier));
+}
+
+/* Select Size Overrides */
+.hb-size-xs .hb-select {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+  padding-right: var(--hb-spacing-6);
+  background-size: 0.75rem;
+}
+
+.hb-size-sm .hb-select {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+  padding-right: var(--hb-spacing-8);
+  background-size: 0.875rem;
+}
+
+.hb-size-lg .hb-select {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+  padding-right: var(--hb-spacing-12);
+  background-size: 1.125rem;
+}
+
+.hb-size-xl .hb-select {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+  padding-right: var(--hb-spacing-14);
+  background-size: 1.25rem;
+}
+
+/* DatePicker Size Overrides */
+.hb-size-xs .hb-datepicker-input {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+}
+
+.hb-size-sm .hb-datepicker-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+}
+
+.hb-size-lg .hb-datepicker-input {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+}
+
+.hb-size-xl .hb-datepicker-input {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+}
+
+/* Message Size Overrides */
+.hb-size-xs .hb-message {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-xs);
+  margin-bottom: var(--hb-spacing-3);
+}
+
+.hb-size-sm .hb-message {
+  padding: var(--hb-spacing-2-5) var(--hb-spacing-3-5);
+  font-size: var(--hb-font-size-sm);
+  margin-bottom: var(--hb-spacing-3-5);
+}
+
+.hb-size-lg .hb-message {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  margin-bottom: var(--hb-spacing-5);
+}
+
+.hb-size-xl .hb-message {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  margin-bottom: var(--hb-spacing-6);
+}
+
+/* Chip Size Overrides */
+.hb-size-xs .hb-chip {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  gap: var(--hb-spacing-1);
+}
+
+.hb-size-xs .hb-chip .hb-chip-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-size-xs .hb-chip .hb-chip-image {
+  width: 1rem;
+  height: 1rem;
+}
+
+.hb-size-xs .hb-chip .hb-chip-remove {
+  width: 0.875rem;
+  height: 0.875rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-size-sm .hb-chip {
+  padding: var(--hb-spacing-1-5) var(--hb-spacing-2-5);
+  font-size: var(--hb-font-size-sm);
+  gap: var(--hb-spacing-1-5);
+}
+
+.hb-size-sm .hb-chip .hb-chip-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-size-sm .hb-chip .hb-chip-image {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.hb-size-sm .hb-chip .hb-chip-remove {
+  width: 1rem;
+  height: 1rem;
+  font-size: var(--hb-font-size-xs);
+}
+
+.hb-size-lg .hb-chip {
+  padding: var(--hb-spacing-3) var(--hb-spacing-4);
+  font-size: var(--hb-font-size-lg);
+  gap: var(--hb-spacing-2-5);
+}
+
+.hb-size-lg .hb-chip .hb-chip-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-size-lg .hb-chip .hb-chip-image {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.hb-size-lg .hb-chip .hb-chip-remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--hb-font-size-sm);
+}
+
+.hb-size-xl .hb-chip {
+  padding: var(--hb-spacing-4) var(--hb-spacing-5);
+  font-size: var(--hb-font-size-xl);
+  gap: var(--hb-spacing-3);
+}
+
+.hb-size-xl .hb-chip .hb-chip-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: var(--hb-font-size-base);
+}
+
+.hb-size-xl .hb-chip .hb-chip-image {
+  width: 2rem;
+  height: 2rem;
+}
+
+.hb-size-xl .hb-chip .hb-chip-remove {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: var(--hb-font-size-base);
+}
+
+/* =============================================================================
+   RESPONSIVE SIZE ADJUSTMENTS
+   ============================================================================= */
+
+/* Mobile - Automatically use smaller sizes on small screens */
+@media (max-width: 640px) {
+  :root {
+    --hb-size-multiplier: 0.875;
+    --hb-font-size-multiplier: 0.9375;
+  }
+}
+
+/* Tablet - Use normal sizes */
+@media (min-width: 641px) and (max-width: 1024px) {
+  :root {
+    --hb-size-multiplier: 1;
+    --hb-font-size-multiplier: 1;
+  }
+}
+
+/* Desktop - Can use larger sizes */
+@media (min-width: 1025px) {
+  :root {
+    --hb-size-multiplier: 1;
+    --hb-font-size-multiplier: 1;
+  }
+}
+
+/* =============================================================================
+   ACCESSIBILITY SIZE PRESETS
+   ============================================================================= */
+
+/* High contrast mode - slightly larger for better visibility */
+@media (prefers-contrast: high) {
+  :root {
+    --hb-size-multiplier: 1.125;
+    --hb-font-size-multiplier: 1.125;
+  }
+}
+
+/* Reduced motion - remove transitions for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+} 

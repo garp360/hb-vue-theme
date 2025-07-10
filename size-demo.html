@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HB Vue Theme - Size Presets Demo</title>
+    <link rel="stylesheet" href="dist/theme.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .demo-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .size-controls {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .size-controls button {
+            margin: 0.25rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+        }
+        .size-controls button.active {
+            background: #3b82f6;
+            color: white;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="size-controls">
+        <h3>Size Presets</h3>
+        <button onclick="setSize('xs')" class="size-btn">XS (75%)</button>
+        <button onclick="setSize('sm')" class="size-btn">SM (87.5%)</button>
+        <button onclick="setSize('normal')" class="size-btn active">Normal (100%)</button>
+        <button onclick="setSize('lg')" class="size-btn">LG (125%)</button>
+        <button onclick="setSize('xl')" class="size-btn">XL (150%)</button>
+    </div>
+
+    <h1>HB Vue Theme - Global Size Presets Demo</h1>
+    <p>Click the size buttons above to see how all components scale globally.</p>
+
+    <div class="demo-section">
+        <h2>Buttons</h2>
+        <div class="component-grid">
+            <button class="hb-button hb-button-primary">Primary Button</button>
+            <button class="hb-button hb-button-secondary">Secondary Button</button>
+            <button class="hb-button hb-button-success">Success Button</button>
+            <button class="hb-button hb-button-warning">Warning Button</button>
+            <button class="hb-button hb-button-danger">Danger Button</button>
+            <button class="hb-button hb-button-info">Info Button</button>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Inputs</h2>
+        <div class="component-grid">
+            <input type="text" class="hb-input" placeholder="Text input" value="Sample text">
+            <input type="email" class="hb-input" placeholder="Email input" value="user@example.com">
+            <input type="password" class="hb-input" placeholder="Password input" value="password123">
+            <input type="number" class="hb-input" placeholder="Number input" value="42">
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Cards</h2>
+        <div class="component-grid">
+            <div class="hb-card">
+                <div class="hb-card-header">
+                    <h3>Card Title</h3>
+                </div>
+                <div class="hb-card-content">
+                    <p>This is a sample card with some content that will scale with the size preset.</p>
+                </div>
+                <div class="hb-card-footer">
+                    <button class="hb-button hb-button-primary">Action</button>
+                </div>
+            </div>
+            <div class="hb-card">
+                <div class="hb-card-header">
+                    <h3>Another Card</h3>
+                </div>
+                <div class="hb-card-content">
+                    <p>More content to demonstrate scaling across different components.</p>
+                </div>
+                <div class="hb-card-footer">
+                    <button class="hb-button hb-button-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Messages</h2>
+        <div class="component-grid">
+            <div class="hb-message hb-message-info">
+                <span class="hb-message-text">This is an info message that scales with the size preset.</span>
+            </div>
+            <div class="hb-message hb-message-success">
+                <span class="hb-message-text">This is a success message that scales with the size preset.</span>
+            </div>
+            <div class="hb-message hb-message-warning">
+                <span class="hb-message-text">This is a warning message that scales with the size preset.</span>
+            </div>
+            <div class="hb-message hb-message-error">
+                <span class="hb-message-text">This is an error message that scales with the size preset.</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setSize(size) {
+            // Remove all size classes from body
+            document.body.classList.remove('hb-size-xs', 'hb-size-sm', 'hb-size-normal', 'hb-size-lg', 'hb-size-xl');
+            
+            // Add the selected size class
+            if (size !== 'normal') {
+                document.body.classList.add(`hb-size-${size}`);
+            }
+            
+            // Update button states
+            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html> 

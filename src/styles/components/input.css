@@ -165,7 +165,7 @@
 
 /* Textarea */
 .hb-textarea {
-  min-height: 6rem;
+  min-height: calc(6rem * var(--hb-size-multiplier));
   resize: vertical;
   font-family: var(--hb-font-family-primary);
 }

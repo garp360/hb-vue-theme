@@ -147,14 +147,15 @@
   --hb-font-family-mono: 'Courier New', Courier, monospace;
   
   /* Font Sizes - PrimeVue Standard */
-  --hb-font-size-xs: 0.75rem;      /* 12px */
-  --hb-font-size-sm: 0.875rem;     /* 14px */
-  --hb-font-size-base: 1rem;       /* 16px - PrimeVue standard */
-  --hb-font-size-lg: 1.125rem;     /* 18px */
-  --hb-font-size-xl: 1.25rem;      /* 20px */
-  --hb-font-size-2xl: 1.5rem;      /* 24px */
-  --hb-font-size-3xl: 1.875rem;    /* 30px */
-  --hb-font-size-4xl: 2.25rem;     /* 36px */
+  --hb-font-size-multiplier: 1;  /* 0.875 = small, 1 = normal, 1.125 = large, 1.25 = xl */
+  --hb-font-size-xs: calc(0.75rem * var(--hb-font-size-multiplier));      /* 12px */
+  --hb-font-size-sm: calc(0.875rem * var(--hb-font-size-multiplier));     /* 14px */
+  --hb-font-size-base: calc(1rem * var(--hb-font-size-multiplier));       /* 16px - PrimeVue standard */
+  --hb-font-size-lg: calc(1.125rem * var(--hb-font-size-multiplier));     /* 18px */
+  --hb-font-size-xl: calc(1.25rem * var(--hb-font-size-multiplier));      /* 20px */
+  --hb-font-size-2xl: calc(1.5rem * var(--hb-font-size-multiplier));      /* 24px */
+  --hb-font-size-3xl: calc(1.875rem * var(--hb-font-size-multiplier));    /* 30px */
+  --hb-font-size-4xl: calc(2.25rem * var(--hb-font-size-multiplier));     /* 36px */
   
   /* Font Weights */
   --hb-font-weight-light: 300;
@@ -172,19 +173,22 @@
      SPACING - PrimeVue Standard
      ============================================================================= */
   
+  /* Global Size Multiplier - Change this to scale all components */
+  --hb-size-multiplier: 1;  /* 0.75 = small, 1 = normal, 1.25 = large, 1.5 = xl */
+  
   --hb-spacing-0: 0;
-  --hb-spacing-1: 0.25rem;         /* 4px */
-  --hb-spacing-2: 0.5rem;          /* 8px */
-  --hb-spacing-3: 0.75rem;         /* 12px */
-  --hb-spacing-4: 1rem;            /* 16px - PrimeVue standard */
-  --hb-spacing-5: 1.25rem;         /* 20px */
-  --hb-spacing-6: 1.5rem;          /* 24px */
-  --hb-spacing-8: 2rem;            /* 32px */
-  --hb-spacing-10: 2.5rem;         /* 40px */
-  --hb-spacing-12: 3rem;           /* 48px */
-  --hb-spacing-16: 4rem;           /* 64px */
-  --hb-spacing-20: 5rem;           /* 80px */
-  --hb-spacing-24: 6rem;           /* 96px */
+  --hb-spacing-1: calc(0.25rem * var(--hb-size-multiplier));         /* 4px */
+  --hb-spacing-2: calc(0.5rem * var(--hb-size-multiplier));          /* 8px */
+  --hb-spacing-3: calc(0.75rem * var(--hb-size-multiplier));         /* 12px */
+  --hb-spacing-4: calc(1rem * var(--hb-size-multiplier));            /* 16px - PrimeVue standard */
+  --hb-spacing-5: calc(1.25rem * var(--hb-size-multiplier));         /* 20px */
+  --hb-spacing-6: calc(1.5rem * var(--hb-size-multiplier));          /* 24px */
+  --hb-spacing-8: calc(2rem * var(--hb-size-multiplier));            /* 32px */
+  --hb-spacing-10: calc(2.5rem * var(--hb-size-multiplier));         /* 40px */
+  --hb-spacing-12: calc(3rem * var(--hb-size-multiplier));           /* 48px */
+  --hb-spacing-16: calc(4rem * var(--hb-size-multiplier));           /* 64px */
+  --hb-spacing-20: calc(5rem * var(--hb-size-multiplier));           /* 80px */
+  --hb-spacing-24: calc(6rem * var(--hb-size-multiplier));           /* 96px */
 
   /* =============================================================================
      BORDER RADIUS - PrimeVue Standard

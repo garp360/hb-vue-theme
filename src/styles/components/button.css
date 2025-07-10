@@ -47,14 +47,14 @@
   padding: var(--hb-spacing-2) var(--hb-spacing-3);
   font-size: var(--hb-font-size-sm);
   gap: var(--hb-spacing-1);
-  min-height: 2rem;
+  min-height: calc(2rem * var(--hb-size-multiplier));
 }
 
 .hb-button.hb-button-lg {
   padding: var(--hb-spacing-4) var(--hb-spacing-6);
   font-size: var(--hb-font-size-lg);
   gap: var(--hb-spacing-3);
-  min-height: 3rem;
+  min-height: calc(3rem * var(--hb-size-multiplier));
 }
 
 /* =============================================================================
@@ -605,17 +605,17 @@
 /* Icon-only buttons */
 .hb-button.hb-button-icon-only {
   padding: var(--hb-spacing-3);
-  min-width: 2.5rem;
+  min-width: calc(2.5rem * var(--hb-size-multiplier));
 }
 
 .hb-button.hb-button-icon-only.hb-button-sm {
   padding: var(--hb-spacing-2);
-  min-width: 2rem;
+  min-width: calc(2rem * var(--hb-size-multiplier));
 }
 
 .hb-button.hb-button-icon-only.hb-button-lg {
   padding: var(--hb-spacing-4);
-  min-width: 3rem;
+  min-width: calc(3rem * var(--hb-size-multiplier));
 }
 
 /* Button groups */
@@ -642,7 +642,7 @@
 @media (max-width: 640px) {
   .hb-button {
     padding: var(--hb-spacing-2) var(--hb-spacing-3);
-    font-size: var(--hb-font-size-sm);
+  font-size: var(--hb-font-size-sm);
   }
   
   .hb-button.hb-button-lg {

@@ -9,8 +9,10 @@ A custom theme for PrimeVue 4 using the new **Design Token System** and **PrimeF
 - **Installable Preset**: Easy installation in any Vue 3 + PrimeVue 4 project
 - **Custom Prefix**: Uses 'hb' prefix for all components and utilities
 - **Comprehensive Design System**: Complete color palette, typography, spacing, and component tokens
+- **Global Size Presets**: Scale all components with a single CSS class or variable
 - **TypeScript Support**: Full TypeScript support for design tokens
 - **Responsive Design**: Mobile-first responsive design system
+- **Accessibility Features**: Built-in support for high contrast and reduced motion
 
 ## 📦 Installation
 
@@ -265,6 +267,64 @@ The theme includes a comprehensive color system:
   </div>
 </template>
 ```
+
+## 📏 Global Size Presets
+
+The HB Vue Theme includes a powerful global size system that allows you to scale all components with a single CSS class or variable change.
+
+### Quick Usage
+
+```html
+<!-- Apply to entire page -->
+<html class="hb-size-lg">
+  <body>
+    <!-- All components will be 25% larger -->
+  </body>
+</html>
+
+<!-- Apply to specific section -->
+<div class="hb-size-sm">
+  <!-- Only components in this div will be smaller -->
+</div>
+```
+
+### Available Size Presets
+
+| Class | Size Multiplier | Font Multiplier | Description |
+|-------|----------------|-----------------|-------------|
+| `.hb-size-xs` | 0.75 (75%) | 0.875 (87.5%) | Extra Small - Compact UI |
+| `.hb-size-sm` | 0.875 (87.5%) | 0.9375 (93.75%) | Small - Reduced size |
+| `.hb-size-normal` | 1.0 (100%) | 1.0 (100%) | Normal - Default size |
+| `.hb-size-lg` | 1.25 (125%) | 1.125 (112.5%) | Large - Enhanced size |
+| `.hb-size-xl` | 1.5 (150%) | 1.25 (125%) | Extra Large - Maximum size |
+
+### Responsive Size Changes
+
+```css
+/* Mobile: Smaller sizes for better touch targets */
+@media (max-width: 640px) {
+    :root {
+        --hb-size-multiplier: 0.875;
+        --hb-font-size-multiplier: 0.9375;
+    }
+}
+```
+
+### Accessibility Features
+
+```css
+/* High contrast mode - larger for better visibility */
+@media (prefers-contrast: high) {
+    :root {
+        --hb-size-multiplier: 1.125;
+        --hb-font-size-multiplier: 1.125;
+    }
+}
+```
+
+For complete documentation, see [SIZE_PRESETS.md](./SIZE_PRESETS.md).
+
+## 🛠️ Usage
 
 ### Using PassThrough Configuration
 
