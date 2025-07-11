@@ -292,6 +292,187 @@
   font-size: var(--hb-font-size-base);
 }
 
+/* Autocomplete Size Overrides */
+.hb-size-xs .hb-autocomplete-input {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+}
+
+.hb-size-sm .hb-autocomplete-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+}
+
+.hb-size-lg .hb-autocomplete-input {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+}
+
+.hb-size-xl .hb-autocomplete-input {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+}
+
+/* SelectButton Size Overrides */
+.hb-size-xs .hb-selectbutton-item {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+  min-width: 2rem;
+}
+
+.hb-size-sm .hb-selectbutton-item {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+  min-width: 2.25rem;
+}
+
+.hb-size-lg .hb-selectbutton-item {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+  min-width: 3rem;
+}
+
+.hb-size-xl .hb-selectbutton-item {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+  min-width: 3.5rem;
+}
+
+/* InputNumber Size Overrides (uses same classes as input) */
+.hb-size-xs .hb-inputnumber-input {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+}
+
+.hb-size-sm .hb-inputnumber-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+}
+
+.hb-size-lg .hb-inputnumber-input {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+}
+
+.hb-size-xl .hb-inputnumber-input {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+}
+
+/* Password Input Size Overrides (uses same classes as input) */
+.hb-size-xs .hb-password-input {
+  padding: var(--hb-spacing-1) var(--hb-spacing-2);
+  font-size: var(--hb-font-size-xs);
+  min-height: 1.5rem;
+}
+
+.hb-size-sm .hb-password-input {
+  padding: var(--hb-spacing-2) var(--hb-spacing-3);
+  font-size: var(--hb-font-size-sm);
+  min-height: 1.75rem;
+}
+
+.hb-size-lg .hb-password-input {
+  padding: var(--hb-spacing-4) var(--hb-spacing-6);
+  font-size: var(--hb-font-size-lg);
+  min-height: 3rem;
+}
+
+.hb-size-xl .hb-password-input {
+  padding: var(--hb-spacing-5) var(--hb-spacing-8);
+  font-size: var(--hb-font-size-xl);
+  min-height: 3.5rem;
+}
+
+/* ToggleSwitch Size Overrides */
+.hb-size-xs .hb-toggleswitch-track {
+  width: 2rem;
+  height: 1rem;
+}
+
+.hb-size-xs .hb-toggleswitch-thumb {
+  width: calc(1rem - 4px);
+  height: calc(1rem - 4px);
+}
+
+.hb-size-xs .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(1rem);
+}
+
+.hb-size-xs .hb-toggleswitch-label {
+  font-size: var(--hb-font-size-xs);
+  margin-left: var(--hb-spacing-2);
+}
+
+.hb-size-sm .hb-toggleswitch-track {
+  width: 2.5rem;
+  height: 1.25rem;
+}
+
+.hb-size-sm .hb-toggleswitch-thumb {
+  width: calc(1.25rem - 4px);
+  height: calc(1.25rem - 4px);
+}
+
+.hb-size-sm .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(1.25rem);
+}
+
+.hb-size-sm .hb-toggleswitch-label {
+  font-size: var(--hb-font-size-sm);
+  margin-left: var(--hb-spacing-2-5);
+}
+
+.hb-size-lg .hb-toggleswitch-track {
+  width: 4rem;
+  height: 2rem;
+}
+
+.hb-size-lg .hb-toggleswitch-thumb {
+  width: calc(2rem - 4px);
+  height: calc(2rem - 4px);
+}
+
+.hb-size-lg .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(2rem);
+}
+
+.hb-size-lg .hb-toggleswitch-label {
+  font-size: var(--hb-font-size-lg);
+  margin-left: var(--hb-spacing-4);
+}
+
+.hb-size-xl .hb-toggleswitch-track {
+  width: 5rem;
+  height: 2.5rem;
+}
+
+.hb-size-xl .hb-toggleswitch-thumb {
+  width: calc(2.5rem - 4px);
+  height: calc(2.5rem - 4px);
+}
+
+.hb-size-xl .hb-toggleswitch-input:checked + .hb-toggleswitch-track .hb-toggleswitch-thumb {
+  transform: translateX(2.5rem);
+}
+
+.hb-size-xl .hb-toggleswitch-label {
+  font-size: var(--hb-font-size-xl);
+  margin-left: var(--hb-spacing-5);
+}
+
 /* =============================================================================
    RESPONSIVE SIZE ADJUSTMENTS
    ============================================================================= */
