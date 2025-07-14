@@ -504,12 +504,12 @@ export const hbComponentTokens = {
   '--sidebar-shadow': 'var(--hb-shadow-xl)',
   '--sidebar-mask-bg': 'var(--hb-bg-overlay)',
   
-  // OverlayPanel Component
-  '--overlaypanel-bg': 'var(--hb-bg-primary)',
-  '--overlaypanel-border-radius': 'var(--hb-border-radius-lg)',
-  '--overlaypanel-padding': 'var(--hb-spacing-4)',
-  '--overlaypanel-shadow': 'var(--hb-shadow-lg)',
-  '--overlaypanel-arrow-size': '0.5rem',
+  // Popover Component
+  '--popover-bg': 'var(--hb-bg-primary)',
+  '--popover-border-radius': 'var(--hb-border-radius-lg)',
+  '--popover-padding': 'var(--hb-spacing-4)',
+  '--popover-shadow': 'var(--hb-shadow-lg)',
+  '--popover-arrow-size': '0.5rem',
   
   // Tooltip Component
   '--tooltip-bg': 'var(--hb-neutral-800)',

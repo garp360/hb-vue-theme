@@ -81,6 +81,27 @@ export const passthroughConfig = {
     loadingIcon: { class: 'hb-button-loading-icon' }
   },
   
+  // Chip component mapping
+  chip: {
+    root: ({ props }) => {
+      const classes = ['hb-chip']
+      
+      // States
+      if (props.removable) {
+        classes.push('hb-removable')
+      }
+      if (props.clickable) {
+        classes.push('hb-clickable')
+      }
+      
+      return { class: classes.join(' ') }
+    },
+    label: { class: 'hb-chip-label' },
+    icon: { class: 'hb-chip-icon' },
+    image: { class: 'hb-chip-image' },
+    removeIcon: { class: 'hb-chip-remove' }
+  },
+  
   // InputText component mapping
   inputtext: {
     root: { class: 'hb-inputtext' }
@@ -392,12 +413,12 @@ export const passthroughConfig = {
     content: { class: 'hb-divider-content' }
   },
   
-  // OverlayPanel component mapping
-  overlaypanel: {
-    root: { class: 'hb-overlaypanel' },
-    content: { class: 'hb-overlaypanel-content' },
-    closeButton: { class: 'hb-overlaypanel-close-button' },
-    closeIcon: { class: 'hb-overlaypanel-close-icon' }
+  // Popover component mapping
+  popover: {
+    root: { class: 'hb-popover' },
+    content: { class: 'hb-popover-content' },
+    closeButton: { class: 'hb-popover-close-button' },
+    closeIcon: { class: 'hb-popover-close-icon' }
   },
   
   // Sidebar component mapping

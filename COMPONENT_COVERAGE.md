@@ -47,7 +47,7 @@ This document provides a comprehensive overview of all PrimeVue components that 
 ### ✅ **Overlay Components** (Complete Coverage)
 - **Dialog** - Modal dialogs
 - **Sidebar** - Side navigation panels
-- **OverlayPanel** - Contextual overlay panels
+- **Popover** - Contextual popover panels
 - **ConfirmDialog** - Confirmation dialogs
 - **Tooltip** - Hover tooltips with various positions
 - **Overlay** - Generic overlay component

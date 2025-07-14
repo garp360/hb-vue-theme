@@ -174,28 +174,28 @@
     </div>
 
     <div class="hb-component-group">
-      <h3 class="hb-group-title">OverlayPanel Components</h3>
+      <h3 class="hb-group-title">Popover Components</h3>
       <div class="hb-component-examples">
         <div class="hb-example-item">
-          <label>Basic OverlayPanel</label>
-          <OverlayPanel ref="op">
+          <label>Basic Popover</label>
+          <Popover ref="op">
             <template #reference>
-              <Button label="Show Panel" />
+              <Button label="Show Popover" />
             </template>
             <div style="padding: 1rem; min-width: 250px;">
-              <h4 style="margin: 0 0 1rem 0;">Overlay Panel</h4>
-              <p style="margin: 0 0 1rem 0; color: var(--hb-text-secondary);">This is an overlay panel that appears on click.</p>
+              <h4 style="margin: 0 0 1rem 0;">Popover Content</h4>
+              <p style="margin: 0 0 1rem 0; color: var(--hb-text-secondary);">This is a popover that appears on click.</p>
               <div style="display: flex; gap: 0.5rem;">
                 <Button label="Action 1" size="small" />
                 <Button label="Action 2" severity="secondary" size="small" />
               </div>
             </div>
-          </OverlayPanel>
+          </Popover>
         </div>
         
         <div class="hb-example-item">
-          <label>OverlayPanel with Form</label>
-          <OverlayPanel ref="formOp">
+          <label>Popover with Form</label>
+          <Popover ref="formOp">
             <template #reference>
               <Button label="Quick Add" severity="success" />
             </template>
@@ -216,7 +216,7 @@
                 </div>
               </div>
             </div>
-          </OverlayPanel>
+          </Popover>
         </div>
       </div>
     </div>
@@ -229,7 +229,7 @@ import Dialog from 'primevue/dialog'
 import Drawer from 'primevue/drawer'
 import Tooltip from 'primevue/tooltip'
 import Popover from 'primevue/popover'
-import OverlayPanel from 'primevue/overlaypanel'
+
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
@@ -244,7 +244,7 @@ const showFormDialog = ref(false)
 const showRightDrawer = ref(false)
 const showLeftDrawer = ref(false)
 
-// OverlayPanel refs
+// Popover refs
 const op = ref()
 const formOp = ref()
 

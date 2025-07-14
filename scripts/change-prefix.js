@@ -10,6 +10,10 @@
  * - JavaScript references
  * - Package.json and other configuration files
  * - Comments and documentation
+ * 
+ * IMPORTANT: This script is designed to work with PrimeVue 4 unstyled mode.
+ * It will NOT change PrimeVue's .p-* classes (like .p-select, .p-datepicker)
+ * to avoid breaking PrimeVue component styling.
  */
 
 import fs from 'fs';
@@ -133,8 +137,12 @@ function replaceInFile(filePath, oldPrefix, newPrefix) {
     
     // Replace different patterns
     const patterns = [
-      // CSS classes: hb-* -> newPrefix-*
-      { regex: new RegExp(`\\b${oldPrefix}-([a-zA-Z0-9_-]+)`, 'g'), replacement: `${newPrefix}-$1` },
+      // CSS classes: .hb-* -> .newPrefix-* (only CSS selectors, not PrimeVue .p-* classes)
+      { regex: new RegExp(`\\.${oldPrefix}-([a-zA-Z0-9_-]+)`, 'g'), replacement: `.${newPrefix}-$1` },
+      
+      // HTML classes: class="hb-*" -> class="newPrefix-*"
+      { regex: new RegExp(`class="([^"]*?)${oldPrefix}-([a-zA-Z0-9_-]+)`, 'g'), replacement: `class="$1${newPrefix}-$2` },
+      { regex: new RegExp(`class='([^']*?)${oldPrefix}-([a-zA-Z0-9_-]+)`, 'g'), replacement: `class='$1${newPrefix}-$2` },
       
       // CSS custom properties: --hb-* -> --newPrefix-*
       { regex: new RegExp(`--${oldPrefix}-([a-zA-Z0-9_-]+)`, 'g'), replacement: `--${newPrefix}-$1` },

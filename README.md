@@ -391,7 +391,7 @@ The PassThrough configuration includes mappings for all major PrimeVue component
 - **DataTable**: `datatable`, `column`
 - **Form Components**: `button`, `inputtext`, `select`, `inputnumber`, `checkbox`, `radiobutton`, `textarea`, `password`, `multiselect`
 - **Layout Components**: `panel`, `card`, `divider`
-- **Overlay Components**: `dialog`, `overlaypanel`, `sidebar`, `tooltip`
+- **Overlay Components**: `dialog`, `popover`, `sidebar`, `tooltip`
 - **Navigation Components**: `menu`, `tabview`, `accordion`
 - **Data Display**: `message`, `toast`, `confirmdialog`
 - **File Upload**: `fileupload`

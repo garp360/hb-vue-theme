@@ -109,119 +109,9 @@
   white-space: nowrap;
 }
 
-/* Chip variants */
-.hb-chip.hb-primary {
-  background-color: var(--hb-primary-50);
-  border-color: var(--hb-primary);
-  color: var(--hb-primary);
-}
+/* Chip variants - Removed severity variants since PrimeVue Chip doesn't support them */
 
-.hb-chip.hb-primary.hb-clickable:hover {
-  background-color: var(--hb-primary-100);
-  border-color: var(--hb-primary-hover);
-}
-
-.hb-chip.hb-secondary {
-  background-color: var(--hb-secondary-50);
-  border-color: var(--hb-secondary);
-  color: var(--hb-secondary);
-}
-
-.hb-chip.hb-secondary.hb-clickable:hover {
-  background-color: var(--hb-secondary-100);
-  border-color: var(--hb-secondary-hover);
-}
-
-.hb-chip.hb-success {
-  background-color: var(--hb-success-50);
-  border-color: var(--hb-success);
-  color: var(--hb-success);
-}
-
-.hb-chip.hb-success.hb-clickable:hover {
-  background-color: var(--hb-success-100);
-  border-color: var(--hb-success-hover);
-}
-
-.hb-chip.hb-warning {
-  background-color: var(--hb-warning-50);
-  border-color: var(--hb-warning);
-  color: var(--hb-warning);
-}
-
-.hb-chip.hb-warning.hb-clickable:hover {
-  background-color: var(--hb-warning-100);
-  border-color: var(--hb-warning-hover);
-}
-
-.hb-chip.hb-danger {
-  background-color: var(--hb-danger-50);
-  border-color: var(--hb-danger);
-  color: var(--hb-danger);
-}
-
-.hb-chip.hb-danger.hb-clickable:hover {
-  background-color: var(--hb-danger-100);
-  border-color: var(--hb-danger-hover);
-}
-
-.hb-chip.hb-info {
-  background-color: var(--hb-info-50);
-  border-color: var(--hb-info);
-  color: var(--hb-info);
-}
-
-.hb-chip.hb-info.hb-clickable:hover {
-  background-color: var(--hb-info-100);
-  border-color: var(--hb-info-hover);
-}
-
-/* Chip sizes - Fixed to ensure proper sizing hierarchy */
-.hb-chip.hb-chip-sm {
-  padding: var(--hb-spacing-1) var(--hb-spacing-2);
-  font-size: var(--hb-font-size-sm);  /* 14px - smaller than normal */
-  gap: var(--hb-spacing-1);
-}
-
-.hb-chip.hb-chip-sm .hb-chip-icon {
-  width: 0.875rem;
-  height: 0.875rem;
-  font-size: var(--hb-font-size-xs);
-}
-
-.hb-chip.hb-chip-sm .hb-chip-image {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.hb-chip.hb-chip-sm .hb-chip-remove {
-  width: 1rem;
-  height: 1rem;
-  font-size: var(--hb-font-size-xs);
-}
-
-.hb-chip.hb-chip-lg {
-  padding: var(--hb-spacing-3) var(--hb-spacing-4);
-  font-size: var(--hb-font-size-lg);  /* 18px - larger than normal */
-  gap: var(--hb-spacing-3);
-}
-
-.hb-chip.hb-chip-lg .hb-chip-icon {
-  width: 1.125rem;
-  height: 1.125rem;
-  font-size: var(--hb-font-size-base);
-}
-
-.hb-chip.hb-chip-lg .hb-chip-image {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
-.hb-chip.hb-chip-lg .hb-chip-remove {
-  width: 1.5rem;
-  height: 1.5rem;
-  font-size: var(--hb-font-size-base);
-}
+/* Chip sizes - Removed size variants since PrimeVue Chip doesn't support them */
 
 /* Chip outlined variant */
 .hb-chip.hb-chip-outlined {
@@ -233,59 +123,7 @@
   background-color: var(--hb-bg-secondary);
 }
 
-.hb-chip.hb-chip-outlined.hb-primary {
-  border-color: var(--hb-primary);
-  color: var(--hb-primary);
-}
 
-.hb-chip.hb-chip-outlined.hb-primary.hb-clickable:hover {
-  background-color: var(--hb-primary-50);
-}
-
-.hb-chip.hb-chip-outlined.hb-secondary {
-  border-color: var(--hb-secondary);
-  color: var(--hb-secondary);
-}
-
-.hb-chip.hb-chip-outlined.hb-secondary.hb-clickable:hover {
-  background-color: var(--hb-secondary-50);
-}
-
-.hb-chip.hb-chip-outlined.hb-success {
-  border-color: var(--hb-success);
-  color: var(--hb-success);
-}
-
-.hb-chip.hb-chip-outlined.hb-success.hb-clickable:hover {
-  background-color: var(--hb-success-50);
-}
-
-.hb-chip.hb-chip-outlined.hb-warning {
-  border-color: var(--hb-warning);
-  color: var(--hb-warning);
-}
-
-.hb-chip.hb-chip-outlined.hb-warning.hb-clickable:hover {
-  background-color: var(--hb-warning-50);
-}
-
-.hb-chip.hb-chip-outlined.hb-danger {
-  border-color: var(--hb-danger);
-  color: var(--hb-danger);
-}
-
-.hb-chip.hb-chip-outlined.hb-danger.hb-clickable:hover {
-  background-color: var(--hb-danger-50);
-}
-
-.hb-chip.hb-chip-outlined.hb-info {
-  border-color: var(--hb-info);
-  color: var(--hb-info);
-}
-
-.hb-chip.hb-chip-outlined.hb-info.hb-clickable:hover {
-  background-color: var(--hb-info-50);
-}
 
 /* Chip with shadow */
 .hb-chip.hb-chip-shadow {
@@ -412,19 +250,7 @@
   margin-left: var(--hb-spacing-1);
 }
 
-.hb-chip.hb-chip-sm .hb-chip-badge {
-  min-width: 1rem;
-  height: 1rem;
-  font-size: 0.625rem;
-  padding: 0 var(--hb-spacing-0-5);
-}
 
-.hb-chip.hb-chip-lg .hb-chip-badge {
-  min-width: 1.5rem;
-  height: 1.5rem;
-  font-size: var(--hb-font-size-sm);
-  padding: 0 var(--hb-spacing-1-5);
-}
 
 /* Chip counter */
 .hb-chip-counter {
@@ -480,10 +306,5 @@
   
   .hb-chip-group {
     gap: var(--hb-spacing-1);
-  }
-  
-  .hb-chip.hb-chip-lg {
-    font-size: var(--hb-font-size-base);
-    padding: var(--hb-spacing-2) var(--hb-spacing-3);
   }
 } 

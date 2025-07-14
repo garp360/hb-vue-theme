@@ -99,28 +99,8 @@
           <label>Default Chips</label>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <Chip label="Default" />
-            <Chip label="Primary" severity="primary" />
-            <Chip label="Success" severity="success" />
-            <Chip label="Warning" severity="warn" />
-            <Chip label="Danger" severity="danger" />
-          </div>
-        </div>
-        
-        <div class="hb-example-item">
-          <label>Chip Sizes</label>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-            <Chip label="Small" size="small" />
-            <Chip label="Normal" />
-            <Chip label="Large" size="large" />
-          </div>
-        </div>
-        
-        <div class="hb-example-item">
-          <label>Chips with Icons</label>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <Chip label="User" icon="pi pi-user" />
-            <Chip label="Email" icon="pi pi-envelope" severity="info" />
-            <Chip label="Settings" icon="pi pi-cog" severity="secondary" />
+            <Chip label="With Icon" icon="pi pi-user" />
+            <Chip label="With Image" image="https://via.placeholder.com/32" />
           </div>
         </div>
         
@@ -128,8 +108,17 @@
           <label>Removable Chips</label>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <Chip label="Removable" removable />
-            <Chip label="Primary" severity="primary" removable />
-            <Chip label="Success" severity="success" removable />
+            <Chip label="With Icon" icon="pi pi-user" removable />
+            <Chip label="With Image" image="https://via.placeholder.com/32" removable />
+          </div>
+        </div>
+        
+        <div class="hb-example-item">
+          <label>Clickable Chips</label>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <Chip label="Clickable" clickable />
+            <Chip label="With Icon" icon="pi pi-user" clickable />
+            <Chip label="With Image" image="https://via.placeholder.com/32" clickable />
           </div>
         </div>
       </div>
@@ -185,7 +174,7 @@ import Checkbox from 'primevue/checkbox'
 import RadioButton from 'primevue/radiobutton'
 import Chip from 'primevue/chip'
 import Select from 'primevue/select'
-import DatePicker from 'primevue/calendar'
+import DatePicker from 'primevue/datepicker'
 
 const formData = ref({
   text: '',

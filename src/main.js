@@ -17,9 +17,10 @@ import Dialog from 'primevue/dialog'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import Paginator from 'primevue/paginator'
+import Chip from 'primevue/chip'
 
-// Import our local theme library for development
-import { HBThemePlugin, passthroughConfig } from './index.js'
+// Import our linked theme library (as consumers would)
+import { HBThemePlugin, passthroughConfig } from 'hb-vue-theme'
 
 // Import PrimeFlex for utility classes
 import 'primeflex/primeflex.css'
@@ -27,8 +28,8 @@ import 'primeflex/primeflex.css'
 // Import PrimeIcons
 import 'primeicons/primeicons.css'
 
-// Import our generated theme styles for development
-import '../dist/theme.css'
+// Import our linked theme styles (as consumers would)
+import 'hb-vue-theme/css'
 
 // Import our main App component
 import App from './App.vue'
@@ -78,8 +79,10 @@ app.component('Dialog', Dialog)
 app.component('DataTable', DataTable)
 app.component('Column', Column)
 app.component('Paginator', Paginator)
+app.component('Chip', Chip)
 
 // Mount the app
 app.mount('#app')
 
-// Note: Theme installer and PassThrough configuration are now available from local source files 
+// Note: Theme installer and PassThrough configuration are now imported from the linked npm package
+// This ensures the demo uses the same code that consumers will get from npm 
