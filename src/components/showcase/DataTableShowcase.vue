@@ -1,12 +1,7 @@
 <template>
-  <div class="hb-datatable-demo">
-    <div class="hb-demo-header">
-      <h2 class="hb-demo-title">Custom Themed DataTable</h2>
-      <p class="hb-demo-description">
-        This DataTable uses our custom 'hb' theme with PrimeVue 4's design token system.
-      </p>
-    </div>
-
+  <section class="hb-showcase-section">
+    <h2 class="hb-section-title">DataTable Components</h2>
+    
     <div class="hb-demo-content">
       <!-- Filters Section -->
       <div class="hb-filters-section">
@@ -120,10 +115,10 @@
         </DataTable>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<script>
+<script setup>
 import { ref, onMounted } from 'vue'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
@@ -151,135 +146,98 @@ const FilterMatchMode = {
   DATE_AFTER: 'dateAfter'
 }
 
-export default {
-  name: 'DataTableDemo',
-  components: {
-    DataTable,
-    Column,
-    InputText,
-    Select,
-    Button
-  },
-  setup() {
-    const customers = ref([])
-    const loading = ref(true)
-    
-    const filters = ref({
-      name: { value: null, matchMode: FilterMatchMode.CONTAINS },
-      status: { value: null, matchMode: FilterMatchMode.EQUALS }
-    })
-    
-    const statusOptions = ref([
-      { label: 'Active', value: 'active' },
-      { label: 'Inactive', value: 'inactive' },
-      { label: 'Pending', value: 'pending' },
-      { label: 'Suspended', value: 'suspended' }
-    ])
+const customers = ref([])
+const loading = ref(true)
 
-    // Sample data
-    const generateCustomers = () => {
-      const statuses = ['active', 'inactive', 'pending', 'suspended']
-      const names = [
-        'John Smith', 'Jane Doe', 'Bob Johnson', 'Alice Brown', 'Charlie Wilson',
-        'Diana Davis', 'Edward Miller', 'Fiona Garcia', 'George Martinez', 'Helen Rodriguez',
-        'Ian Thompson', 'Julia Anderson', 'Kevin Taylor', 'Laura Moore', 'Michael Jackson',
-        'Nancy White', 'Oliver Harris', 'Patricia Clark', 'Quentin Lewis', 'Rachel Walker'
-      ]
-      
-      return Array.from({ length: 20 }, (_, i) => ({
-        id: i + 1,
-        name: names[i],
-        email: `${names[i].toLowerCase().replace(' ', '.')}@example.com`,
-        status: statuses[Math.floor(Math.random() * statuses.length)],
-        balance: Math.floor(Math.random() * 10000) + 100,
-        date: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000)
-      }))
-    }
+const filters = ref({
+  name: { value: null, matchMode: FilterMatchMode.CONTAINS },
+  status: { value: null, matchMode: FilterMatchMode.EQUALS }
+})
 
-    const clearFilters = () => {
-      filters.value.name.value = null
-      filters.value.status.value = null
-    }
+const statusOptions = ref([
+  { label: 'Active', value: 'active' },
+  { label: 'Inactive', value: 'inactive' },
+  { label: 'Pending', value: 'pending' },
+  { label: 'Suspended', value: 'suspended' }
+])
 
-    const getStatusClass = (status) => {
-      return `hb-status-${status}`
-    }
-
-    const formatCurrency = (value) => {
-      return value.toLocaleString()
-    }
-
-    const formatDate = (date) => {
-      return new Date(date).toLocaleDateString()
-    }
-
-    const viewCustomer = (customer) => {
-      console.log('View customer:', customer)
-    }
-
-    const editCustomer = (customer) => {
-      console.log('Edit customer:', customer)
-    }
-
-    const deleteCustomer = (customer) => {
-      console.log('Delete customer:', customer)
-    }
-
-    onMounted(() => {
-      // Simulate loading
-      setTimeout(() => {
-        customers.value = generateCustomers()
-        loading.value = false
-      }, 1000)
-    })
-
-    return {
-      customers,
-      loading,
-      filters,
-      statusOptions,
-      clearFilters,
-      getStatusClass,
-      formatCurrency,
-      formatDate,
-      viewCustomer,
-      editCustomer,
-      deleteCustomer
-    }
-  }
+// Sample data
+const generateCustomers = () => {
+  const statuses = ['active', 'inactive', 'pending', 'suspended']
+  const names = [
+    'John Smith', 'Jane Doe', 'Bob Johnson', 'Alice Brown', 'Charlie Wilson',
+    'Diana Davis', 'Edward Miller', 'Fiona Garcia', 'George Martinez', 'Helen Rodriguez',
+    'Ian Thompson', 'Julia Anderson', 'Kevin Taylor', 'Laura Moore', 'Michael Jackson',
+    'Nancy White', 'Oliver Harris', 'Patricia Clark', 'Quentin Lewis', 'Rachel Walker'
+  ]
+  
+  return Array.from({ length: 20 }, (_, i) => ({
+    id: i + 1,
+    name: names[i],
+    email: `${names[i].toLowerCase().replace(' ', '.')}@example.com`,
+    status: statuses[Math.floor(Math.random() * statuses.length)],
+    balance: Math.floor(Math.random() * 10000) + 100,
+    date: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000)
+  }))
 }
+
+const clearFilters = () => {
+  filters.value.name.value = null
+  filters.value.status.value = null
+}
+
+const getStatusClass = (status) => {
+  return `hb-status-${status}`
+}
+
+const formatCurrency = (value) => {
+  return value.toLocaleString()
+}
+
+const formatDate = (date) => {
+  return new Date(date).toLocaleDateString()
+}
+
+const viewCustomer = (customer) => {
+  console.log('View customer:', customer)
+}
+
+const editCustomer = (customer) => {
+  console.log('Edit customer:', customer)
+}
+
+const deleteCustomer = (customer) => {
+  console.log('Delete customer:', customer)
+}
+
+onMounted(() => {
+  // Simulate loading
+  setTimeout(() => {
+    customers.value = generateCustomers()
+    loading.value = false
+  }, 1000)
+})
 </script>
 
-<style>
+<style scoped>
 /* =============================================================================
-   HB VUE THEME - DATATABLE DEMO STYLES USING DESIGN TOKENS
+   DATATABLE SHOWCASE STYLES
    ============================================================================= */
 
-.hb-datatable-demo {
+.hb-showcase-section {
   background-color: var(--hb-bg-primary);
   border-radius: var(--hb-border-radius-lg);
+  padding: var(--hb-spacing-8);
   box-shadow: var(--hb-shadow-md);
-  overflow: hidden;
 }
 
-.hb-demo-header {
-  padding: var(--hb-spacing-6) var(--hb-spacing-6) var(--hb-spacing-4);
-  border-bottom: 1px solid var(--hb-border-light);
-  background-color: var(--hb-bg-secondary);
-}
-
-.hb-demo-title {
-  font-size: var(--hb-font-size-2xl);
-  font-weight: var(--hb-font-weight-semibold);
+.hb-section-title {
+  font-size: var(--hb-font-size-3xl);
+  font-weight: var(--hb-font-weight-bold);
   color: var(--hb-text-primary);
-  margin: 0 0 var(--hb-spacing-2) 0;
-}
-
-.hb-demo-description {
-  font-size: var(--hb-font-size-base);
-  color: var(--hb-text-secondary);
-  margin: 0;
-  line-height: var(--hb-line-height-relaxed);
+  margin: 0 0 var(--hb-spacing-8) 0;
+  padding-bottom: var(--hb-spacing-4);
+  border-bottom: 3px solid var(--hb-border-light);
 }
 
 .hb-demo-content {
@@ -322,10 +280,6 @@ export default {
   border: 1px solid var(--hb-border-light);
   border-radius: var(--hb-border-radius-lg);
   overflow: hidden;
-}
-
-.hb-datatable {
-  /* Custom DataTable styles using design tokens */
 }
 
 /* Cell Styles */
@@ -420,10 +374,6 @@ export default {
   }
   
   .hb-demo-content {
-    padding: var(--hb-spacing-4);
-  }
-  
-  .hb-demo-header {
     padding: var(--hb-spacing-4);
   }
 }

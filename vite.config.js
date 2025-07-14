@@ -6,6 +6,12 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [vue()],
   
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src')
+    }
+  },
+  
   // Library build configuration
   build: {
     lib: {

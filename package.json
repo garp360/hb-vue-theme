@@ -38,6 +38,8 @@
     "build": "npm run build:dist && npm run generate:css",
     "build:dist": "vite build",
     "generate:css": "node scripts/generate-css.js",
+    "change-prefix": "node scripts/change-prefix.js",
+    "restore-prefix": "node scripts/change-prefix.js --restore",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build"
